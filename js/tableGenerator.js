@@ -78,7 +78,7 @@ const generateTable = (data, tableDiv, model) => {
         var pTag = document.createElement("button");
         //giving value to p-tag so we know what to edit. ObjValue is all values of current row
         pTag.value = objValue[c];
-        var btnName = document.createTextNode("Accept");
+        var btnName = document.createTextNode("✓");
         pTag.className = "acceptButton";
         pTag.appendChild(btnName);
         td.appendChild(pTag);

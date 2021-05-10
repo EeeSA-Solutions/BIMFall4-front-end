@@ -67,19 +67,19 @@ export const calculateBudgets = (arr, earr) => {
     };
     var returnArray = [
         {
-            "Groceries Budget left": totalRemainingGroceries,
-            "Fixed Costs Budget left": totalRemainingFixedCosts,
-            "Entertainment Budget left": totalRemainingEntertainment
+            "Groceries Budget": totalRemainingGroceries,
+            "FixedCosts Budget": totalRemainingFixedCosts,
+            "Entertainment Budget": totalRemainingEntertainment
         },
         {
-            "Your total Groceries Budget": totalBudgetGroceries,
-            "Your total Fixed Costs Budget": totalBudgetFixedCosts,
-            "Your total Entertainment Budget": totalBudgetEntertainment
+            "Your total Groceries": totalBudgetGroceries,
+            "Your total FixedCosts": totalBudgetFixedCosts,
+            "Your total Entertainment": totalBudgetEntertainment
         },
         {
-            "Your total Groceries expense": totalExpenseGroceries,
-            "Your total Fixedcosts expense": totalExpenseFixedCosts,
-            "Your total Entertainment expense": totalExpenseEntertainment
+            "Your total Groceries": totalExpenseGroceries,
+            "Your total Fixedcosts": totalExpenseFixedCosts,
+            "Your total Entertainment": totalExpenseEntertainment
         }]
     return returnArray
 };

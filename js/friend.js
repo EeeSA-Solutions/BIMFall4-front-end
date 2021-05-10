@@ -31,21 +31,21 @@ getDataByName("Friend").then((data) => {
 });
 
 function friendListSorter (list) {
-  let sent = []
   let received = []
+  let sent = []
   let friends = []
   list.forEach((obj) => {
     if (obj.List_ID === 1){
       obj["Accept"] = obj.Relationship_ID;
-      obj["Decline"] = obj.Relationship_ID;
+      obj["Delete"] = obj.Relationship_ID;
       delete obj.List_ID
       delete obj.Relationship_ID
-      sent.push(obj)
+      received.push(obj)
     } else if (obj.List_ID === 2){
       obj["Delete"] = obj.Relationship_ID;
       delete obj.Relationship_ID
       delete obj.List_ID
-      received.push(obj)
+      sent.push(obj)
     } else if (obj.List_ID === 3){
       obj["Delete"] = obj.Relationship_ID;
       delete obj.Relationship_ID
@@ -53,7 +53,7 @@ function friendListSorter (list) {
       friends.push(obj)
     }
   })
-  generateTable(sent, "sent")
+  generateTable(sent, "sent", "Friend")
   generateTable(received, "received", "Friend")
   generateTable(friends, "friends", "Friend")
 }
