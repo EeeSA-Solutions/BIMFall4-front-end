@@ -17,18 +17,28 @@ forms.onsubmit = (e) => {
   postByModel(requestObject, "savinggoal")
 };
 
+const getMonthdiff = (StartDate, ReachDate) => {
+  let months;
+  months = (ReachDate.getFullYear()- StartDate.getFullYear())* 12;
+  months -= StartDate.getMonth();
+  months += ReachDate.getMonth();
+  //To calculate with current month---------------------------------------------------------------------------
+  months += 1;
+  return months;
+}
+
+
 getDataByName("savinggoal").then((data) => {
   data.forEach(function (obj) {
     //calculating days/months to save -------------------------------------------------------------------------
     var msSpan = new Date(obj.ReachDate) - new Date(obj.StartDate);
-    var daySpan = msSpan / (1000 * 60 * 60 * 24); //(1000ms * 60minut * 60h * 24dag)
+    var daySpan = msSpan / (1000 * 60 * 60 * 24) + 1; //(1000ms * 60sekunder * 60minuter * 24timmar)
     var saveEveryDay = obj.Amount / daySpan;
-    var saveEveryMonth = obj.Amount / (daySpan / 30);
-    if (daySpan <= 31) {
-      saveEveryMonth = "";
-    } else {
-      saveEveryMonth = saveEveryMonth.toFixed(2);
-    }
+    const monthdiff = getMonthdiff(new Date(obj.StartDate), new Date(obj.ReachDate));
+    const saveEveryMonth = obj.Amount/monthdiff;
+
+  
+
     //counting to here ------------------------------------------------------------------------------------------
     //Formatting date
     obj.StartDate = obj.StartDate.slice(0, 10);
@@ -39,8 +49,8 @@ getDataByName("savinggoal").then((data) => {
     delete obj["StartDate"];
     delete obj["ReachDate"];
     //adding new obj key and value to object
-    obj["Save every day"] = saveEveryDay.toFixed(2);
-    obj["Save every month"] = saveEveryMonth;
+    obj["Save every day"] = "~" + saveEveryDay.toFixed(0) + "kr";
+    obj["Save every month"] = "~" + saveEveryMonth.toFixed(0) + "kr";
 
     //delete and edit columns with the important value
     obj["Delete"] = obj.ID;
