@@ -14,18 +14,17 @@ let text = document.createTextNode("")
 
 export const dotAnimation = {
     show: () => {
-        
+            
             AnimationWrapper.appendChild(divAnimation1)
             AnimationWrapper.appendChild(divAnimation2)
             AnimationWrapper.appendChild(divAnimation3)
-        
-       
     },
     hide: () => {
-
-        AnimationWrapper.removeChild(divAnimation1)
-        AnimationWrapper.removeChild(divAnimation2)
-        AnimationWrapper.removeChild(divAnimation3)
+        if (AnimationWrapper && AnimationWrapper.hasChildNodes()){      
+            AnimationWrapper.removeChild(divAnimation1)
+            AnimationWrapper.removeChild(divAnimation2)
+            AnimationWrapper.removeChild(divAnimation3) 
+        }
 
      },
     errorMessage: (msg) =>{
@@ -33,13 +32,8 @@ export const dotAnimation = {
          errorMsg.appendChild(text)
           errorMsg.className = "errorMessage"
          AnimationWrapper.appendChild(errorMsg)
-        
-        
     },
     deleteMessage: () => {
         text.textContent = ""
-        
     }
-
-    
 }

@@ -3,18 +3,15 @@ import { dotAnimation } from "./animations.js";
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
+  dotAnimation.show()
   return fetch(`https://localhost:44357/api/${name}/${cookieUserID}`)
     .then((response) => {
       return response.json();
-    })
-    .then((data) => {
-      return data;
-    })
-    .catch(() => {
+    }).catch(() => {
        dotAnimation.errorMessage("Unable to retrieve data")
     })
     .finally(() => {
-      console.log("Fixa det här")
+      dotAnimation.hide();
     })
 };
 
