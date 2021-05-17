@@ -16,7 +16,7 @@ forms.onsubmit = (e) => {
 
   postByModel(requestObject, "Income");
 };
-// console.log(popupConfirmation());
+console.log(popupConfirmation());
 
 //GET
 getDataByName("Income").then((data) => {

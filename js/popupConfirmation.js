@@ -1,4 +1,4 @@
-export const popupConfirmation = () => {
+export function popupConfirmation() {
   //Get overlay container
   const overlayContainer = document.getElementById("overlay-container");
   //create overlay
@@ -33,14 +33,13 @@ export const popupConfirmation = () => {
   btnYes.value = true;
   form.append(btnNo);
   form.append(btnYes);
-
+  let theValue;
   form.addEventListener("click", (e) => {
     e.preventDefault();
+    theValue = e.target.value;
   });
-  return form[0].value;
-};
-const clickhandler = (e) => {
-  e.preventDefault();
-  console.log(e.target.value);
-  return e.target.value;
-};
+  if (theValue) {
+    console.log(theValue);
+    return theValue;
+  }
+}
