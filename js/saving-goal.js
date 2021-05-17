@@ -14,19 +14,18 @@ forms.onsubmit = (e) => {
     UserID: cookieUserID,
   };
 
-  postByModel(requestObject, "savinggoal")
+  postByModel(requestObject, "savinggoal");
 };
 
 const getMonthdiff = (StartDate, ReachDate) => {
   let months;
-  months = (ReachDate.getFullYear()- StartDate.getFullYear())* 12;
+  months = (ReachDate.getFullYear() - StartDate.getFullYear()) * 12;
   months -= StartDate.getMonth();
   months += ReachDate.getMonth();
   //To calculate with current month---------------------------------------------------------------------------
   months += 1;
   return months;
-}
-
+};
 
 getDataByName("savinggoal").then((data) => {
   data.forEach(function (obj) {
@@ -34,10 +33,11 @@ getDataByName("savinggoal").then((data) => {
     var msSpan = new Date(obj.ReachDate) - new Date(obj.StartDate);
     var daySpan = msSpan / (1000 * 60 * 60 * 24) + 1; //(1000ms * 60sekunder * 60minuter * 24timmar)
     var saveEveryDay = obj.Amount / daySpan;
-    const monthdiff = getMonthdiff(new Date(obj.StartDate), new Date(obj.ReachDate));
-    const saveEveryMonth = obj.Amount/monthdiff;
-
-  
+    const monthdiff = getMonthdiff(
+      new Date(obj.StartDate),
+      new Date(obj.ReachDate)
+    );
+    const saveEveryMonth = obj.Amount / monthdiff;
 
     //counting to here ------------------------------------------------------------------------------------------
     //Formatting date
