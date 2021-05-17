@@ -22,8 +22,6 @@
     margin-right: auto;
     left: 0;
     right: 0;
-    bottom: 0;
-    
 }
 
 .a1{
@@ -47,4 +45,5 @@
 
 .errorMessage{
     color: rgb(140, 0, 0);
+    
 }
