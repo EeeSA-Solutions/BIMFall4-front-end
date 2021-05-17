@@ -15,3 +15,7 @@ footer{
 #forms{
     width: 80%;
 }
+label {
+    color: Black;
+    text-shadow: none;
+}

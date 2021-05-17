@@ -11,7 +11,7 @@ export const getDataByName = (name) => {
        dotAnimation.errorMessage("Unable to retrieve data")
     })
     .finally(() => {
-      dotAnimation.hide()
+      dotAnimation.hide();
     })
 };
 

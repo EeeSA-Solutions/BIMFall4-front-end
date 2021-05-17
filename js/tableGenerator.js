@@ -48,8 +48,8 @@ const generateTable = (data, tableDiv, model) => {
         console.log(objValue);
 
         var td = document.createElement("td");
-        var pTag = document.createElement("p");
-        var btnName = document.createTextNode("🗑");
+        var pTag = document.createElement("button");
+        var btnName = document.createTextNode("🗑️");
         //dataSet kolla in---
         //giving value to it so we know what to delete. ObjValue[c] is the ID.
         pTag.value = objValue[c];
@@ -62,9 +62,9 @@ const generateTable = (data, tableDiv, model) => {
       //IF objKey contains data with name "Edit" then create EditButton!
       else if (objKey[c] == "Edit") {
         var td = document.createElement("td");
-        var pTag = document.createElement("p");
+        var pTag = document.createElement("button");
         //giving value to p-tag so we know what to edit. ObjValue is all values of current row
-        pTag.value = objValue;
+        pTag.value = objValue[c];
         var btnName = document.createTextNode("✎");
         pTag.className = "editButton";
         pTag.appendChild(btnName);
@@ -78,22 +78,12 @@ const generateTable = (data, tableDiv, model) => {
         var pTag = document.createElement("button");
         //giving value to p-tag so we know what to edit. ObjValue is all values of current row
         pTag.value = objValue[c];
-        var btnName = document.createTextNode("Accept");
+        var btnName = document.createTextNode("✓");
         pTag.className = "acceptButton";
         pTag.appendChild(btnName);
         td.appendChild(pTag);
         row.appendChild(td);
-      } 
-      else if (objKey[c] == "Decline") {
-        var td = document.createElement("td");
-        var pTag = document.createElement("button");
-        //giving value to p-tag so we know what to edit. ObjValue is all values of current row
-        pTag.value = objValue[c];
-        var btnName = document.createTextNode("Decline");
-        pTag.className = "declineButton";
-        pTag.appendChild(btnName);
-        td.appendChild(pTag);
-        row.appendChild(td);
+      
       } else {
         var td = document.createElement("td");
         var cellText = document.createTextNode(objValue[c]);
@@ -119,9 +109,7 @@ const generateTable = (data, tableDiv, model) => {
       //e.target.value is the value of (trashcan) <p> that was defined in the for-loop (46)
       const id = e.target.value;
       deleteByID(model, id);
-      
-
-     
+  
     } else if (e.target.className === "editButton") {
       //e.target.value is the value of (editpen) <p> that was defined in the for-loop (58)
       const data = e.target.value;
@@ -144,18 +132,8 @@ const generateTable = (data, tableDiv, model) => {
         generateTable(data, "friendtable");
         })
     }
-    else if (e.target.className === "declineButton") {
-      const relId = e.target.value;
-      setFriendStatus(relId , "Denied")
-      .then((response)=> {
-        feedbackResponse(response, "feedback")})
-        .then(() => {
-          getDataByName("Friend")})
-          .then((data) => {
-            generateTable(data, "friendtable");
-            })
-      
-    }
+    
+    
   });
 }
 else{

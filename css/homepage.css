@@ -23,13 +23,16 @@
   
 }
 #budget{
- color:rgb(28, 97, 51)
+ color:rgb(28, 97, 51);
+ width: 33%;
 }
 #expense{
-  color:rgb(194, 37, 71)
+  color:rgb(194, 37, 71);
+  width: 33%;
 }
 #remaining{
-  color:rgb(32, 32, 207)
+  color:rgb(32, 32, 207);
+  width: 33%;
 }
 footer{
   display:flex;
