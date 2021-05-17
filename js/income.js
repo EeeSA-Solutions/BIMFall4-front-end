@@ -1,6 +1,7 @@
 import cookieUserID from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
+import { popupConfirmation } from "./popupConfirmation.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
@@ -13,10 +14,11 @@ forms.onsubmit = (e) => {
     UserID: cookieUserID,
   };
 
-  postByModel(requestObject, "Income")
+  postByModel(requestObject, "Income");
 };
-//GET
+// console.log(popupConfirmation());
 
+//GET
 getDataByName("Income").then((data) => {
   data.forEach((obj) => {
     obj.Date = obj.Date.slice(0, 10);
