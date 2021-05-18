@@ -1,4 +1,4 @@
-export function popupConfirmation() {
+export const popupConfirmation = (functionTrue, functionFalse, message) => {
   //Get overlay container
   const overlayContainer = document.getElementById("overlay-container");
   //create overlay
@@ -14,9 +14,7 @@ export function popupConfirmation() {
 
   //create text
   const text = document.createElement("p");
-  const textNode = document.createTextNode(
-    "Are you sure you want to continue?"
-  );
+  const textNode = document.createTextNode(message);
   text.appendChild(textNode);
   popup.append(text);
 
@@ -25,21 +23,27 @@ export function popupConfirmation() {
   popup.append(form);
 
   //create buttons
-  const btnNo = document.createElement("button");
   const btnYes = document.createElement("button");
-  btnNo.textContent = "No";
+  const btnNo = document.createElement("button");
   btnYes.textContent = "Yes";
-  btnNo.value = false;
+  btnNo.textContent = "No";
   btnYes.value = true;
-  form.append(btnNo);
+  btnNo.value = false;
   form.append(btnYes);
-  let theValue;
-  form.addEventListener("click", (e) => {
+  form.append(btnNo);
+
+  btnYes.addEventListener("click", (e) => {
     e.preventDefault();
-    theValue = e.target.value;
+    if (functionTrue && typeof functionTrue === "function") {
+      functionTrue();
+    }
+    overlay.remove();
   });
-  if (theValue) {
-    console.log(theValue);
-    return theValue;
-  }
-}
+  btnNo.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (functionFalse && typeof functionTrue === "function") {
+      functionFalse();
+    }
+    overlay.remove();
+  });
+};

@@ -1,20 +1,25 @@
-const AnimationWrapper = document.querySelector("#animation-wrapper");
+let AnimationWrapper = document.querySelector(".animation-wrapper");
 
 const divAnimation1 = document.createElement("div");
 const divAnimation2 = document.createElement("div");
 const divAnimation3 = document.createElement("div");
 
+divAnimation1.className = "animation a1"
+divAnimation2.className = "animation a2"
+divAnimation3.className = "animation a3"
 
 const errorMsg = document.createElement("p")
 let text = document.createTextNode("")
 
 
 export const dotAnimation = {
-    show: () => {
-
-        AnimationWrapper.appendChild(divAnimation1)
-        AnimationWrapper.appendChild(divAnimation2)
-        AnimationWrapper.appendChild(divAnimation3)
+    show: (parent) => {
+            if(parent){
+                AnimationWrapper = parent
+            }
+            AnimationWrapper.appendChild(divAnimation1)
+            AnimationWrapper.appendChild(divAnimation2)
+            AnimationWrapper.appendChild(divAnimation3)
     },
     hide: () => {
         if (AnimationWrapper && AnimationWrapper.hasChildNodes()) {
