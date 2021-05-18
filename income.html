@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="./css/animation.css">
   <title>DinBudget</title>
 </head>
-
 <body>
   <main>
     <div class="logoHeader">B.I.M</div>
@@ -23,20 +22,12 @@
       <ul class="sidebarList">
         <li class="homepage" onclick="location.href='./homepage.html'">Homepage</li>
         <li class="income" onclick="location.href='./income.html'">Income</li>
-        <li class="expenses" onclick="location.href='./expense.html'">
-          Expense
-        </li>
-        <li class="monthly-budget" onclick="location.href = './monthly-budget.html'">
-          Monthly Budget
-        </li>
-        <li class="saving-goal" onclick="location.href = './saving-goal.html'">
-          Saving Goal
-        </li>
+        <li class="expense" onclick="location.href='./expense.html'">Expense</li>
+        <li class="monthly-budget" onclick="location.href = './monthly-budget.html'">Monthly Budget</li>
+        <li class="saving-goal" onclick="location.href= './saving-goal.html'">Saving Goal</li>
         <li class="social" onclick="location.href= './social.html'">Social</li>
-        <li class="subscribe">Subscription</li>
-        <li class="sign-out" onclick="location.href= './index.html'">
-          Sign out
-        </li>
+        <li class="subscribe" onclick="location.href= './subscription.html'">Subscription</li>
+        <li class="sign-out" onclick="location.href= './index.html'">Sign out</li>
       </ul>
     </div>
     <div class="maincontent">
@@ -45,7 +36,6 @@
           <div class="newBudgetLabel">
             <h2>New income</h2>
           </div>
-
           <div>
             <input placeholder="Income Name" type="text" required />
           </div>
@@ -57,39 +47,35 @@
             <input id="date" name="date" placeholder="Transaction date" type="date" required />
           </div>
           <div>
-              
             <button type="submit">Send</button>
           </div>
-          <div class="animation-wrapper"></div>
-         
+          <div class="animation-wrapper"></div>       
         </form>
-        <div  id="table-div">
-          
+        <div id="table-div">
         </div>
       </div>
     </div>
     <div id="test">
-      
+
     </div>
-    <div id="overlay-container" ></div>
+    <div id="overlay-container"></div>
     <footer>
-    <div class="box">
-      <a class="buttonPopup" href="#popup1">About us</a>
-    </div>
-    <div id="popup1" class="overlay">
-      <div class="popup">
-        <h1>About us</h1>
-        <a class="close" href="#">&times;</a>
-        <div class="content">
-          <p>His palms are sweaty, knees weak, arms are heavy
-            There's vomit on his sweater already, mom's spaghetti.
-          </p> 
+      <div class="box">
+        <a class="buttonPopup" href="#popup1">About us</a>
+      </div>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h1>About us</h1>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <p>Vi är sex studerande som har detta som ett pågående projectarbete.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <span>EeesSa Solutions</span>
-  </footer>
-    <script type = "module" src="./js/income.js"></script>
+      <span>EeesSa Solutions</span>
+    </footer>
+    <script type="module" src="./js/income.js"></script>
   </main>
 </body>
 

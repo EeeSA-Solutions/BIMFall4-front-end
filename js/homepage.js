@@ -1,5 +1,5 @@
 import cookieUserID from "./cookiecutter.js";
-import { getDataByName} from "./fetches.js";
+import { getDataByName } from "./fetches.js";
 
 
 function welcomeMessage() {
@@ -7,11 +7,11 @@ function welcomeMessage() {
     getDataByName("user").then((data) => {
       return data.FirstName;
     })
-    .then((result) => {
-      var welcomeText = document.createElement("h1");
-      welcomeText.appendChild(document.createTextNode("Welcome " + result));
-      document.getElementById("welcome").appendChild(welcomeText);
-    });
+      .then((result) => {
+        var welcomeText = document.createElement("h1");
+        welcomeText.appendChild(document.createTextNode("Welcome " + result));
+        document.getElementById("welcome").appendChild(welcomeText);
+      });
   } else {
     var notLoggedIn = document.createElement("h1");
     notLoggedIn.appendChild(

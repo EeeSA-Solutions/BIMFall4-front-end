@@ -103,3 +103,4 @@ export const postByModel = (requestObject, model) => {
       dotAnimation.hide();
     });
 };
+

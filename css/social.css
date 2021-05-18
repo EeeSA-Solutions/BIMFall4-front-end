@@ -6,6 +6,7 @@ footer{
     display:flex;
     justify-content: space-between;
 }
+
 #feedback{
     display: flex;
     justify-content: center;
@@ -15,6 +16,7 @@ footer{
 #forms{
     width: 80%;
 }
+
 label {
     color: Black;
     text-shadow: none;

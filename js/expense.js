@@ -4,7 +4,6 @@ import { getDataByName, postByModel } from "./fetches.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
-  console.log(e);
 
   let requestObject = {
     Name: e.target[0].value,
@@ -13,7 +12,6 @@ forms.onsubmit = (e) => {
     Amount: e.target[3].value,
     UserID: cookieUserID,
   };
-
   postByModel(requestObject, "Expense")
 };
 
