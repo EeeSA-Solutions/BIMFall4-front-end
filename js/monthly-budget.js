@@ -10,16 +10,8 @@ forms.onsubmit = (e) => {
     UserID: cookieUserID,
     Date: e.target[2].value,
   };
-
   postByModel(requestObject, "budget")
 };
-
-// GetBudgetsByUserIdPromise().then((data) => {
-//   data.forEach((item) => {
-//     item.Date = item.Date.slice(0, 10);
-//   });
-//   generateTable(data, "table-div");
-// });
 
 getDataByName("budget").then((data) => {
   data.forEach((obj) => {

@@ -83,17 +83,14 @@ export const calculateBudgets = (arr, earr) => {
         }]
     return returnArray
 };
-// som ska ge feed back i form av text. Success och Failed
-// Skriva en funktion. Som gör detta baserat på backend response.
-// Generell funktion som funkar överallt. DRY tänk.
-// Vilka parametrar behöver funktion ta? 1.Svar från backend, 
-// 2. Vart den ska skriva ut. 
 
+//---------------------Feedback Response-----------------
 export const feedbackResponse = (response, whereID) => {
- if (response.Status == "Success"){
-     document.getElementById(whereID).innerHTML = response.Message
- }else if (response.status == "200"){
-    document.getElementById(whereID).innerHTML = "Success"
-} else { 
-document.getElementById(whereID).innerHTML = response.Message
-}}
+    if (response.Status == "Success") {
+        document.getElementById(whereID).innerHTML = response.Message
+    } else if (response.status == "200") {
+        document.getElementById(whereID).innerHTML = "Success"
+    } else {
+        document.getElementById(whereID).innerHTML = response.Message
+    }
+}

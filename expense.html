@@ -1,114 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
-    <link rel="stylesheet" href="./css/expense.css" />
-    <link rel="stylesheet" href="./css/table.css" />
-    <link rel="stylesheet" href="./css/forms.css" />
-    <link rel="stylesheet" href="./css/popup.css" />
-    <link rel="stylesheet" href="./css/animation.css" />
-    <title>DinBudget</title>
-  </head>
 
-  <body>
-    <main>
-      <div class="logoHeader">B.I.M</div>
-      <div class="textHeader">
-        <h1>Expenses</h1>
-      </div>
-      <div class="sidebar">
-        <ul class="sidebarList">
-          <li class="homepage" onclick="location.href='./homepage.html'">
-            Homepage
-          </li>
-          <li class="income" onclick="location.href='./income.html'">Income</li>
-          <li class="expenses" onclick="location.href='./expense.html'">
-            Expense
-          </li>
-          <li
-            class="monthly-budget"
-            onclick="location.href = './monthly-budget.html'"
-          >
-            Monthly Budget
-          </li>
-          <li
-            class="saving-goal"
-            onclick="location.href = './saving-goal.html'"
-          >
-            Saving Goal
-          </li>
-          <li class="social" onclick="location.href= './social.html'">
-            Social
-          </li>
-          <li class="subscribe">Subscription</li>
-          <li class="sign-out" onclick="location.href= './index.html'">
-            Sign out
-          </li>
-        </ul>
-      </div>
-      <div class="maincontent">
-        <div class="maincontentBox">
-          <form id="forms">
-            <div class="newBudgetLabel">
-              <h2>New expense</h2>
-            </div>
-            <div>
-              <input placeholder="Expense Name" type="text" required />
-            </div>
-            <div>
-              <select name="category" id="category">
-                <option value="Groceries">Groceries</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Fixed Cost">Fixed Cost</option>
-              </select>
-            </div>
-            <div>
-              <label for="date">Date</label>
-              <input placeholder="Transaction date" type="date" required />
-            </div>
-            <div>
-              <input
-                placeholder="Expense Amount"
-                type="number"
-                step="1"
-                required
-                min="1"
-              />
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
+  <link rel="stylesheet" href="./css/expense.css" />
+  <link rel="stylesheet" href="./css/table.css" />
+  <link rel="stylesheet" href="./css/forms.css" />
+  <link rel="stylesheet" href="./css/popup.css" />
+  <link rel="stylesheet" href="./css/animation.css" />
+  <title>DinBudget</title>
+</head>
 
-            <div>
-              <button type="submit">Send</button>
-            </div>
-            <div id="animation-wrapper"></div>
-          </form>
+<body>
+  <main>
+    <div class="logoHeader">B.I.M</div>
+    <div class="textHeader">
+      <h1>Expenses</h1>
+    </div>
+    <div class="sidebar">
+      <ul class="sidebarList">
+        <li class="homepage" onclick="location.href='./homepage.html'">Homepage</li>
+        <li class="income" onclick="location.href='./income.html'">Income</li>
+        <li class="expense" onclick="location.href='./expense.html'">Expense</li>
+        <li class="monthly-budget" onclick="location.href = './monthly-budget.html'">Monthly Budget</li>
+        <li class="saving-goal" onclick="location.href= './saving-goal.html'">Saving Goal</li>
+        <li class="social" onclick="location.href= './social.html'">Social</li>
+        <li class="subscribe" onclick="location.href= './subscription.html'">Subscription</li>
+        <li class="sign-out" onclick="location.href= './index.html'">Sign out</li>
+      </ul>
+    </div>
+    <div class="maincontent">
+      <div class="maincontentBox">
+        <form id="forms">
+          <div class="newBudgetLabel">
+            <h2>New expense</h2>
+          </div>
+          <div>
+            <input placeholder="Expense Name" type="text" required />
+          </div>
+          <div>
+            <select name="category" id="category">
+              <option value="Groceries">Groceries</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Fixed Cost">Fixed Cost</option>
+            </select>
+          </div>
+          <div>
+            <label for="date">Date</label>
+            <input placeholder="Transaction date" type="date" required />
+          </div>
+          <div>
+            <input placeholder="Expense Amount" type="number" step="1" required min="1" />
+          </div>
 
-          <div id="expenseDiv"></div>
-          <div id="table-div"></div>
-        </div>
-        <div id="overlay-container"></div>
+          <div>
+            <button type="submit">Send</button>
+          </div>
+          <div id="animation-wrapper"></div>
+        </form>
+
+        <div id="expenseDiv"></div>
+        <div id="table-div"></div>
       </div>
-      <footer>
-        <div class="box">
-          <a class="buttonPopup" href="#popup1">About us</a>
-        </div>
-        <div id="popup1" class="overlay">
-          <div class="popup">
-            <h1>About us</h1>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-              <p>
-                His palms are sweaty, knees weak, arms are heavy There's vomit
-                on his sweater already, mom's spaghetti.
-              </p>
-            </div>
+      <div id="overlay-container"></div>
+    </div>
+    <footer>
+      <div class="box">
+        <a class="buttonPopup" href="#popup1">About us</a>
+      </div>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h1>About us</h1>
+          <a class="close" href="#">&times;</a>
+          <div class="content">
+            <p>
+              Vi är sex studerande som har detta som ett pågående projectarbete.
+            </p>
           </div>
         </div>
+      </div>
 
-        <span>EeesSa Solutions</span>
-      </footer>
-    </main>
-    <script type="module" src="./js/expense.js"></script>
-  </body>
+      <span>EeesSa Solutions</span>
+    </footer>
+  </main>
+  <script type="module" src="./js/expense.js"></script>
+</body>
+
 </html>

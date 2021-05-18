@@ -4,7 +4,6 @@ import { getDataByName, postByModel } from "./fetches.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
-  console.log(e);
 
   let requestObject = {
     Amount: e.target[0].value,
@@ -13,7 +12,6 @@ forms.onsubmit = (e) => {
     Name: e.target[3].value,
     UserID: cookieUserID,
   };
-
   postByModel(requestObject, "savinggoal");
 };
 
@@ -38,7 +36,6 @@ getDataByName("savinggoal").then((data) => {
       new Date(obj.ReachDate)
     );
     const saveEveryMonth = obj.Amount / monthdiff;
-
     //counting to here ------------------------------------------------------------------------------------------
     //Formatting date
     obj.StartDate = obj.StartDate.slice(0, 10);
@@ -51,7 +48,6 @@ getDataByName("savinggoal").then((data) => {
     //adding new obj key and value to object
     obj["Save every day"] = "~" + saveEveryDay.toFixed(0) + "kr";
     obj["Save every month"] = "~" + saveEveryMonth.toFixed(0) + "kr";
-
     //delete and edit columns with the important value
     obj["Delete"] = obj.ID;
     delete obj["ID"];

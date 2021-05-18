@@ -1,12 +1,11 @@
 import generateTable from "./tableGenerator.js";
 import cookieUserID from "./cookiecutter.js"
 import { getDataByName } from "./fetches.js"
-import {feedbackResponse} from "./workhorse.js"
+import { feedbackResponse } from "./workhorse.js"
 
 forms.onsubmit = (e) => {
   e.preventDefault();
-  console.log(e);
- 
+
   let requestObject = {
     ID: cookieUserID,
     Email: e.target[0].value
@@ -19,34 +18,32 @@ forms.onsubmit = (e) => {
     },
     body: JSON.stringify(requestObject),
   })
-  .then((response) => response.json())
-  .then((response) => {
-    console.log(response);
-    feedbackResponse(response, "feedback")
-   
-});
+    .then((response) => response.json())
+    .then((response) => {
+      feedbackResponse(response, "feedback")
+    });
 }
 getDataByName("Friend").then((data) => {
   friendListSorter(data)
 });
 
-function friendListSorter (list) {
+function friendListSorter(list) {
   let received = []
   let sent = []
   let friends = []
   list.forEach((obj) => {
-    if (obj.List_ID === 1){
+    if (obj.List_ID === 1) {
       obj["Accept"] = obj.Relationship_ID;
       obj["Delete"] = obj.Relationship_ID;
       delete obj.List_ID
       delete obj.Relationship_ID
       received.push(obj)
-    } else if (obj.List_ID === 2){
+    } else if (obj.List_ID === 2) {
       obj["Delete"] = obj.Relationship_ID;
       delete obj.Relationship_ID
       delete obj.List_ID
       sent.push(obj)
-    } else if (obj.List_ID === 3){
+    } else if (obj.List_ID === 3) {
       obj["Delete"] = obj.Relationship_ID;
       delete obj.Relationship_ID
       delete obj.List_ID

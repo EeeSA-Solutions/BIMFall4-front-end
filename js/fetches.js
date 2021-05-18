@@ -8,7 +8,7 @@ export const getDataByName = (name) => {
     .then((response) => {
       return response.json();
     }).catch(() => {
-       dotAnimation.errorMessage("Unable to retrieve data")
+      dotAnimation.errorMessage("Unable to retrieve data")
     })
     .finally(() => {
       dotAnimation.hide();
@@ -24,25 +24,24 @@ export const deleteByID = (model, id) => {
     },
   }).then(() => {
     window.location.reload()
-  }).catch(() => { 
-     dotAnimation.errorMessage("Unable to delete")
+  }).catch(() => {
+    dotAnimation.errorMessage("Unable to delete")
   })
     .finally(() => {
       dotAnimation.hide()
     })
 };
 
-export const setFriendStatus = (relationshipID, wantedstatus  ) => {
-  return  fetch(`https://localhost:44357/api/Friend/${relationshipID}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify (
-            wantedstatus 
-        )
-    })
-    
+export const setFriendStatus = (relationshipID, wantedstatus) => {
+  return fetch(`https://localhost:44357/api/Friend/${relationshipID}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(
+      wantedstatus
+    )
+  })
 };
 
 export const putByID = (requestObject, model, id) => {
@@ -56,14 +55,14 @@ export const putByID = (requestObject, model, id) => {
     body: JSON.stringify(requestObject),
   }).then(() => {
     window.location.reload()
-  }).catch(() => { 
+  }).catch(() => {
     dotAnimation.errorMessage("Unable to edit")
-   }).finally(() => {
-     dotAnimation.hide()
-   })
+  }).finally(() => {
+    dotAnimation.hide()
+  })
 };
 
-export const postByModel = (requestObject, model) =>{
+export const postByModel = (requestObject, model) => {
   dotAnimation.deleteMessage()
   dotAnimation.show()
   fetch("https://localhost:44357/api/" + model, {
@@ -74,8 +73,8 @@ export const postByModel = (requestObject, model) =>{
     body: JSON.stringify(requestObject),
   }).then(() => {
     window.location.reload()
-  }).catch(() => { 
-     dotAnimation.errorMessage("Unable to add") 
+  }).catch(() => {
+    dotAnimation.errorMessage("Unable to add")
   })
     .finally(() => {
       dotAnimation.hide()

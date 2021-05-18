@@ -2,8 +2,6 @@ import {filterCurrentMonthYear, calculateBudgets} from "./workhorse.js";
 import {getDataByName} from "./fetches.js";
 import generateTable from "./tableGenerator.js"
 
-
-
 async function calculateBudgetsAndExpense(){
 let budgetsUnfilterd  = await getDataByName("budget");
 let expensesUnfilterd = await getDataByName("Expense");

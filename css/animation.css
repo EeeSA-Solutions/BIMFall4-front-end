@@ -1,4 +1,4 @@
-.animation{
+.animation {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -8,10 +8,9 @@
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    
 }
 
-#animation-wrapper{
+#animation-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -24,26 +23,24 @@
     right: 0;
 }
 
-.a1{
+.a1 {
     animation-delay: 0;
     margin-right: 5px;
 }
-.a2{
+.a2 {
     animation-delay: 0.25s;
     margin-right: 5px;
 }
-.a3{
+.a3 {
     animation-delay: 0.5s;
 }
 
-@keyframes dotAnimation{
+@keyframes dotAnimation {
     0% {opacity: 0.2;}
     100%{opacity: 1; transform: scale(1.25);}
-
 }
 
-
-.errorMessage{
+.errorMessage {
     color: rgb(140, 0, 0);
     
 }

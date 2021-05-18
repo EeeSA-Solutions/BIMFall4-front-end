@@ -3,21 +3,20 @@ table {
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.233) 2px 2px 2px;
 }
+
 th {
   color: white;
   text-align: left;
   background-color: #1d3a6b;
 }
-table,
-th,
-td {
+
+table, th, td {
   border-collapse: collapse;
   border: 1px solid #000;
   border-radius: 10px, 30px, 10px, 5px;
 }
 
-th,
-td {
+th, td {
   padding: 7px;
 }
 
