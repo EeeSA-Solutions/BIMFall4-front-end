@@ -26,6 +26,11 @@ const popup = (editObj, model, id) => {
   form.id = "popupForm";
   popup.appendChild(form);
 
+//Creatin animation div
+const popupAnimationWrapper = document.createElement("div")
+popupAnimationWrapper.className = "animation-wrapper popup-animation"
+popup.appendChild(popupAnimationWrapper)
+
   let nr = 2;
 
   if (model === "savinggoal") {
@@ -109,10 +114,10 @@ const popup = (editObj, model, id) => {
 
   popupForm.onsubmit = (e) => {
     e.preventDefault();
-    createEditObj(e, model, id);
+    createEditObj(e, model, id, popupAnimationWrapper);
   };
 };
-const createEditObj = (e, model, id) => {
+const createEditObj = (e, model, id, popupAnimationWrapper) => {
   switch (model) {
     case "Income":
       const incomeObject = {
@@ -120,7 +125,7 @@ const createEditObj = (e, model, id) => {
         Amount: e.target[1].value,
         Date: e.target[2].value,
       };
-      putByID(incomeObject, model, id);
+      putByID(incomeObject, model, id, popupAnimationWrapper);
       break;
 
     case "Expense":
@@ -130,7 +135,7 @@ const createEditObj = (e, model, id) => {
         Date: e.target[2].value,
         Amount: e.target[3].value,
       };
-      putByID(expenseObject, model, id);
+      putByID(expenseObject, model, id, popupAnimationWrapper);
       break;
 
     case "budget":
@@ -139,7 +144,7 @@ const createEditObj = (e, model, id) => {
         Amount: e.target[1].value,
         Date: e.target[2].value,
       };
-      putByID(budgetObject, model, id);
+      putByID(budgetObject, model, id, popupAnimationWrapper);
       break;
 
     case "savinggoal":
@@ -149,7 +154,7 @@ const createEditObj = (e, model, id) => {
         StartDate: e.target[2].value,
         ReachDate: e.target[3].value,
       };
-      putByID(savinggoalObject, model, id);
+      putByID(savinggoalObject, model, id, popupAnimationWrapper);
       break;
 
     default:
