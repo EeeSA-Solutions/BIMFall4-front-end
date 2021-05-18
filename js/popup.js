@@ -88,8 +88,7 @@ popup.appendChild(popupAnimationWrapper)
       form.appendChild(select);
     }
   }
-  //  }
-
+  
   //Creating SubmitButton
   const btn = document.createElement("button");
   btn.className = "submit-btn";
