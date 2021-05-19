@@ -2,7 +2,6 @@
 //----------------Collection of functions---------------
 
 //----------------Filter and "sort"-----------------------
-// filterCurrentMonthYear needs getMonthNow and getYearNow
 export function filterCurrentMonthYear(arr) {
 
     let filterMonth = arr.filter(date => new Date(date.Date).getMonth() === getMonthNow());
