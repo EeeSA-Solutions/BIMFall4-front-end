@@ -58,7 +58,7 @@ export const putByID = (requestObject, model, id, parent) => {
   popupConfirmation(
     () => {
       dotAnimation.deleteMessage();
-       dotAnimation.show(parent)
+      dotAnimation.show(parent);
       fetch("https://localhost:44357/api/" + model + "/" + id + "/", {
         method: "PUT",
         headers: {
@@ -103,4 +103,3 @@ export const postByModel = (requestObject, model) => {
       dotAnimation.hide();
     });
 };
-

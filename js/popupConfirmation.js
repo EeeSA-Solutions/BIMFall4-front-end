@@ -27,23 +27,21 @@ export const popupConfirmation = (functionTrue, functionFalse, message) => {
   const btnNo = document.createElement("button");
   btnYes.textContent = "Yes";
   btnNo.textContent = "No";
-  btnYes.value = true;
-  btnNo.value = false;
   form.append(btnYes);
   form.append(btnNo);
 
   btnYes.addEventListener("click", (e) => {
     e.preventDefault();
-    if (functionTrue && typeof functionTrue === "function") {
-      functionTrue();
-    }
-    overlay.remove();
+    btnAction(functionTrue);
   });
   btnNo.addEventListener("click", (e) => {
     e.preventDefault();
-    if (functionFalse && typeof functionTrue === "function") {
-      functionFalse();
+    btnAction(functionFalse);
+  });
+  const btnAction = (functionAction) => {
+    if (functionAction && typeof functionAction === "function") {
+      functionAction();
     }
     overlay.remove();
-  });
+  };
 };
