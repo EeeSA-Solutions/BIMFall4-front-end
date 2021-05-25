@@ -64,8 +64,9 @@ popup.appendChild(popupAnimationWrapper)
       }
       form.appendChild(input);
     } else if (Object.keys(editObj)[i] === "Category") {
+      
       const select = document.createElement("select");
-      const optext1 = document.createTextNode("Groceries");
+      const optext1 = document.createTextNode( "Groceries");
       const optext2 = document.createTextNode("Entertainment");
       const optext3 = document.createTextNode("Fixed Cost");
 
@@ -76,7 +77,13 @@ popup.appendChild(popupAnimationWrapper)
       option1.value = "Groceries";
       option2.value = "Entertainment";
       option3.value = "Fixed Cost";
-
+      if (editObj.Category==="Fixed Cost"){
+        option3.selected = true;
+      }else if (editObj.Category==="Groceries"){
+        option1.selected = true;
+      }else if (editObj.Category==="Entertainment"){
+          option2.selected = true;
+        }
       option1.appendChild(optext1);
       option2.appendChild(optext2);
       option3.appendChild(optext3);
