@@ -50,9 +50,10 @@ const generateTable = (data, tableDiv, model) => {
         //IF objKey contains data with name "Edit" then create EditButton!
         else if (objKey[c] == "Edit") {
           var td = document.createElement("td");
-          var pTag = document.createElement("p");
+          var pTag = document.createElement("button");
           //giving value to p-tag so we know what to edit. ObjValue is all values of current row
-          pTag.value = objValue[c];
+          pTag.editData = objValue[c];
+          console.log(pTag.value)
           var btnName = document.createTextNode("✎");
           pTag.className = "editButton";
           pTag.appendChild(btnName);
@@ -70,17 +71,7 @@ const generateTable = (data, tableDiv, model) => {
           pTag.appendChild(btnName);
           td.appendChild(pTag);
           row.appendChild(td);
-        }
-        else if (objKey[c] == "Decline") {
-          var td = document.createElement("td");
-          var pTag = document.createElement("button");
-          //giving value to p-tag so we know what to edit. ObjValue is all values of current row
-          pTag.value = objValue[c];
-          var btnName = document.createTextNode("Decline");
-          pTag.className = "declineButton";
-          pTag.appendChild(btnName);
-          td.appendChild(pTag);
-          row.appendChild(td);
+        
         } else {
           var td = document.createElement("td");
           var cellText = document.createTextNode(objValue[c]);
@@ -108,7 +99,7 @@ const generateTable = (data, tableDiv, model) => {
         deleteByID(model, id);
       } else if (e.target.className === "editButton") {
         //e.target.value is the value of (editpen) <p> that was defined in the for-loop (58)
-        const data = e.target.value;
+        const data = e.target.editData;
         const id = data.Delete;
         popup(data, model, id);
       }
