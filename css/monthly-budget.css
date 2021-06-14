@@ -1,5 +1,5 @@
 .sidebarList > .monthly-budget {
-  background-color: #7d92c5;
+  background-color: var(--white);
 }
 
 footer {

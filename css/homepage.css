@@ -1,5 +1,5 @@
 .sidebarList > .homepage {
-  background-color: #7d92c5;
+  background-color: var(--white);
 }
 
 .maincontentBox > h1 {

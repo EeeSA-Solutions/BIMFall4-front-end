@@ -1,5 +1,5 @@
-.sidebarList > .expenses {
-  background-color: #7d92c5;
+.sidebarList > .expense {
+  background-color: var(--white);
 }
 
 footer {
