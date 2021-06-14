@@ -1,8 +1,0 @@
-.sidebarList > .monthly-budget {
-  background-color: var(--white);
-}
-
-footer {
-  display:flex;
-  justify-content: space-between;
-}
