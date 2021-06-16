@@ -19,9 +19,9 @@ forms.onsubmit = (e) => {
 getDataByName("Expense").then((data) => {
   data.forEach((obj) => {
     obj.Date = obj.Date.slice(0, 10);
+    obj["Edit"] = obj;
     obj["Delete"] = obj.ID;
     delete obj["ID"];
-    obj["Edit"] = obj;
   });
   generateTable(data, "table-div", "Expense");
 });

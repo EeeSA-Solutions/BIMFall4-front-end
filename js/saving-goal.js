@@ -49,9 +49,9 @@ getDataByName("savinggoal").then((data) => {
     obj["Save every day"] = "~" + saveEveryDay.toFixed(0) + "kr";
     obj["Save every month"] = "~" + saveEveryMonth.toFixed(0) + "kr";
     //delete and edit columns with the important value
+    obj["Edit"] = obj;
     obj["Delete"] = obj.ID;
     delete obj["ID"];
-    obj["Edit"] = obj;
   });
   generateTable(data, "table-div", "savinggoal");
 });

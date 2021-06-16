@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/site-skeleton.css" />
-    <link rel="stylesheet" href="./css/popup.css" />
-    <link rel="stylesheet" href="./css/subscription.css" />
-    <title>DinBudget</title>
-  </head>
 
-  <body>
-    <main>
-      <div class="logoHeader">
-        <img src="css/profile.jpg" width=70px height=70px>
-        <div id="profileName"></div>
-      </div>
-      <div class="textHeader"></div>
-      <div class="sidebarBox">
-        <ul class="sidebarList">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/site-skeleton.css" />
+  <link rel="stylesheet" href="./css/popup.css" />
+  <link rel="stylesheet" href="./css/subscription.css" />
+  <title>DinBudget</title>
+</head>
+
+<body>
+  <main>
+    <div class="logoHeader">
+      <img src="css/profile.jpg" width=70px height=70px>
+      <div id="profileName"></div>
+    </div>
+    <div class="textHeader">
+      <div id="dateSelector">Maj 2021</div>
+      <div>BIM</div>
+    </div>
+    <div class="sidebarBox">
+      <ul class="sidebarList">
         <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
         <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
         <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
@@ -26,28 +30,29 @@
         <li class="social" onclick="location.href= './social.html'">👥 Social</li>
         <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
         <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
-        </ul>
-      </div>
-      <div class="maincontent">
-        <div class="maincontentBox"></div>
-      </div>
-    </main>
-    <footer>
-      <div class="box">
-        <a class="buttonPopup" href="#popup1">About us</a>
-      </div>
-      <div id="popup1" class="overlay">
-        <div class="popup">
-          <h1>About us</h1>
-          <a class="close" href="#">&times;</a>
-          <div class="content">
-            <p>
-              Vi är sex studerande som har detta som ett pågående projectarbete.
-            </p>
-          </div>
+      </ul>
+    </div>
+    <div class="maincontent">
+      <div class="maincontentBox"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="box">
+      <a class="buttonPopup" href="#popup1">About us</a>
+    </div>
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h1>About us</h1>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <p>
+            Vi är sex studerande som har detta som ett pågående projectarbete.
+          </p>
         </div>
       </div>
-      <span>EeesSa Solutions</span>
-    </footer>
-  </body>
+    </div>
+    <span>EeesSa Solutions</span>
+  </footer>
+</body>
+
 </html>

@@ -21,6 +21,7 @@
 
 html, body {
   height: 100%;
+  width:100%;
   background: var(--white);
 }
 
@@ -65,6 +66,8 @@ main {
 
 .logoHeader{
   background-color: var(--baseLightGrey);
+  color: var(--darkBlue);
+  font-family: Saira_Expanded;
     padding: 10px;
     display: flex;
     text-align: justify;
@@ -72,4 +75,10 @@ main {
     
 }
 
+.textHeader{
+  padding: 10px;
+  font-family: Saira_Expanded;
+  display:flex;
+  justify-content: space-between;
+}
 
