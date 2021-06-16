@@ -65,6 +65,11 @@ main {
 
 .logoHeader{
   background-color: var(--baseLightGrey);
+    padding: 10px;
+    display: flex;
+    text-align: justify;
+    justify-content:space-evenly;
+    
 }
 
 
