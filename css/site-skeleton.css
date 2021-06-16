@@ -41,10 +41,30 @@ main {
   color: var(--darkBlue);
   padding: 50px;
   list-style: none;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 0px;
+  
 }
 
 .sidebarList > li {
   padding: 5%;
+  width: 100%;
+  padding-right: 0;
+
+}
+
+.sidebarList :hover{
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.maincontent{
+  padding: 5%;
+}
+
+.logoHeader{
+  background-color: var(--baseLightGrey);
 }
 
 

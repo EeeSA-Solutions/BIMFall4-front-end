@@ -1,5 +1,5 @@
 .sidebarList > .homepage {
-  background-color: var(--white);
+  background: linear-gradient(90deg, var(--baseLightGrey), var(--white), var(--white));
 }
 
 .maincontentBox > h1 {
