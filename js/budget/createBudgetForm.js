@@ -6,6 +6,7 @@ const createBudgetForm = (parent) => {
   const addBtnDropDownContainer = document.createElement("div");
   addBtnDropDownContainer.className = "buttons-container";
   
+  
   //for loop
   for (let index = 0; index < 5; index++) {
     const inputDiv = document.createElement("div");
@@ -69,11 +70,15 @@ const createButtons = (parent) => {
 
 const createDropdown = (parent) => {
   const dropdown = document.createElement("select");
+  dropdown.className = "addCategory-dropdown";
+  const option = document.createElement("option");
+  option.text = "Earlier...";
+  dropdown.appendChild(option)
   parent.appendChild(dropdown);
 };
 const createAddCategory = (parent) => {
   const addCategoryBtn = document.createElement("button");
-  const textNode = document.createTextNode("+");
+  const textNode = document.createTextNode("+ New");
   addCategoryBtn.className = "addCategory-btn";
   addCategoryBtn.appendChild(textNode);
   parent.appendChild(addCategoryBtn);
