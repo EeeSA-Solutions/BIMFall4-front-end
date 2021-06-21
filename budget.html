@@ -37,27 +37,16 @@
     </div>
     <div class="maincontent">
       <div class="maincontentBox">
-        <div class="formContent">
-          <form id="forms">
-            <div class="newBudgetLabel">
-              <h2>New budget</h2>
-            </div>
-            <div>
-              <select name="category" id="category">
-                <option value="Groceries">Groceries</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Fixed Cost">Fixed Cost</option>
-              </select>
-            </div>
-            <div>
-              <input placeholder="Budget Amount" type="number" step="0.01" required min="0" />
-            </div>
-            <div>
-              <input type="month" id="start" name="start" />
-            </div>
-            <div>
-              <button type="submit">Send</button>
-            </div>
+        <div class="containerBudget">
+        <div class="addBudget" id="addBudgetID"></div>
+        <div class="summaryBudget" id="summaryBudgetID">
+          <progress id="totalBudget" value="32" max="100"> 32% </progress>
+          <progress id="totalFixedcosts" value="50" max="100"> 50% </progress>
+          <progress id="totalEntertainment" value="66" max="100"> 66% </progress>
+          <progress id="totalIncome" value="79" max="100"> 79% </progress>
+          <progress id="totalSavinggoal" value="25" max="100"> 25% </progress>
+        </div>
+      </div>
             <div class="animation-wrapper"></div>
           </form>
         </div>

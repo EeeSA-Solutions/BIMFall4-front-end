@@ -6,3 +6,23 @@ footer {
   display:flex;
   justify-content: space-between;
 }
+.containerBudget{
+width: auto;
+}
+
+.addBudget{
+
+}
+.summaryBudget{
+  border-radius: 25px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lightBlue);
+width:100%;
+}
+progress{
+  padding: 10px;
+  width: 80%;
+  height: 50px;
+}
