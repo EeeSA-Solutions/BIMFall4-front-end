@@ -10,9 +10,6 @@ footer {
 width: auto;
 }
 
-.addBudget{
-
-}
 .summaryBudget{
   background: rgb(86,170,253);
   background: var(--gradeBlue);
