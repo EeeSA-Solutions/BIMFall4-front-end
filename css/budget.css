@@ -19,10 +19,51 @@ width: auto;
   flex-direction: column;
   align-items: center;
   background-color: var(--lightBlue);
-width:100%;
+  width:100%;
+  height: 100%;
 }
-progress{
-  padding: 10px;
+.progress::before{
+  content: attr(data-label);
+  vertical-align: 0;
+  
+}
+.progress{
+  font-family: 'Saira_Expanded';
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  padding: 12px;
   width: 80%;
-  height: 50px;
+  height: 100%;
+}
+
+
+.textHeader{
+  font-weight: bold;
+  font-size: 170%;
+}
+
+.line{
+  background-color: var(--darkGrey);
+  width: 90%;
+  height: 3px;
+  border-top: none;
+  border-left: none;
+  margin: auto;
+}
+
+#dateSelector{
+  padding: 15px;
+  padding-left: 65px;
+}
+
+#logo{
+  padding: 15px;
+  padding-right: 65px;
+  padding-bottom: 40px;
+}
+
+.underText{
+  padding-top: 15px;
+  font-size: 50%;
 }

@@ -6,6 +6,7 @@
   --red: #E35454;
   /*EXTRA?*/
   --lightBlueGrey: #73B5F5;
+  --darkGrey: #9F9F9F;
 }
 
 @font-face {
@@ -79,7 +80,8 @@ main {
 .textHeader{
   padding: 10px;
   font-family: Saira_Expanded;
-  display:flex;
+  display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 

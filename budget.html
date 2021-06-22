@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="./css/forms.css" />
   <link rel="stylesheet" href="./css/popup.css" />
   <link rel="stylesheet" href="./css/animation.css">
+  
   <title>BIM-Budget</title>
 </head>
 
@@ -21,7 +22,8 @@
     </div>
     <div class="textHeader">
       <div id="dateSelector">Maj 2021</div>
-      <div>BIM</div>
+      <div id="logo">B.I.M</div>
+      <hr class="line">
     </div>
     <div class="sidebarBox">
       <ul class="sidebarList">
@@ -40,11 +42,11 @@
         <div class="containerBudget">
         <div class="addBudget" id="addBudgetID"></div>
         <div class="summaryBudget" id="summaryBudgetID">
-          <progress id="totalBudget" value="32" max="100"> 32% </progress>
-          <progress id="totalFixedcosts" value="50" max="100"> 50% </progress>
-          <progress id="totalEntertainment" value="66" max="100"> 66% </progress>
-          <progress id="totalIncome" value="79" max="100"> 79% </progress>
-          <progress id="totalSavinggoal" value="25" max="100"> 25% </progress>
+          <progress class="progress" value="12" max="100" data-label="Total Budget: 1500 / 12.000"></progress>
+          <progress class="progress" value="50" max="100" data-label="Total Fixed Costs: 1500 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Entertainment: 0 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Income: 0 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Saving Goals: 0 / 3000"></progress>
         </div>
       </div>
             <div class="animation-wrapper"></div>
