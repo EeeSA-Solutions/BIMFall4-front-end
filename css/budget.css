@@ -14,6 +14,8 @@ width: auto;
 
 }
 .summaryBudget{
+  background: rgb(86,170,253);
+  background: var(--gradeBlue);
   border-radius: 25px;
   display:flex;
   flex-direction: column;
@@ -28,6 +30,7 @@ width: auto;
   
 }
 .progress{
+  
   font-family: 'Saira_Expanded';
   font-weight: bold;
   color: black;
@@ -38,32 +41,28 @@ width: auto;
 }
 
 
-.textHeader{
-  font-weight: bold;
-  font-size: 170%;
-}
 
-.line{
-  background-color: var(--darkGrey);
-  width: 90%;
-  height: 3px;
-  border-top: none;
-  border-left: none;
-  margin: auto;
-}
 
-#dateSelector{
-  padding: 15px;
-  padding-left: 65px;
-}
 
-#logo{
-  padding: 15px;
-  padding-right: 65px;
-  padding-bottom: 40px;
-}
+
+
 
 .underText{
   padding-top: 15px;
   font-size: 50%;
+}
+
+#planbudget{
+  background: var(--gradeBlue);
+  font-family: 'Saira_Expanded';
+  font-size: medium;
+  margin-top :10px;
+  padding:10px;
+  width: 15%;
+  height: 40px;
+  background-color: var(--lightBlue);
+  color: white;
+  border-radius: 25px;
+  border: none;
+
 }

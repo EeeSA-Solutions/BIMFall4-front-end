@@ -19,7 +19,11 @@
       <img src="css/profile.jpg" width=70px height=70px>
       <div id="profileName"></div>
     </div>
-    <div class="textHeader"></div>
+    <div class="textHeader">
+      <div id="dateSelector">Maj 2021</div>
+      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+    <hr class="line">
+  </div>
     <div class="sidebarBox">
       <ul class="sidebarList">
         <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
@@ -39,14 +43,14 @@
             <h2>New expense</h2>
           </div>
           <div>
-            <input placeholder="Expense Name" type="text" required />
-          </div>
-          <div>
             <select name="category" id="category">
               <option value="Groceries">Groceries</option>
               <option value="Entertainment">Entertainment</option>
               <option value="Fixed Cost">Fixed Cost</option>
             </select>
+          </div>
+          <div>
+            <input placeholder="Expense Name" type="text" required />
           </div>
           <div>
             <label for="date">Date</label>
@@ -62,8 +66,8 @@
           </form>
         <div id="expenseDiv"></div>
         <div id="table-div"></div>
+        <div id="overlay-container"></div>
       </div>
-      <div id="overlay-container"></div>
     </div>
     <footer>
       <div class="box">

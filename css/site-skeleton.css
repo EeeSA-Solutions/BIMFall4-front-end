@@ -1,12 +1,18 @@
 :root {
-  --lightBlue: #71B9FF;
-  --darkBlue: #36618A;
-  --white: #FFFFFF;
-  --baseLightGrey: #E1E1E1;
-  --red: #E35454;
-  /*EXTRA?*/
+  --lightBlue: #7BBEFF;
+  --mediumBlue: #71B9FF;
+  --darkBlue: #56AAFD;
   --lightBlueGrey: #73B5F5;
-  --darkGrey: #9F9F9F;
+  --lightGrey: #EBEAEA;
+  --mediumGrey: #E3E3E3;
+  --darkGrey: #DFDFDF;
+  --red: #E35454;
+  --white: #FFFFFF;
+  /*EXTRA?*/
+  --textDarkBlue: #36618A;
+  --gradeBlue: linear-gradient(190deg, var(--darkBlue) 33%, var(--mediumBlue) 33%, var(--mediumBlue) 73%, var(--lightBlue) 73%);
+  --gradeGrey: linear-gradient(200deg, var(--darkGrey) 15%, var(--mediumGrey) 15%, var(--mediumGrey) 40%, var(--lightGrey) 40%);
+
 }
 
 @font-face {
@@ -34,13 +40,14 @@ main {
 }
 
 .sidebarBox {
-  background-color: var(--baseLightGrey);
+  background: var(--gradeGrey);
+ 
 }
 
 .sidebarList {
   font-family: Saira_Expanded;
   font-size: 130%;
-  color: var(--darkBlue);
+  color: var(--textDarkBlue);
   padding: 50px;
   list-style: none;
   width: 100%;
@@ -67,8 +74,8 @@ main {
 }
 
 .logoHeader{
-  background-color: var(--baseLightGrey);
-  color: var(--darkBlue);
+  background-color: var(--darkGrey);
+  color: var(--textDarkBlue);
   font-family: Saira_Expanded;
     padding: 10px;
     display: flex;
@@ -78,6 +85,7 @@ main {
 }
 
 .textHeader{
+  color: var(--textDarkBlue);
   padding: 10px;
   font-family: Saira_Expanded;
   display: flex;
@@ -85,3 +93,35 @@ main {
   flex-wrap: wrap;
 }
 
+#logo{
+  text-align: center;
+  padding: 15px;
+  padding-right: 65px;
+  padding-bottom: 40px;
+}
+
+#bim{
+  font-size: 0.6em;
+}
+
+footer{
+  font-family: Saira_Expanded;
+}
+.line{
+  background-color: var(--darkGrey);
+  width: 90%;
+  height: 3px;
+  border-top: none;
+  border-left: none;
+  margin: auto;
+}
+.textHeader{
+  font-weight: bold;
+  font-size: 170%;
+}
+
+#dateSelector{
+  padding: 15px;
+  padding-left: 65px;
+}
+  
