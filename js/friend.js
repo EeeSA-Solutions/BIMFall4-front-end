@@ -2,6 +2,7 @@ import generateTable from "./tableGenerator.js";
 import cookieUserID from "./cookiecutter.js"
 import { getDataByName } from "./fetches.js"
 import { feedbackResponse } from "./workhorse.js"
+import {welcomeMessage} from "./homepage.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
@@ -54,3 +55,4 @@ function friendListSorter(list) {
   generateTable(received, "received", "Friend")
   generateTable(friends, "friends", "Friend")
 }
+welcomeMessage()
