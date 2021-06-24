@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-button{
+button {
   cursor: pointer;
 }
 .create-budget-container {
@@ -28,17 +28,28 @@ button{
 }
 
 .header-container {
-  width:100%;
+  width: 100%;
   margin-left: 12px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 
 .header-container > h2 {
-  margin: 0;
-  margin-right: 0.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: lighter;
   color: #f1f1f1;
+}
+.header-name {
+  margin-left: 21px;
+}
+.header-amount {
+  margin-left: 75px;
+}
+.header-repeat {
+  margin-left: 45px;
 }
 
 .input-container {
@@ -46,7 +57,6 @@ button{
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  
 }
 
 .input-content {
@@ -56,81 +66,92 @@ button{
   margin-bottom: 6px;
 }
 
-.amount-input{
+.amount-input {
   border-radius: 5px;
   border: none;
   width: 100px;
   height: 17px;
   box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.165);
+  outline: transparent;
 }
 
-.checkbox-input{
+.checkbox-input {
   background: transparent;
   border: 0;
 }
-.checkbox-input{
+.checkbox-input {
   margin: 0;
 }
 
-
-.checkbox-input:checked{
+.checkbox-input:checked {
   background-color: black;
 }
 
-.clearSave-btn-container{
+.clearSave-btn-container {
   display: flex;
   justify-content: flex-end;
   margin: 0px 5px 5px 5px;
-  
 }
 
-.clear-btn{
-  margin-right: 7px;
-  width: 80px;
-  border-radius: 7px;
-  border: solid 1px #0575E6;;
-  background-color: #71B9FF;
-  color: white;
+.clear-btn {
+  margin-right: 10px;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  background: #fdfdfd00;
+  width: 100px;
+  border: 3px solid #f1f1f1;
+  border-radius: 100px;
+  display: inline-block;
+  transition: all 1s ease 0s;
 }
 
-
-.save-btn{
-  width: 80px;
+.save-btn {
+  color: #f1f1f1;
+  text-transform: uppercase;
+  background: #33c02000;
+  width: 100px;
   height: 30px;
-  border-radius: 7px;
-  border: none;
-  background: #0575E6;
-  color: white;
+  border: 3px solid #f1f1f1;
+  border-radius: 100px;
+  display: inline-block;
+  transition: all 1s ease 0s;
 }
 
-.clear-btn:hover{
-  background-color: #0575E6;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.165);
+.clear-btn:hover {
+  color: #f1f1f1;
+  border-radius: 1px;
+  border-color: #f1f1f1;
+  transition: all 0.3s ease 0s;
+  border-top: #fdfdfd00;
+  border-left: #fdfdfd00;
+  border-right: #fdfdfd00;
 }
 
-.save-btn:hover{
-  background-color: #71B9FF;
-  border: solid 1px #0575E6;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.165);
+.save-btn:hover {
+  color: #f1f1f1;
+  border-radius: 1px;
+  border-color: #f1f1f1;
+  transition: all 0.3s ease 0s;
+  border-top: #fdfdfd00;
+  border-left: #fdfdfd00;
+  border-right: #fdfdfd00;
 }
 
-
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 12px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
-  margin-top: 30px; 
-
+  margin-top: 30px;
 }
 ::-webkit-scrollbar-thumb {
-  background:rgb(113, 185, 255); 
+  background: rgb(113, 185, 255);
   border-radius: 10px;
   border: solid 3px #f1f1f1;
 }
 
-.addCategory-btn{
+.addCategory-btn {
   margin-left: 15px;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -139,10 +160,8 @@ button{
   height: 17px;
 }
 
-
-
-.addCategory-dropdown{
-  width: 100px;
+.addCategory-dropdown {
+  width: 110px;
   border-radius: 8px;
   border: transparent;
   margin-left: 30px;
