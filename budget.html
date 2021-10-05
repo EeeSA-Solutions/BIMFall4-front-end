@@ -5,12 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
-  <link rel="stylesheet" href="./css/expense.css" />
+  <link rel="stylesheet" href="./css/budget.css" />
   <link rel="stylesheet" href="./css/table.css" />
   <link rel="stylesheet" href="./css/forms.css" />
   <link rel="stylesheet" href="./css/popup.css" />
-  <link rel="stylesheet" href="./css/animation.css" />
-  <title>DinBudget</title>
+  <link rel="stylesheet" href="./css/animation.css">
+  
+  <title>BIM-Budget</title>
 </head>
 
 <body>
@@ -22,8 +23,8 @@
     <div class="textHeader">
       <div id="dateSelector">Maj 2021</div>
       <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
-    <hr class="line">
-  </div>
+      <hr class="line">
+    </div>
     <div class="sidebarBox">
       <ul class="sidebarList">
         <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
@@ -38,36 +39,49 @@
     </div>
     <div class="maincontent">
       <div class="maincontentBox">
-        <form id="forms">
-          <div class="newBudgetLabel">
-            <h2>New expense</h2>
-          </div>
-          <div>
-            <select name="category" id="category">
-              <option value="Groceries">Groceries</option>
-              <option value="Entertainment">Entertainment</option>
-              <option value="Fixed Cost">Fixed Cost</option>
-            </select>
-          </div>
-          <div>
-            <input placeholder="Expense Name" type="text" required />
-          </div>
-          <div>
-            <label for="date">Date</label>
-            <input placeholder="Transaction date" type="date" required />
-          </div>
-          <div>
-            <input placeholder="Expense Amount" type="number" step="1" required min="1" />
-          </div>
+        
+        <div class="containerBudget">
+        <div class="addBudget" id="addBudgetID"></div>
+        <div class="summaryBudget" id="summaryBudgetID">
+          <progress class="progress" value="12" max="100" data-label="Total Budget: 1500 / 12.000"></progress>
+          <progress class="progress" value="50" max="100" data-label="Total Fixed Costs: 1500 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Entertainment: 0 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Income: 0 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Saving Goals: 0 / 3000"></progress>
+        </div>
+      </div>
+      <button id="planbudget">Plan budget.</button>
+            <div class="animation-wrapper"></div>
+        
+
+          <form id="forms">
+            <div class="newBudgetLabel">
+              <h2>New budget</h2>
+            </div>
+            <div>
+              <select name="category" id="category">
+                <option value="Groceries">Groceries</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Fixed Cost">Fixed Cost</option>
+              </select>
+            </div>
+            <div>
+              <input placeholder="Budget Amount" type="number" step="0.01" required min="0" />
+            </div>
+            <div>
+              <input type="month" id="start" name="start" />
+            </div>
             <div>
               <button type="submit">Send</button>
             </div>
             <div class="animation-wrapper"></div>
-          </form>
-        <div id="expenseDiv"></div>
+          </form> 
+
+
+        </div>
         <div id="table-div"></div>
-        <div id="overlay-container"></div>
       </div>
+      <div id="overlay-container"></div>
     </div>
     <footer>
       <div class="box">
@@ -78,16 +92,14 @@
           <h1>About us</h1>
           <a class="close" href="#">&times;</a>
           <div class="content">
-            <p>
-              Vi är sex studerande som har detta som ett pågående projectarbete.
-            </p>
+            <p>Vi är sex studerande som har detta som ett pågående projectarbete.</p>
           </div>
         </div>
       </div>
       <span>EeesSa Solutions</span>
     </footer>
   </main>
-  <script type="module" src="./js/expense.js"></script>
 </body>
+<script type="module" src="./js/monthly-budget.js"></script>
 
 </html>

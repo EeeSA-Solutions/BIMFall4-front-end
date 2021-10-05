@@ -4,12 +4,14 @@
   display: flex;
   justify-content: center;
 }
+
 .newBudgetLabel > h2 {
   color: white;
   text-shadow: 1px 1px 5px black;
 }
 
 #forms {
+  position: relative;
   border-radius: 15px;
   height: 100%;
   width: 50%;
@@ -18,8 +20,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #1b3c7775;
+  padding-bottom: 35px;
+  background: var(--gradeBlue);
+  
 }
 
 #forms > div {
@@ -27,8 +30,7 @@
   text-align-last: center;
 }
 
-#forms > div > input,
-#forms > div > select {
+#forms > div > input, #forms > div > select {
   border-radius: 5px;
   width: 80%;
   height: 30px;
@@ -44,6 +46,7 @@
   border: 1px solid black;
   border-radius: 5px;
 }
+
 button:hover {
   background-color: lightgray;
   cursor: pointer;

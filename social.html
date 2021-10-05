@@ -5,42 +5,54 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/site-skeleton.css">
-  <link rel="stylesheet" href="/css/forms.css">
-  <link rel="stylesheet" href="/css/table.css" />
-  <link rel="stylesheet" href="/css/social.css">
-  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="./css/site-skeleton.css" />
+  <link rel="stylesheet" href="./css/forms.css" />
+  <link rel="stylesheet" href="./css/table.css" />
+  <link rel="stylesheet" href="./css/social.css" />
+  <link rel="stylesheet" href="./css/popup.css" />
   <title>DinBudget</title>
 </head>
 
 <body>
   <main>
-    <div class="logoHeader">B.I.M</div>
-    <div class="textHeader">
-      <h1>Social</h1>
+    <div class="logoHeader">
+      <img src="css/profile.jpg" width=70px height=70px>
+      <div id="profileName"></div>
     </div>
-    <div class="sidebar">
+    <div class="textHeader">
+      <div id="dateSelector">Maj 2021</div>
+      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+      <hr class="line">
+    </div>
+    <div class="sidebarBox">
       <ul class="sidebarList">
-        <li class="homepage" onclick="location.href='/homepage.html'">Homepage</li>
-        <li class="income" onclick="location.href='/income.html'">Income</li>
-        <li class="expense" onclick="location.href='/expense.html'">Expense</li>
-        <li class="monthly-budget" onclick="location.href = '/monthly-budget.html'">Monthly Budget</li>
-        <li class="saving-goal" onclick="location.href= '/saving-goal.html'">Saving Goal</li>
-        <li class="social" onclick="location.href= '/social.html'">Social</li>
-        <li class="subscribe">Subscription</li>
-        <li class="sign-out" onclick="location.href= '/index.html'">Sign out</li>
+        <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
+        <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
+        <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
+        <li class="income" onclick="location.href='./income.html'">💰 Income</li>
+        <li class="saving-goal" onclick="location.href= './saving-goal.html'">🚀 Saving Goal</li>
+        <li class="social" onclick="location.href= './social.html'">👥 Social</li>
+        <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
+        <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
       </ul>
     </div>
     <div class="maincontent">
       <div class="maincontentBox">
         <form id="forms">
-          <label>Add user by email
-          <input type="email" /></label>
+          <label>Add user by email <input type="email" /></label>
           <button type="submit">Send</button>
+          <div class="animation-wrapper"></div>
         </form>
-        <div> 
-        <table id="friendtable"></table>
+        <p id="feedback"></p>
+        <div>
+          <label for="received">Received</label>
+          <table id="received"></table>
+          <label for="friends">Friends</label>
+          <table id="friends"></table>
+          <label for="sent">Sent</label>
+          <table id="sent"></table>
         </div>
+        <div id="overlay-container"></div>
       </div>
     </div>
     <footer>
@@ -52,9 +64,10 @@
           <h1>About us</h1>
           <a class="close" href="#">&times;</a>
           <div class="content">
-            <p>His palms are sweaty, knees weak, arms are heavy
-              There's vomit on his sweater already, mom's spaghetti.
-            </p> 
+            <p>
+              Vi är sex studerande som har detta som ett pågående
+              projectarbete.
+            </p>
           </div>
         </div>
       </div>

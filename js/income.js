@@ -1,6 +1,7 @@
 import cookieUserID from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
-import { getDataByName } from "./fetches.js";
+import { getDataByName, postByModel } from "./fetches.js";
+import {welcomeMessage} from "./homepage.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
@@ -13,22 +14,18 @@ forms.onsubmit = (e) => {
     UserID: cookieUserID,
   };
 
-  fetch("https://localhost:44357/api/Income", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(requestObject),
-  });
+  postByModel(requestObject, "Income");
 };
-//GET
 
+//GET
 getDataByName("Income").then((data) => {
   data.forEach((obj) => {
     obj.Date = obj.Date.slice(0, 10);
     //delete and edit columns with the important value
-    obj["Delete"] = obj.ID;
     obj["Edit"] = obj;
+    obj["Delete"] = obj.ID;
+    delete obj["ID"];
   });
   generateTable(data, "table-div", "Income");
 });
+welcomeMessage();

@@ -25,9 +25,7 @@ loginForm.onsubmit = (e) => {
         setCookie("User", UserID);
         window.location.href = "homepage.html";
       } else {
-
         document.getElementById("ErrorMessage").style.visibility = "Visible"
-       
       }
     });
   function setCookie(cname, cvalue) {

@@ -1,98 +1,127 @@
+:root {
+  --lightBlue: #7BBEFF;
+  --mediumBlue: #71B9FF;
+  --darkBlue: #56AAFD;
+  --lightBlueGrey: #73B5F5;
+  --lightGrey: #EBEAEA;
+  --mediumGrey: #E3E3E3;
+  --darkGrey: #DFDFDF;
+  --red: #E35454;
+  --white: #FFFFFF;
+  /*EXTRA?*/
+  --textDarkBlue: #36618A;
+  --gradeBlue: linear-gradient(190deg, var(--darkBlue) 33%, var(--mediumBlue) 33%, var(--mediumBlue) 73%, var(--lightBlue) 73%);
+  --gradeGrey: linear-gradient(200deg, var(--darkGrey) 15%, var(--mediumGrey) 15%, var(--mediumGrey) 40%, var(--lightGrey) 40%);
+
+}
+
+@font-face {
+  font-family: "Saira_Expanded";
+  src: url(Saira_Expanded-Light.ttf)
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html,
-body {
+
+html, body {
   height: 100%;
-  background: #cbdaf3;
+  width:100%;
+  background: var(--white);
 }
 
 main {
   height: 100vh;
   display: grid;
-  grid-template-columns: 225px 1fr;
+  grid-template-columns: 250px 1fr;
   grid-template-rows: 120px 1fr 25px;
 }
-.logoHeader {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  background: #1d3a6b;
-  grid-row: 1/2;
-  grid-column: 1/2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.sidebarBox {
+  background: var(--gradeGrey);
+ 
 }
-.textHeader {
-  font-size: 1.5rem;
-  background: #1d3a6b;
-  color: white;
-  grid-row: 1/2;
-  grid-column: 2/3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.sidebar {
-  padding-top: 30px;
-  background: #92a7d6;
-  grid-row: 2/4;
-  grid-column: 1/2;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+
+.sidebarList {
+  font-family: Saira_Expanded;
+  font-size: 130%;
+  color: var(--textDarkBlue);
+  padding: 50px;
+  list-style: none;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 0px;
+  
 }
 
 .sidebarList > li {
-  list-style: none;
-  text-align: center;
-  padding: 5px 30px;
-  margin-bottom: 10px;
-  background-color: #becced;
-  border: 1px solid #707070;
-  border-radius: 8px;
-  list-style-position: inside;
-  box-shadow: rgba(0, 0, 0, 0.233) 2px 2px 2px;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-.sidebarList :hover {
-  background-color: #a6b1cc;
-  transition: background-color 0.5s;
-  cursor: pointer;
-}
-.sidebarList > li:active {
-  background-color: #1d3a6b;
-  transition-duration: 0s;
-  transition-timing-function: ease;
+  padding: 5%;
+  width: 100%;
+  padding-right: 0;
+
 }
 
-.maincontent {
-  background: #cbdaf3;
-  grid-column: 2/3;
-  grid-row: 2/3;
+.sidebarList :hover{
+  text-decoration-line: underline;
+  cursor: pointer;
 }
-.maincontentBox {
-  background-color: rgba(255, 255, 255, 0.596);
-  margin: 35px;
-  min-height: calc(100% - 70px);
-  border-radius: 20px;
-  overflow: auto;
+
+.maincontent{
+  padding: 5%;
+  
+}
+
+.logoHeader{
+  background-color: var(--darkGrey);
+  color: var(--textDarkBlue);
+  font-family: Saira_Expanded;
+    padding: 10px;
+    display: flex;
+    text-align: justify;
+    justify-content:space-evenly;
+    
+}
+
+.textHeader{
+  color: var(--textDarkBlue);
+  padding: 10px;
+  font-family: Saira_Expanded;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#logo{
+  text-align: center;
+  padding: 15px;
+  padding-right: 65px;
+  padding-bottom: 40px;
+}
+
+#bim{
+  font-size: 0.6em;
 }
 
 footer{
-  grid-row: 3/4;
-  grid-column: 1/2;
+  font-family: Saira_Expanded;
+}
+.line{
+  background-color: var(--darkGrey);
+  width: 90%;
+  height: 3px;
+  border-top: none;
+  border-left: none;
+  margin: auto;
+}
+.textHeader{
+  font-weight: bold;
+  font-size: 170%;
 }
 
-.editButton, .deleteButton:hover{
-  cursor: pointer;
+#dateSelector{
+  padding: 15px;
+  padding-left: 65px;
 }
-.editButton, .deleteButton{
-  width: 10px;
-}
+  

@@ -2,7 +2,6 @@
 //----------------Collection of functions---------------
 
 //----------------Filter and "sort"-----------------------
-// filterCurrentMonthYear needs getMonthNow and getYearNow
 export function filterCurrentMonthYear(arr) {
 
     let filterMonth = arr.filter(date => new Date(date.Date).getMonth() === getMonthNow());
@@ -67,19 +66,30 @@ export const calculateBudgets = (arr, earr) => {
     };
     var returnArray = [
         {
-            "Groceries Budget left": totalRemainingGroceries,
-            "Fixed Costs Budget left": totalRemainingFixedCosts,
-            "Entertainment Budget left": totalRemainingEntertainment
+            "Groceries Budget": totalRemainingGroceries,
+            "FixedCosts Budget": totalRemainingFixedCosts,
+            "Entertainment Budget": totalRemainingEntertainment
         },
         {
-            "Your total Groceries Budget": totalBudgetGroceries,
-            "Your total Fixed Costs Budget": totalBudgetFixedCosts,
-            "Your total Entertainment Budget": totalBudgetEntertainment
+            "Your total Groceries": totalBudgetGroceries,
+            "Your total FixedCosts": totalBudgetFixedCosts,
+            "Your total Entertainment": totalBudgetEntertainment
         },
         {
-            "Your total Groceries expense": totalExpenseGroceries,
-            "Your total Fixedcosts expense": totalExpenseFixedCosts,
-            "Your total Entertainment expense": totalExpenseEntertainment
+            "Your total Groceries": totalExpenseGroceries,
+            "Your total Fixedcosts": totalExpenseFixedCosts,
+            "Your total Entertainment": totalExpenseEntertainment
         }]
     return returnArray
 };
+
+//---------------------Feedback Response-----------------
+export const feedbackResponse = (response, whereID) => {
+    if (response.Status == "Success") {
+        document.getElementById(whereID).innerHTML = response.Message
+    } else if (response.status == "200") {
+        document.getElementById(whereID).innerHTML = "Success"
+    } else {
+        document.getElementById(whereID).innerHTML = response.Message
+    }
+}

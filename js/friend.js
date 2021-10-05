@@ -1,11 +1,11 @@
 import generateTable from "./tableGenerator.js";
 import cookieUserID from "./cookiecutter.js"
 import { getDataByName } from "./fetches.js"
-
+import { feedbackResponse } from "./workhorse.js"
+import {welcomeMessage} from "./homepage.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
-  console.log(e);
 
   let requestObject = {
     ID: cookieUserID,
@@ -18,11 +18,41 @@ forms.onsubmit = (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(requestObject),
-  });
-};
-
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      feedbackResponse(response, "feedback")
+    });
+}
 getDataByName("Friend").then((data) => {
-  generateTable(data, "friendtable");
+  friendListSorter(data)
 });
 
-
+function friendListSorter(list) {
+  let received = []
+  let sent = []
+  let friends = []
+  list.forEach((obj) => {
+    if (obj.List_ID === 1) {
+      obj["Accept"] = obj.Relationship_ID;
+      obj["Delete"] = obj.Relationship_ID;
+      delete obj.List_ID
+      delete obj.Relationship_ID
+      received.push(obj)
+    } else if (obj.List_ID === 2) {
+      obj["Delete"] = obj.Relationship_ID;
+      delete obj.Relationship_ID
+      delete obj.List_ID
+      sent.push(obj)
+    } else if (obj.List_ID === 3) {
+      obj["Delete"] = obj.Relationship_ID;
+      delete obj.Relationship_ID
+      delete obj.List_ID
+      friends.push(obj)
+    }
+  })
+  generateTable(sent, "sent", "Friend")
+  generateTable(received, "received", "Friend")
+  generateTable(friends, "friends", "Friend")
+}
+welcomeMessage()
