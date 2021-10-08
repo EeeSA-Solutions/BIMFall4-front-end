@@ -21,8 +21,9 @@ loginForm.onsubmit = (e) => {
       console.log(result);
       if (result.Status != "Invalid") {
         UserID = result.UserID;
-        console.log(UserID);
+        Token = result.UserToken;
         setCookie("User", UserID);
+        setCookie("Token", Token);
         window.location.href = "homepage.html";
       } else {
         document.getElementById("ErrorMessage").style.visibility = "Visible"
