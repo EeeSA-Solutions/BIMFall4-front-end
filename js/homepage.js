@@ -1,4 +1,4 @@
-import cookieUserID from "./cookiecutter.js";
+import {cookieUserID} from "./cookiecutter.js";
 import { getDataByName } from "./fetches.js";
 
 

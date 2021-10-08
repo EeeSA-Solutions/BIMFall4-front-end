@@ -1,4 +1,4 @@
-import { cookieUserID, token} from "./cookiecutter.js";
+import { cookieUserID, token } from "./cookiecutter.js";
 import { dotAnimation } from "./animations.js";
 import { popupConfirmation } from "./popupConfirmation.js";
 //---------------------Collection of "fetch" functions----------------------
@@ -11,8 +11,7 @@ export const getDataByName = (name) => {
     headers: {
       "Content-Type": "application/json",
       "Authorization": "Bearer " + token
-    },
-    body: JSON.stringify(requestObject),
+    }
   })
     .then((response) => {
       return response.json();
