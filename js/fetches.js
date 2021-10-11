@@ -6,11 +6,10 @@ import { popupConfirmation } from "./popupConfirmation.js";
 export const getDataByName = (name) => {
   dotAnimation.show();
 
-  return fetch(`https://localhost:44357/api/${name}/${cookieUserID}`, {
+  return fetch(`https://localhost:44357/api/${name}/${token}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer " + token
     }
   })
     .then((response) => {
