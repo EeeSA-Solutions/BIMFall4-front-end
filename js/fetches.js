@@ -6,17 +6,18 @@ import { popupConfirmation } from "./popupConfirmation.js";
 export const getDataByName = (name) => {
   dotAnimation.show();
 
-  return fetch(`https://localhost:44357/api/${name}/${token}`, {
+  return fetch(`https://localhost:44357/api/${name}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-    }
+      "Authorization": `Bearer ${token}`,
+    },
   })
     .then((response) => {
       return response.json();
     })
     .catch(() => {
-      dotAnimation.errorMessage("Unable to retrieve data");
+      //dotAnimation.errorMessage("Unable to retrieve data");
     })
     .finally(() => {
       dotAnimation.hide();
