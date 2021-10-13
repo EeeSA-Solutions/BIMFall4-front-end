@@ -28,17 +28,19 @@ export const deleteByID = (model, id) => {
   popupConfirmation(
     () => {
       dotAnimation.show();
-      fetch("https://localhost:44357/api/" + model + "/" + id + "/", {
+      fetch("https://localhost:44357/api/" + model, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
+        body: JSON.stringify(id)
       })
         .then(() => {
           window.location.reload();
         })
         .catch(() => {
-          dotAnimation.errorMessage("Unable to delete");
+          //dotAnimation.errorMessage("Unable to delete");
         })
         .finally(() => {
           dotAnimation.hide();
@@ -66,10 +68,11 @@ export const putByID = (requestObject, model, id, parent) => {
     () => {
       dotAnimation.deleteMessage();
       dotAnimation.show(parent);
-      fetch("https://localhost:44357/api/" + model + "/" + id + "/", {
+      fetch("https://localhost:44357/api/" + model + "/" +  id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
         body: JSON.stringify(requestObject),
       })

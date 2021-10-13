@@ -1,5 +1,5 @@
 import generateTable from "./tableGenerator.js";
-import cookieUserID from "./cookiecutter.js"
+import { cookieUserID } from "./cookiecutter.js"
 import { getDataByName } from "./fetches.js"
 import { feedbackResponse } from "./workhorse.js"
 import {welcomeMessage} from "./homepage.js";
