@@ -7,8 +7,8 @@ forms.onsubmit = (e) => {
   e.preventDefault();
 
   let requestObject = {
-    Name: e.target[0].value,
-    Category: e.target[1].value,
+    Category: e.target[0].value,
+    Name: e.target[1].value,
     Date: e.target[2].value,
     Amount: e.target[3].value,
     UserID: cookieUserID,
