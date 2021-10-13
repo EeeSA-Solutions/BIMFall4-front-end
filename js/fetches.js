@@ -1,4 +1,4 @@
-import { cookieUserID, token } from "./cookiecutter.js";
+import { token } from "./cookiecutter.js";
 import { dotAnimation } from "./animations.js";
 import { popupConfirmation } from "./popupConfirmation.js";
 //---------------------Collection of "fetch" functions----------------------
