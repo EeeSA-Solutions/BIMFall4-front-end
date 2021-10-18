@@ -27,9 +27,9 @@ const popup = (editObj, model, id) => {
   popup.appendChild(form);
 
   //Creatin animation div
-  const popupAnimationWrapper = document.createElement("div")
-  popupAnimationWrapper.className = "animation-wrapper popup-animation"
-  popup.appendChild(popupAnimationWrapper)
+  const popupAnimationWrapper = document.createElement("div");
+  popupAnimationWrapper.className = "animation-wrapper popup-animation";
+  popup.appendChild(popupAnimationWrapper);
 
   let nr = 2;
 
@@ -64,7 +64,6 @@ const popup = (editObj, model, id) => {
       }
       form.appendChild(input);
     } else if (Object.keys(editObj)[i] === "Category") {
-
       const select = document.createElement("select");
       const optext1 = document.createTextNode("Groceries");
       const optext2 = document.createTextNode("Entertainment");
@@ -130,7 +129,7 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Name: e.target[0].value,
         Amount: e.target[1].value,
         Date: e.target[2].value,
-        ID: id
+        ID: id,
       };
       putByID(incomeObject, model, popupAnimationWrapper);
       break;
@@ -141,8 +140,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Category: e.target[1].value,
         Date: e.target[2].value,
         Amount: e.target[3].value,
+        ID: id,
       };
-      putByID(expenseObject, model, id, popupAnimationWrapper);
+      putByID(expenseObject, model, popupAnimationWrapper);
       break;
 
     case "budget":
@@ -150,8 +150,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Category: e.target[0].value,
         Amount: e.target[1].value,
         Date: e.target[2].value,
+        ID: id,
       };
-      putByID(budgetObject, model, id, popupAnimationWrapper);
+      putByID(budgetObject, model, popupAnimationWrapper);
       break;
 
     case "savinggoal":
@@ -160,8 +161,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Amount: e.target[1].value,
         StartDate: e.target[2].value,
         ReachDate: e.target[3].value,
+        ID: id,
       };
-      putByID(savinggoalObject, model, id, popupAnimationWrapper);
+      putByID(savinggoalObject, model, popupAnimationWrapper);
       break;
 
     default:
