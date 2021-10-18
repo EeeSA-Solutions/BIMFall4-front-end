@@ -10,7 +10,7 @@ export const getDataByName = (name) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   })
     .then((response) => {
@@ -32,9 +32,9 @@ export const deleteByID = (model, id) => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(id)
+        body: JSON.stringify(id),
       })
         .then(() => {
           window.location.reload();
@@ -66,13 +66,13 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
 export const putByID = (requestObject, model, parent) => {
   popupConfirmation(
     () => {
-      dotAnimation.deleteMessage();
-      dotAnimation.show(parent);
+      // dotAnimation.deleteMessage();
+      // dotAnimation.show(parent);
       fetch("https://localhost:44357/api/" + model, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(requestObject),
       })
@@ -80,10 +80,10 @@ export const putByID = (requestObject, model, parent) => {
           window.location.reload();
         })
         .catch(() => {
-          dotAnimation.errorMessage("Unable to edit");
+          // dotAnimation.errorMessage("Unable to edit");
         })
         .finally(() => {
-          dotAnimation.hide();
+          // dotAnimation.hide();
         });
     },
     () => {
@@ -100,7 +100,7 @@ export const postByModel = (requestObject, model) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(requestObject),
   })
