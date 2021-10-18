@@ -63,12 +63,12 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
   });
 };
 
-export const putByID = (requestObject, model, id, parent) => {
+export const putByID = (requestObject, model, parent) => {
   popupConfirmation(
     () => {
       dotAnimation.deleteMessage();
       dotAnimation.show(parent);
-      fetch("https://localhost:44357/api/" + model + "/" +  id, {
+      fetch("https://localhost:44357/api/" + model, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
