@@ -115,7 +115,7 @@ const generateTable = (data, tableDiv, model) => {
           })
       }
       else if (e.target.className === "declineButton") {
-        const relId = e.target.value;
+        const relId = parseInt(e.target.value);
         setFriendStatus(relId, "Denied")
           .then((response) => {
             feedbackResponse(response, "feedback")

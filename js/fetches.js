@@ -32,7 +32,7 @@ export const deleteByID = (model, id) => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          "Authorization": `Bearer ${token}`,
         },
         body: JSON.stringify(id),
       })
@@ -54,10 +54,11 @@ export const deleteByID = (model, id) => {
 };
 
 export const setFriendStatus = (relationshipID, wantedstatus) => {
-  return fetch(`https://localhost:44357/api/Friend/${relationshipID}`, {
+  return fetch(`https://localhost:44357/api/Friend?id=${relationshipID}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
     },
     body: JSON.stringify(wantedstatus),
   });
