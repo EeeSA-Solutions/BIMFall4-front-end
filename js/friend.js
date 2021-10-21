@@ -55,4 +55,3 @@ function friendListSorter(list) {
   generateTable(received, "received", "Friend")
   generateTable(friends, "friends", "Friend")
 }
-welcomeMessage()

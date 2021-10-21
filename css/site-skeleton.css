@@ -70,16 +70,17 @@ main {
 
 .maincontent{
   padding: 5%;
-  
 }
 
 .logoHeader{
-  background-color: var(--darkGrey);
-  color: var(--textDarkBlue);
-    padding: 10px;
+    background-color: var(--darkGrey);
+    color: var(--textDarkBlue);
+    padding: 25%;
     display: flex;
-    text-align: justify;
-    justify-content:space-evenly;
+    /* text-align: justify;
+    justify-content:center; */
+    justify-content: space-between;
+    align-items: center;
     
 }
 

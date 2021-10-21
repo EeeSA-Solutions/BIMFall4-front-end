@@ -28,4 +28,3 @@ getDataByName("Income").then((data) => {
   });
   generateTable(data, "table-div", "Income");
 });
-welcomeMessage();
