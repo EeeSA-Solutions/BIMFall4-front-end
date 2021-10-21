@@ -25,4 +25,3 @@ getDataByName("Expense").then((data) => {
   });
   generateTable(data, "table-div", "Expense");
 });
-welcomeMessage();

@@ -21,6 +21,7 @@
 }
 
 * {
+  font-family: Saira_Expanded;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -45,7 +46,6 @@ main {
 }
 
 .sidebarList {
-  font-family: Saira_Expanded;
   font-size: 130%;
   color: var(--textDarkBlue);
   padding: 50px;
@@ -73,20 +73,20 @@ main {
 }
 
 .logoHeader{
-  background-color: var(--darkGrey);
-  color: var(--textDarkBlue);
-  font-family: Saira_Expanded;
-    padding: 10px;
+    background-color: var(--darkGrey);
+    color: var(--textDarkBlue);
+    padding: 25%;
     display: flex;
-    text-align: justify;
-    justify-content:space-evenly;
+    /* text-align: justify;
+    justify-content:center; */
+    justify-content: space-between;
+    align-items: center;
     
 }
 
 .textHeader{
   color: var(--textDarkBlue);
   padding: 10px;
-  font-family: Saira_Expanded;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -103,9 +103,7 @@ main {
   font-size: 0.6em;
 }
 
-footer{
-  font-family: Saira_Expanded;
-}
+
 .line{
   background-color: var(--darkGrey);
   width: 90%;

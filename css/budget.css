@@ -27,8 +27,6 @@ width: auto;
   
 }
 .progress{
-  
-  font-family: 'Saira_Expanded';
   font-weight: bold;
   color: black;
   text-align: center;
@@ -37,13 +35,6 @@ width: auto;
   height: 100%;
 }
 
-
-
-
-
-
-
-
 .underText{
   padding-top: 15px;
   font-size: 50%;
@@ -51,7 +42,6 @@ width: auto;
 
 #planbudget{
   background: var(--gradeBlue);
-  font-family: 'Saira_Expanded';
   font-size: medium;
   margin-top :10px;
   padding:10px;

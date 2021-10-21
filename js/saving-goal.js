@@ -56,4 +56,3 @@ getDataByName("savinggoal").then((data) => {
   });
   generateTable(data, "table-div", "savinggoal");
 });
-welcomeMessage()
