@@ -73,15 +73,17 @@ main {
 }
 
 .logoHeader{
-    background-color: var(--darkGrey);
-    color: var(--textDarkBlue);
-    padding: 25%;
-    display: flex;
-    /* text-align: justify;
-    justify-content:center; */
-    justify-content: space-between;
-    align-items: center;
-    
+  background-color: var(--darkGrey);
+  color: var(--textDarkBlue);
+  padding-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+}
+
+#profileName{
+padding-left: 10px;
 }
 
 .textHeader{
