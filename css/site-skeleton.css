@@ -77,10 +77,12 @@ main {
   background-color: var(--darkGrey);
   color: var(--textDarkBlue);
   font-family: Saira_Expanded;
-    padding: 10px;
+    padding: 25%;
     display: flex;
-    text-align: justify;
-    justify-content:space-evenly;
+    /* text-align: justify;
+    justify-content:center; */
+    justify-content: space-between;
+    align-items: center;
     
 }
 

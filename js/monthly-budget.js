@@ -24,4 +24,3 @@ getDataByName("budget").then((data) => {
   });
   generateTable(data, "table-div", "budget");
 });
-welcomeMessage();
