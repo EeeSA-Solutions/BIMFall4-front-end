@@ -1,5 +1,10 @@
-.sidebarList > .homepage {
-  background: linear-gradient(90deg, var(--baseLightGrey), var(--white), var(--white));
+.sidebarList .homepage {
+  background: linear-gradient(
+    90deg,
+    var(--lightGrey),
+    var(--white),
+    var(--white)
+  );
 }
 
 .maincontentBox > h1 {
@@ -16,26 +21,25 @@
 .flexbox {
   padding: 1em;
   border: 1px black solid;
-  background-image: linear-gradient( blanchedalmond, rgb(168, 168, 214));
-  
+  background-image: linear-gradient(blanchedalmond, rgb(168, 168, 214));
 }
 
 #budget {
- color:rgb(28, 97, 51);
- width: 33%;
+  color: rgb(28, 97, 51);
+  width: 33%;
 }
 
 #expense {
-  color:rgb(194, 37, 71);
+  color: rgb(194, 37, 71);
   width: 33%;
 }
 
 #remaining {
-  color:rgb(32, 32, 207);
+  color: rgb(32, 32, 207);
   width: 33%;
 }
 
 footer {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
