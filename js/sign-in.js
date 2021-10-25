@@ -39,10 +39,10 @@ var y = document.getElementById('registerForm')
 
 function login_swipe(){
   x.style.left = '400px'
-  y.style.left = '-400px'
+  y.style.left = '-340px'
 }
 
 function register_swipe(){
-  x.style.left = '0px'
+  x.style.left = '20px'
   y.style.left = '400px'
 }
