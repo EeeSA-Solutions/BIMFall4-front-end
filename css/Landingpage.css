@@ -16,8 +16,15 @@ body{
     border: 0.5px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
     background: radial-gradient(at 50% 0% rgba(0, 0, 0), rgba(86, 170, 253, 0.2));
-    -webkit-transision: all 0.5s ease-in;
-    transition:  0.5s ease-in;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
 }
 
 h1{
@@ -25,7 +32,6 @@ h1{
     color: white;
 }
 form{
-    padding-top: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,8 +92,16 @@ button:hover{
     border-bottom: 1px solid white;
 }
 
+#loginForm{
+    position: absolute;
+}
+
 #registerForm{
     left: 400px;
     top: 0;
-    position:absolute;
+    position: absolute;
+    /* width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
 }

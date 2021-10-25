@@ -33,3 +33,16 @@ loginForm.onsubmit = (e) => {
     document.cookie = cname + "=" + cvalue + ";" + ";path=/";
   }
 };
+
+var x = document.getElementById('loginForm')
+var y = document.getElementById('registerForm')
+
+function login_swipe(){
+  x.style.left = '400px'
+  y.style.left = '-400px'
+}
+
+function register_swipe(){
+  x.style.left = '0px'
+  y.style.left = '400px'
+}

@@ -22,7 +22,7 @@
                 <button type="submit" class="sign-in-btn">Sign in</button>
                 <div class="signup-div">
                     <p>Don't have an account?</p>
-                    <strong id="sign-up"><em>Sign Up</em></strong>
+                    <strong id="sign-up"><em onclick="login_swipe()">Sign Up</em></strong>
                 </div>
                 <p id="ErrorMessage">Wrong Email or password. Please try again</p>
         </form>
@@ -44,11 +44,12 @@
               <button type="submit" class="sign-in-btn">Register</button>
                 <div class="signin-div">
                     <p>Already have an account?</p>
-                    <strong id="sign-in"><em>Sign In</em></strong>
+                    <strong id="sign-in"><em onclick="register_swipe()">Sign In</em></strong>
                 </div>
             </div>
           </form>
     </div>
 </body>
+<script src="./js/sign-up.js"></script>
 <script src="./js/sign-in.js"></script>
 </html>
