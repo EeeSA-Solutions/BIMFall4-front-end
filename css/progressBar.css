@@ -1,0 +1,28 @@
+.progress{
+    --width: 200;
+    --height: 32px;
+    
+    margin-bottom: 8px;
+    transition: box-shadow 1s;
+    background: var(--color);
+    height: var(--height);
+    width: calc(var(--width)*1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--label-color, #000);
+    border-radius: calc(var(--height) * var(--radius));
+    box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset;
+  }
+  
+  a{
+    cursor: pointer;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
