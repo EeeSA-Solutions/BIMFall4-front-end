@@ -1,4 +1,4 @@
-import cookieUserID from "./cookiecutter.js";
+import { cookieUserID } from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
 import {welcomeMessage} from "./homepage.js";
@@ -24,4 +24,3 @@ getDataByName("budget").then((data) => {
   });
   generateTable(data, "table-div", "budget");
 });
-welcomeMessage();

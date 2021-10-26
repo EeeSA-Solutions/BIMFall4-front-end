@@ -1,16 +1,23 @@
-import cookieUserID from "./cookiecutter.js";
+import { token } from "./cookiecutter.js";
 import { dotAnimation } from "./animations.js";
 import { popupConfirmation } from "./popupConfirmation.js";
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
   dotAnimation.show();
-  return fetch(`https://localhost:44357/api/${name}/${cookieUserID}`)
+
+  return fetch(`https://localhost:44357/api/${name}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  })
     .then((response) => {
       return response.json();
     })
     .catch(() => {
-      dotAnimation.errorMessage("Unable to retrieve data");
+      //dotAnimation.errorMessage("Unable to retrieve data");
     })
     .finally(() => {
       dotAnimation.hide();
@@ -21,17 +28,19 @@ export const deleteByID = (model, id) => {
   popupConfirmation(
     () => {
       dotAnimation.show();
-      fetch("https://localhost:44357/api/" + model + "/" + id + "/", {
+      fetch("https://localhost:44357/api/" + model, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
+        body: JSON.stringify(id),
       })
         .then(() => {
           window.location.reload();
         })
         .catch(() => {
-          dotAnimation.errorMessage("Unable to delete");
+          //dotAnimation.errorMessage("Unable to delete");
         })
         .finally(() => {
           dotAnimation.hide();
@@ -45,24 +54,26 @@ export const deleteByID = (model, id) => {
 };
 
 export const setFriendStatus = (relationshipID, wantedstatus) => {
-  return fetch(`https://localhost:44357/api/Friend/${relationshipID}`, {
+  return fetch(`https://localhost:44357/api/Friend?id=${relationshipID}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
     },
     body: JSON.stringify(wantedstatus),
   });
 };
 
-export const putByID = (requestObject, model, id, parent) => {
+export const putByID = (requestObject, model, parent) => {
   popupConfirmation(
     () => {
-      dotAnimation.deleteMessage();
-      dotAnimation.show(parent);
-      fetch("https://localhost:44357/api/" + model + "/" + id + "/", {
+      // dotAnimation.deleteMessage();
+      // dotAnimation.show(parent);
+      fetch("https://localhost:44357/api/" + model, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(requestObject),
       })
@@ -70,10 +81,10 @@ export const putByID = (requestObject, model, id, parent) => {
           window.location.reload();
         })
         .catch(() => {
-          dotAnimation.errorMessage("Unable to edit");
+          // dotAnimation.errorMessage("Unable to edit");
         })
         .finally(() => {
-          dotAnimation.hide();
+          // dotAnimation.hide();
         });
     },
     () => {
@@ -90,6 +101,7 @@ export const postByModel = (requestObject, model) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(requestObject),
   })

@@ -1,9 +1,9 @@
 import generateTable from "./tableGenerator.js";
-import cookieUserID from "./cookiecutter.js"
 import { getDataByName } from "./fetches.js"
 import { feedbackResponse } from "./workhorse.js"
 import {welcomeMessage} from "./homepage.js";
-
+import { cookieUserID } from "./cookiecutter.js";
+import {token} from "./cookiecutter.js"
 forms.onsubmit = (e) => {
   e.preventDefault();
 
@@ -16,6 +16,7 @@ forms.onsubmit = (e) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Authorization": `bearer ${token}`
     },
     body: JSON.stringify(requestObject),
   })
@@ -55,4 +56,3 @@ function friendListSorter(list) {
   generateTable(received, "received", "Friend")
   generateTable(friends, "friends", "Friend")
 }
-welcomeMessage()

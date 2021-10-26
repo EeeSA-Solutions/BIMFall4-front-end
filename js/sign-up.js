@@ -20,7 +20,7 @@ registerForm.onsubmit = (e) => {
       if (data.Status == "Invalid")
         alert(data.Message);
       else {
-        window.location.href = "index.html";
+        register_swipe();
       }
     })
 };
