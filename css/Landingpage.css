@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    background-image: url("./pexels-maksim-romashkin-7108218.jpg");
+    background-image: url("/css/wp6928859.webp");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -11,16 +11,15 @@ body{
 .form-wrapper {
     overflow: hidden;
     backdrop-filter: blur(5px);
-    height: 450px;
+    height: 500px;
     width: 400px;
     border: 0.5px solid rgba(255, 255, 255, 0.4);
     border-radius: 15px;
-    background: radial-gradient(at 50% 0% rgba(0, 0, 0), rgba(86, 170, 253, 0.2));
     position: relative;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    padding-left: 1em;
     padding-top: 2em;
+    box-shadow: 10px 10px 30px black;
 }
 
 @keyframes fadeIn {
@@ -68,20 +67,19 @@ button{
     width: 14em;
     padding: 0.3em;
     margin: 2em;
-    background-image: linear-gradient(to right top, #18252b, #3e535b, #68868f, #95bec6, #c5f8ff);
-    box-shadow: 5px 5px 50px;
+    background-image: linear-gradient(to right top, #d4dadd,  #99d8e0);
+    box-shadow: 5px 5px 10px;
 }
 
 button:hover{
-    background-position: 100% 0%;
-
     cursor: pointer;
-    color: white;
+
 }
 .signup-div, .signin-div{
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     color: white;
 }
 #sign-up, #sign-in{
@@ -119,16 +117,16 @@ button:hover{
     font-size: large; 
     height: 6em;
     width: 6em;
-    background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);;
+    background: linear-gradient(to right, #2980b9, #6dd5fa, #9bd4eb);;
     border-radius: 75px;
-    box-shadow: 10px 5px 15px gray;
+    box-shadow: inset -10px -10px 30px rgb(16, 120, 218); 
     position: absolute;
-    -webkit-animation: linear infinite;
-    -webkit-animation-name: moveit;
-    -webkit-animation-duration: 35s;
+    animation: linear infinite;
+    animation-name: moveit;
+    animation-duration: 35s;
 }
 
-@-webkit-keyframes moveit {
+@keyframes moveit {
     0% {
         transform: rotate(0deg)translate(-280px)rotate(0deg);
     }
