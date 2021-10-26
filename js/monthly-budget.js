@@ -29,37 +29,45 @@ createBudgetForm.onsubmit = (e) => {
       Amount: e.target[0].value,
       UserID: cookieUserID,
       Date: yearMonth,
+      Repeat: e.target[1].checked,
     },
     {
       Category: "Entertainment",
       Amount: e.target[2].value,
       UserID: cookieUserID,
       Date: yearMonth,
+      Repeat: e.target[3].checked,
     },
     {
       Category: "Fixed Cost",
       Amount: e.target[4].value,
       UserID: cookieUserID,
       Date: yearMonth,
+      Repeat: e.target[5].checked,
     },
     {
       Category: "Transport",
       Amount: e.target[6].value,
       UserID: cookieUserID,
       Date: yearMonth,
+      Repeat: e.target[7].checked,
     },
     {
       Category: "Other",
       Amount: e.target[8].value,
       UserID: cookieUserID,
       Date: yearMonth,
+      Repeat: e.target[9].checked,
     },
   ];
+
   reqObjects.forEach((obj) => {
     if (obj.Amount > 0) {
+      console.log(obj);
       postByModel(obj, "budget");
     }
   });
+
   planBtn.style.display = "flex";
   createBudgetBody.style.display = "none";
   containerBudget.style.display = "unset";
