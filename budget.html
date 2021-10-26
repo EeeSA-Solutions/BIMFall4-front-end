@@ -5,35 +5,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
-  <link rel="stylesheet" href="./css/monthly-budget.css" />
+  <link rel="stylesheet" href="./css/budget.css" />
   <link rel="stylesheet" href="./css/table.css" />
   <link rel="stylesheet" href="./css/forms.css" />
   <link rel="stylesheet" href="./css/popup.css" />
   <link rel="stylesheet" href="./css/animation.css">
-  <title>DinBudget</title>
+  
+  <title>BIM-Budget</title>
 </head>
 
 <body>
   <main>
-    <div class="logoHeader">B.I.M</div>
-    <div class="textHeader">
-      <h1>Monthly budget</h1>
+    <div class="logoHeader">
+      <img src="css/profile.jpg" width=70px height=70px>
+      <div id="profileName"></div>
     </div>
-    <div class="sidebar">
+    <div class="textHeader">
+      <div id="dateSelector">Maj 2021</div>
+      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+      <hr class="line">
+    </div>
+    <div class="sidebarBox">
       <ul class="sidebarList">
-        <li class="homepage" onclick="location.href='./homepage.html'">Homepage</li>
-        <li class="income" onclick="location.href='./income.html'">Income</li>
-        <li class="expense" onclick="location.href='./expense.html'">Expense</li>
-        <li class="monthly-budget" onclick="location.href = './monthly-budget.html'">Monthly Budget</li>
-        <li class="saving-goal" onclick="location.href= './saving-goal.html'">Saving Goal</li>
-        <li class="social" onclick="location.href= './social.html'">Social</li>
-        <li class="subscribe" onclick="location.href= './subscription.html'">Subscription</li>
-        <li class="sign-out" onclick="location.href= './index.html'">Sign out</li>
+        <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
+        <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
+        <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
+        <li class="income" onclick="location.href='./income.html'">💰 Income</li>
+        <li class="saving-goal" onclick="location.href= './saving-goal.html'">🚀 Saving Goal</li>
+        <li class="social" onclick="location.href= './social.html'">👥 Social</li>
+        <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
+        <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
       </ul>
     </div>
     <div class="maincontent">
       <div class="maincontentBox">
-        <div class="formContent">
+        
+        <div class="containerBudget">
+        <div class="addBudget" id="addBudgetID"></div>
+        <div class="summaryBudget" id="summaryBudgetID">
+          <progress class="progress" value="12" max="100" data-label="Total Budget: 1500 / 12.000"></progress>
+          <progress class="progress" value="50" max="100" data-label="Total Fixed Costs: 1500 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Entertainment: 0 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Income: 0 / 3000"></progress>
+          <progress class="progress" value="0" max="100" data-label="Total Saving Goals: 0 / 3000"></progress>
+        </div>
+      </div>
+      <button id="planbudget">Plan budget.</button>
+            <div class="animation-wrapper"></div>
+        
+
           <form id="forms">
             <div class="newBudgetLabel">
               <h2>New budget</h2>
@@ -55,7 +75,9 @@
               <button type="submit">Send</button>
             </div>
             <div class="animation-wrapper"></div>
-          </form>
+          </form> 
+
+
         </div>
         <div id="table-div"></div>
       </div>

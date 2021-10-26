@@ -13,5 +13,6 @@ function getCookie(cname) {
   }
   return "";
 }
-var cookieUserID = getCookie("User");
-export default cookieUserID;
+export var cookieUserID = getCookie("User");
+export var token =  getCookie("Token")
+// export default cookieUserID;

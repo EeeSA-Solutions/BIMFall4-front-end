@@ -7,22 +7,24 @@ table {
 th {
   color: white;
   text-align: left;
-  background-color: #1d3a6b;
+  background: var(--gradeBlue);
 }
 
 table, th, td {
   border-collapse: collapse;
-  border: 1px solid #000;
   border-radius: 10px, 30px, 10px, 5px;
 }
 
 th, td {
   padding: 7px;
 }
+td > button{
+  width:100%;
+}
 
 tr:nth-child(even) {
   background-color: white;
 }
 tr:nth-child(odd) {
-  background-color: #d6deee28;
+  background-color: var(--baseLightGrey);
 }

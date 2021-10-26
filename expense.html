@@ -15,20 +15,25 @@
 
 <body>
   <main>
-    <div class="logoHeader">B.I.M</div>
-    <div class="textHeader">
-      <h1>Expenses</h1>
+    <div class="logoHeader">
+      <img src="css/profile.jpg" width=70px height=70px>
+      <div id="profileName"></div>
     </div>
-    <div class="sidebar">
+    <div class="textHeader">
+      <div id="dateSelector">Maj 2021</div>
+      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+    <hr class="line">
+  </div>
+    <div class="sidebarBox">
       <ul class="sidebarList">
-        <li class="homepage" onclick="location.href='./homepage.html'">Homepage</li>
-        <li class="income" onclick="location.href='./income.html'">Income</li>
-        <li class="expense" onclick="location.href='./expense.html'">Expense</li>
-        <li class="monthly-budget" onclick="location.href = './monthly-budget.html'">Monthly Budget</li>
-        <li class="saving-goal" onclick="location.href= './saving-goal.html'">Saving Goal</li>
-        <li class="social" onclick="location.href= './social.html'">Social</li>
-        <li class="subscribe" onclick="location.href= './subscription.html'">Subscription</li>
-        <li class="sign-out" onclick="location.href= './index.html'">Sign out</li>
+        <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
+        <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
+        <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
+        <li class="income" onclick="location.href='./income.html'">💰 Income</li>
+        <li class="saving-goal" onclick="location.href= './saving-goal.html'">🚀 Saving Goal</li>
+        <li class="social" onclick="location.href= './social.html'">👥 Social</li>
+        <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
+        <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
       </ul>
     </div>
     <div class="maincontent">
@@ -38,14 +43,14 @@
             <h2>New expense</h2>
           </div>
           <div>
-            <input placeholder="Expense Name" type="text" required />
-          </div>
-          <div>
             <select name="category" id="category">
               <option value="Groceries">Groceries</option>
               <option value="Entertainment">Entertainment</option>
               <option value="Fixed Cost">Fixed Cost</option>
             </select>
+          </div>
+          <div>
+            <input placeholder="Expense Name" type="text" required />
           </div>
           <div>
             <label for="date">Date</label>
@@ -61,8 +66,8 @@
           </form>
         <div id="expenseDiv"></div>
         <div id="table-div"></div>
+        <div id="overlay-container"></div>
       </div>
-      <div id="overlay-container"></div>
     </div>
     <footer>
       <div class="box">

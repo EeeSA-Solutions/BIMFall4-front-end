@@ -26,10 +26,10 @@ const popup = (editObj, model, id) => {
   form.id = "popupForm";
   popup.appendChild(form);
 
-//Creatin animation div
-const popupAnimationWrapper = document.createElement("div")
-popupAnimationWrapper.className = "animation-wrapper popup-animation"
-popup.appendChild(popupAnimationWrapper)
+  //Creatin animation div
+  const popupAnimationWrapper = document.createElement("div");
+  popupAnimationWrapper.className = "animation-wrapper popup-animation";
+  popup.appendChild(popupAnimationWrapper);
 
   let nr = 2;
 
@@ -64,9 +64,8 @@ popup.appendChild(popupAnimationWrapper)
       }
       form.appendChild(input);
     } else if (Object.keys(editObj)[i] === "Category") {
-      
       const select = document.createElement("select");
-      const optext1 = document.createTextNode( "Groceries");
+      const optext1 = document.createTextNode("Groceries");
       const optext2 = document.createTextNode("Entertainment");
       const optext3 = document.createTextNode("Fixed Cost");
 
@@ -77,13 +76,13 @@ popup.appendChild(popupAnimationWrapper)
       option1.value = "Groceries";
       option2.value = "Entertainment";
       option3.value = "Fixed Cost";
-      if (editObj.Category==="Fixed Cost"){
+      if (editObj.Category === "Fixed Cost") {
         option3.selected = true;
-      }else if (editObj.Category==="Groceries"){
+      } else if (editObj.Category === "Groceries") {
         option1.selected = true;
-      }else if (editObj.Category==="Entertainment"){
-          option2.selected = true;
-        }
+      } else if (editObj.Category === "Entertainment") {
+        option2.selected = true;
+      }
       option1.appendChild(optext1);
       option2.appendChild(optext2);
       option3.appendChild(optext3);
@@ -95,7 +94,7 @@ popup.appendChild(popupAnimationWrapper)
       form.appendChild(select);
     }
   }
-  
+
   //Creating SubmitButton
   const btn = document.createElement("button");
   btn.className = "submit-btn";
@@ -130,8 +129,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Name: e.target[0].value,
         Amount: e.target[1].value,
         Date: e.target[2].value,
+        ID: id,
       };
-      putByID(incomeObject, model, id, popupAnimationWrapper);
+      putByID(incomeObject, model, popupAnimationWrapper);
       break;
 
     case "Expense":
@@ -140,8 +140,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Category: e.target[1].value,
         Date: e.target[2].value,
         Amount: e.target[3].value,
+        ID: id,
       };
-      putByID(expenseObject, model, id, popupAnimationWrapper);
+      putByID(expenseObject, model, popupAnimationWrapper);
       break;
 
     case "budget":
@@ -149,8 +150,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Category: e.target[0].value,
         Amount: e.target[1].value,
         Date: e.target[2].value,
+        ID: id,
       };
-      putByID(budgetObject, model, id, popupAnimationWrapper);
+      putByID(budgetObject, model, popupAnimationWrapper);
       break;
 
     case "savinggoal":
@@ -159,8 +161,9 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Amount: e.target[1].value,
         StartDate: e.target[2].value,
         ReachDate: e.target[3].value,
+        ID: id,
       };
-      putByID(savinggoalObject, model, id, popupAnimationWrapper);
+      putByID(savinggoalObject, model, popupAnimationWrapper);
       break;
 
     default:

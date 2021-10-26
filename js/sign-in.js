@@ -21,8 +21,9 @@ loginForm.onsubmit = (e) => {
       console.log(result);
       if (result.Status != "Invalid") {
         UserID = result.UserID;
-        console.log(UserID);
+        Token = result.UserToken;
         setCookie("User", UserID);
+        setCookie("Token", Token);
         window.location.href = "homepage.html";
       } else {
         document.getElementById("ErrorMessage").style.visibility = "Visible"
@@ -32,3 +33,16 @@ loginForm.onsubmit = (e) => {
     document.cookie = cname + "=" + cvalue + ";" + ";path=/";
   }
 };
+
+var x = document.getElementById('loginForm')
+var y = document.getElementById('registerForm')
+
+function login_swipe(){
+  x.style.left = '-400px'
+  y.style.left = '440px'
+}
+
+function register_swipe(){
+  x.style.left = '0px'
+  y.style.left = '400px'
+}

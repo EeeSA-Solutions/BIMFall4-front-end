@@ -1,17 +1,11 @@
 .sidebarList > .homepage {
-  background-color: #7d92c5;
+  background: linear-gradient(90deg, var(--baseLightGrey), var(--white), var(--white));
 }
 
 .maincontentBox > h1 {
   padding: 15px;
   text-align: start;
   color: #7d92c5;
-}
- 
-#welcome {
-   padding: 10px;
-   display: inline-block;
-   text-align: justify;
 }
 
 .infoBudget {
