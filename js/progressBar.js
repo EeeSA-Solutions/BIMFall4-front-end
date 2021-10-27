@@ -11,4 +11,19 @@ Se till att värdena och categories namnen mappas så att "fixedcost 100/300 skr
 
 
 import {getDataByName} from "./fetches.js"
-getDataByName("Calculate").then((res)=>console.log(res))
+getDataByName("Calculate")
+.then((res)=>{
+res[0].forEach(element => {
+    console.log(element)
+    let cat = document.createElement("Div")
+    cat.id=element.Category
+    cat.className="summaryBudget"
+    cat.innerHTML="hej"
+    cat.style.cssText="--progress: 0.5; --color:#f60; --label-color: white; --radius: .3"
+    let pTag = document.createElement("p")
+   // pTag.innerHTML=`${element.Category} ${element.Amount}`
+   // cat.appendChild(pTag)
+    const parentDiv =document.getElementById("summaryBudgetID")
+    parentDiv.appendChild(cat)
+});
+})
