@@ -1,3 +1,4 @@
+import { cookieUserID } from "./cookiecutter.js";
 import { putByID } from "./fetches.js";
 
 const popup = (editObj, model, id) => {
@@ -88,9 +89,9 @@ const popup = (editObj, model, id) => {
         option1.selected = true;
       } else if (editObj.Category === "Entertainment") {
         option2.selected = true;
-      }else if (editObj.Category === "Transport") {
+      } else if (editObj.Category === "Transport") {
         option2.selected = true;
-      }else if (editObj.Category === "Other") {
+      } else if (editObj.Category === "Other") {
         option2.selected = true;
       }
       option1.appendChild(optext1);
@@ -143,6 +144,7 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Name: e.target[0].value,
         Amount: e.target[1].value,
         Date: e.target[2].value,
+        UserID: cookieUserID,
         ID: id,
       };
       putByID(incomeObject, model, popupAnimationWrapper);
@@ -154,6 +156,7 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Category: e.target[1].value,
         Date: e.target[2].value,
         Amount: e.target[3].value,
+        UserID: cookieUserID,
         ID: id,
       };
       putByID(expenseObject, model, popupAnimationWrapper);
@@ -164,6 +167,7 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Category: e.target[0].value,
         Amount: e.target[1].value,
         Date: e.target[2].value,
+        UserID: cookieUserID,
         ID: id,
       };
       putByID(budgetObject, model, popupAnimationWrapper);
@@ -175,6 +179,7 @@ const createEditObj = (e, model, id, popupAnimationWrapper) => {
         Amount: e.target[1].value,
         StartDate: e.target[2].value,
         ReachDate: e.target[3].value,
+        UserID: cookieUserID,
         ID: id,
       };
       putByID(savinggoalObject, model, popupAnimationWrapper);
