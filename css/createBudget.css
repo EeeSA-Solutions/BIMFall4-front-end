@@ -133,9 +133,11 @@ button {
   border-top: #fdfdfd00;
   border-left: #fdfdfd00;
   border-right: #fdfdfd00;
+  background: transparent;
 }
 
 .save-btn:hover {
+  background: transparent;
   color: #f1f1f1;
   border-radius: 1px;
   border-color: #f1f1f1;
