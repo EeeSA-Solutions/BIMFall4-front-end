@@ -1,5 +1,10 @@
-.sidebarList > .income {
-  background: linear-gradient(90deg, var(--baseLightGrey), var(--white), var(--white));
+.sidebarList .income {
+  background: linear-gradient(
+    90deg,
+    var(--lightGrey),
+    var(--white),
+    var(--white)
+  );
 }
 
 #incomeForm {
@@ -17,7 +22,8 @@
   padding: 8px;
 }
 
-#incomeForm input, #incomeForm button {
+#incomeForm input,
+#incomeForm button {
   border-radius: 5px;
   width: 50%;
   height: 30px;
@@ -30,6 +36,6 @@
 }
 
 footer {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }

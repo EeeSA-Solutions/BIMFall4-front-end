@@ -15,12 +15,20 @@
       <img src="css/profile.jpg" width=70px height=70px>
       <div id="profileName"></div>
     </div>
-    
-    <div class="textHeader">
-      <div id="dateSelector">Maj 2021</div>
-      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
-      <hr class="line">
       </div>
+      <div class="textHeader">
+        <div id="dateSelector" >
+            <div id="arrowLeft" > 🡰 </div>
+            <div id="Month"></div>
+            <div id="Year"></div>
+            <div id="arrowRight"> 🡲 </div>
+        </div>
+    <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+    <hr class="line">
+    <div class="animation-container">
+      <div class="animation-wrapper"></div>
+    </div>
+</div>
     <div class="sidebarBox">
       <ul class="sidebarList">
         <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
@@ -41,7 +49,7 @@
           <div class="flexbox" id="expense">Expenses so far this month:</div>
           <div class="flexbox" id="remaining">Left in your budget this month: </div>
         </div>
-        <div class="animation-wrapper"></div>
+        
       </div>
     </div>
     <footer>
@@ -64,5 +72,6 @@
 
 <script type="module" src="./js/calculate.js"></script>
 <script type="module" src="./js/homepage.js"></script>
+<script type="module" src="./js/dateSelector.js"></script>
 
 </html>

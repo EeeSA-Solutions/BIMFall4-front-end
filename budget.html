@@ -9,8 +9,10 @@
   <link rel="stylesheet" href="./css/table.css" />
   <link rel="stylesheet" href="./css/forms.css" />
   <link rel="stylesheet" href="./css/popup.css" />
-  <link rel="stylesheet" href="./css/animation.css">
-  
+  <link rel="stylesheet" href="./css/animation.css"/>
+  <link rel="stylesheet" href="./css/createBudget.css"/>
+  <link rel="stylesheet" href="./css/progressBar.css">
+
   <title>BIM-Budget</title>
 </head>
 
@@ -20,10 +22,18 @@
       <img src="css/profile.jpg" width=70px height=70px>
       <div id="profileName"></div>
     </div>
-    <div class="textHeader">
-      <div id="dateSelector">Maj 2021</div>
+        <div class="textHeader">
+          <div id="dateSelector" >
+              <div id="arrowLeft" > 🡰 </div>
+              <div id="Month"></div>
+              <div id="Year"></div>
+              <div id="arrowRight"> 🡲 </div>
+          </div>
       <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
       <hr class="line">
+      <div class="animation-container">
+        <div class="animation-wrapper"></div>
+      </div>
     </div>
     <div class="sidebarBox">
       <ul class="sidebarList">
@@ -39,49 +49,66 @@
     </div>
     <div class="maincontent">
       <div class="maincontentBox">
-        
-        <div class="containerBudget">
-        <div class="addBudget" id="addBudgetID"></div>
-        <div class="summaryBudget" id="summaryBudgetID">
-          <progress class="progress" value="12" max="100" data-label="Total Budget: 1500 / 12.000"></progress>
-          <progress class="progress" value="50" max="100" data-label="Total Fixed Costs: 1500 / 3000"></progress>
-          <progress class="progress" value="0" max="100" data-label="Total Entertainment: 0 / 3000"></progress>
-          <progress class="progress" value="0" max="100" data-label="Total Income: 0 / 3000"></progress>
-          <progress class="progress" value="0" max="100" data-label="Total Saving Goals: 0 / 3000"></progress>
-        </div>
-      </div>
-      <button id="planbudget">Plan budget.</button>
-            <div class="animation-wrapper"></div>
-        
 
-          <form id="forms">
-            <div class="newBudgetLabel">
-              <h2>New budget</h2>
-            </div>
-            <div>
-              <select name="category" id="category">
-                <option value="Groceries">Groceries</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Fixed Cost">Fixed Cost</option>
-              </select>
-            </div>
-            <div>
-              <input placeholder="Budget Amount" type="number" step="0.01" required min="0" />
-            </div>
-            <div>
-              <input type="month" id="start" name="start" />
-            </div>
-            <div>
-              <button type="submit">Send</button>
-            </div>
-            <div class="animation-wrapper"></div>
-          </form> 
-
-
-        </div>
-        <div id="table-div"></div>
-      </div>
+        <!--  -->
+        <div id="create-budget-body">
+          <div class="create-budget-container">
+            <div class="create-budget-content">
+              <header class="header-container">
+                <h2 class="header-name">Name</h2>
+                <h2 class="header-amount">Amount</h2>
+                <h2 class="header-repeat">Repeat</h2>
+              </header>
+              <form id="createBudgetForm" class="createBudget-form">
+                <div class="input-container">
+                  <div class="input-content">
+                    <label class="create-budget-label">Groceries</label>
+                    <input type="number" class="amount-input">
+                    <input type="checkbox" class="checkbox-input">
+                  </div>
+                  <div class="input-content">
+                    <label class="create-budget-label">Entertainment</label>
+                    <input type="number" class="amount-input">
+                    <input type="checkbox" class="checkbox-input">
+                  </div>
+                  <div class="input-content">
+                    <label class="create-budget-label">Fixed Cost</label>
+                    <input type="number" class="amount-input">
+                    <input type="checkbox" class="checkbox-input">
+                  </div><div class="input-content">
+                    <label class="create-budget-label">Transport</label>
+                    <input type="number" class="amount-input">
+                    <input type="checkbox" class="checkbox-input">
+                  </div>
+                  <div class="input-content">
+                    <label class="create-budget-label">Other</label>
+                    <input type="number" class="amount-input">
+                    <input type="checkbox" class="checkbox-input">
+                  </div>
+                </div>
+                <div class="buttons-container">
+                    <button type="button" class="clear-btn" id="clear-btn">Clear</button>
+                    <button type="submit" class="save-btn">Save</button>
+                  </div></div>
+                </form></div></div>
+              
+                <div class="containerBudget">
+                  <div class="addBudget" id="addBudgetID"></div>
+                  <div class="summaryBudget" id="summaryBudgetID"></div>
+                </div>
+                <button id="planbudget">
+                  <p>Plan Budget </p>
+              </button>
+                <div id="table-div"></div>
+              </div>
+              
+              
+              
+           
       <div id="overlay-container"></div>
+
+        </div>
+          </div>
     </div>
     <footer>
       <div class="box">
@@ -99,7 +126,9 @@
       <span>EeesSa Solutions</span>
     </footer>
   </main>
+
 </body>
 <script type="module" src="./js/monthly-budget.js"></script>
-
+<script type="module" src="./js/dateSelector.js"></script>
+<script type="module" src="./js/progressBar.js"></script>
 </html>

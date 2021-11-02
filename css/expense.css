@@ -1,8 +1,13 @@
 .sidebarList > .expense {
-  background: linear-gradient(90deg, var(--baseLightGrey), var(--white), var(--white));
+  background: linear-gradient(
+    90deg,
+    var(--lightGrey),
+    var(--white),
+    var(--white)
+  );
 }
 
 footer {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
