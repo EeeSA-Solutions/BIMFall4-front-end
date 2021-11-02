@@ -1,6 +1,7 @@
 import { cookieUserID } from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
+import { welcomeMessage } from "./homepage.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();

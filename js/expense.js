@@ -1,7 +1,7 @@
 import { cookieUserID } from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
-import {welcomeMessage} from "./homepage.js";
+import { welcomeMessage } from "./homepage.js";
 
 forms.onsubmit = (e) => {
   e.preventDefault();
@@ -13,7 +13,7 @@ forms.onsubmit = (e) => {
     Amount: e.target[3].value,
     UserID: cookieUserID,
   };
-  postByModel(requestObject, "Expense")
+  postByModel(requestObject, "Expense");
 };
 
 getDataByName("Expense").then((data) => {

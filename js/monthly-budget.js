@@ -1,10 +1,9 @@
 import { cookieUserID } from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
+import { welcomeMessage } from "./homepage.js";
 
-
-
-
+// welcomeMessage();
 getDataByName("budget").then((data) => {
   data.forEach((obj) => {
     obj.Date = obj.Date.slice(0, 10);
