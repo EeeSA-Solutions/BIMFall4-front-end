@@ -1,0 +1,35 @@
+.containerBudget{
+  padding-top: 10px;
+  padding-bottom:5px;
+  background: var(--gradeBlue);
+  border-radius: 20px;
+}
+.summaryBudget{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#summaryTotalId{
+  background-color: indianred;
+  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 #ddd inset;
+}
+.summaryBudget1{
+  --width: 370;
+  --height: 32px;
+
+  margin-bottom: 8px;
+  background: var(--color);
+  height: var(--height);
+  width: calc(var(--width)*1px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color:  #000;
+  transition: box-shadow 1s;
+  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset;
+  border-radius: calc(var(--height) * var(--radius));
+  }
+  
+  

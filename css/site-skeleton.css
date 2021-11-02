@@ -1,23 +1,34 @@
 :root {
-  --lightBlue: #7BBEFF;
-  --mediumBlue: #71B9FF;
-  --darkBlue: #56AAFD;
-  --lightBlueGrey: #73B5F5;
-  --lightGrey: #EBEAEA;
-  --mediumGrey: #E3E3E3;
-  --darkGrey: #DFDFDF;
-  --red: #E35454;
-  --white: #FFFFFF;
+  --lightBlue: #7bbeff;
+  --mediumBlue: #71b9ff;
+  --darkBlue: #56aafd;
+  --lightBlueGrey: #73b5f5;
+  --lightGrey: #ebeaea;
+  --mediumGrey: #e3e3e3;
+  --darkGrey: #dfdfdf;
+  --red: #e35454;
+  --white: #ffffff;
   /*EXTRA?*/
-  --textDarkBlue: #36618A;
-  --gradeBlue: linear-gradient(190deg, var(--darkBlue) 33%, var(--mediumBlue) 33%, var(--mediumBlue) 73%, var(--lightBlue) 73%);
-  --gradeGrey: linear-gradient(200deg, var(--darkGrey) 15%, var(--mediumGrey) 15%, var(--mediumGrey) 40%, var(--lightGrey) 40%);
-
+  --textDarkBlue: #36618a;
+  --gradeBlue: linear-gradient(
+    190deg,
+    var(--darkBlue) 33%,
+    var(--mediumBlue) 33%,
+    var(--mediumBlue) 73%,
+    var(--lightBlue) 73%
+  );
+  --gradeGrey: linear-gradient(
+    200deg,
+    var(--darkGrey) 15%,
+    var(--mediumGrey) 15%,
+    var(--mediumGrey) 40%,
+    var(--lightGrey) 40%
+  );
 }
 
 @font-face {
   font-family: "Saira_Expanded";
-  src: url(Saira_Expanded-Light.ttf)
+  src: url(Saira_Expanded-Light.ttf);
 }
 
 * {
@@ -27,9 +38,10 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  width:100%;
+  width: 100%;
   background: var(--white);
 }
 
@@ -42,7 +54,6 @@ main {
 
 .sidebarBox {
   background: var(--gradeGrey);
- 
 }
 
 .sidebarList {
@@ -51,60 +62,61 @@ main {
   padding: 50px;
   list-style: none;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 0px;
   padding-right: 0px;
-  
 }
 
 .sidebarList > li {
   padding: 5%;
   width: 100%;
   padding-right: 0;
-
+  padding-left: 20px;
 }
 
-.sidebarList :hover{
+.sidebarList :hover {
   text-decoration-line: underline;
   cursor: pointer;
 }
 
-.maincontent{
+.maincontent {
   padding: 5%;
 }
 
-.logoHeader{
-    background-color: var(--darkGrey);
-    color: var(--textDarkBlue);
-    padding: 25%;
-    display: flex;
-    /* text-align: justify;
-    justify-content:center; */
-    justify-content: space-between;
-    align-items: center;
-    
+.logoHeader {
+  background-color: var(--darkGrey);
+  color: var(--textDarkBlue);
+  padding-left: 30px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
 }
 
-.textHeader{
+#profileName {
+  padding-left: 10px;
+}
+
+.textHeader {
   color: var(--textDarkBlue);
   padding: 10px;
   display: flex;
+  position: relative;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-#logo{
+#logo {
   text-align: center;
   padding: 15px;
   padding-right: 65px;
   padding-bottom: 40px;
 }
 
-#bim{
+#bim {
   font-size: 0.6em;
 }
 
-
-.line{
+.line {
   background-color: var(--darkGrey);
   width: 90%;
   height: 3px;
@@ -112,13 +124,12 @@ main {
   border-left: none;
   margin: auto;
 }
-.textHeader{
+.textHeader {
   font-weight: bold;
   font-size: 170%;
 }
 
-#dateSelector{
+#dateSelector {
   padding: 15px;
   padding-left: 65px;
 }
-  

@@ -13,7 +13,7 @@ export function welcomeMessage() {
         document.getElementById("profileName").appendChild(welcomeText);
       });
   } else {
-    var notLoggedIn = document.createElement("h3");
+    var notLoggedIn = document.createElement("h5");
     notLoggedIn.appendChild(
       document.createTextNode(
         "You are not logged in. Please login for full use of this site."

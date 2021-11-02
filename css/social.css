@@ -1,23 +1,28 @@
 .sidebarList > .social {
-    background: linear-gradient(90deg, var(--baseLightGrey), var(--white), var(--white));
+  background: linear-gradient(
+    90deg,
+    var(--lightGrey),
+    var(--white),
+    var(--white)
+  );
 }
 
-footer{
-    display:flex;
-    justify-content: space-between;
+footer {
+  display: flex;
+  justify-content: space-between;
 }
 
-#feedback{
-    display: flex;
-    justify-content: center;
-    color:indianred;
+#feedback {
+  display: flex;
+  justify-content: center;
+  color: indianred;
 }
 
-#forms{
-    width: 80%;
+#forms {
+  width: 80%;
 }
 
 label {
-    color: Black;
-    text-shadow: none;
+  color: Black;
+  text-shadow: none;
 }
