@@ -49,7 +49,7 @@ const totalExpenseBudget = (arrayOfBudExp) => {
         totalBud += bud.Amount
     })
     let cat = document.createElement("Div")
-    cat.style.cssText = "--progress: 0; --color:#f60;  --radius: .3; width:430px; font-weight: bold;"
+    cat.style.cssText = "--progress: 0; --color:#f60;  --radius: .3;  font-weight: bold;"
     cat.id = "summaryTotalId"
     cat.className = "summaryBudget1"
     let value = totalExp / totalBud;

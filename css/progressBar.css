@@ -11,8 +11,9 @@
   justify-content: center;
 }
 #summaryTotalId{
+  width: 420px;
   background-color: indianred;
-  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 #ddd inset;
+  box-shadow: calc(420*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset;
 }
 .summaryBudget1{
   --width: 370;
