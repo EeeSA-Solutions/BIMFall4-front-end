@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./css/animation.css"/>
   <link rel="stylesheet" href="./css/createBudget.css"/>
   <link rel="stylesheet" href="./css/progressBar.css">
+
   <title>BIM-Budget</title>
 </head>
 
@@ -21,11 +22,14 @@
       <img src="css/profile.jpg" width=70px height=70px>
       <div id="profileName"></div>
     </div>
-    <div class="textHeader">
-      <div id="dateSelector">Maj 2021</div>
-      <div id="logo">B.I.M <br>
-        <p id="bim">Budget in mind</p>
-      </div>
+        <div class="textHeader">
+          <div id="dateSelector" >
+              <div id="arrowLeft" > 🡰 </div>
+              <div id="Month"></div>
+              <div id="Year"></div>
+              <div id="arrowRight"> 🡲 </div>
+          </div>
+      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
       <hr class="line">
       <div class="animation-container">
         <div class="animation-wrapper"></div>
@@ -125,6 +129,6 @@
 
 </body>
 <script type="module" src="./js/monthly-budget.js"></script>
+<script type="module" src="./js/dateSelector.js"></script>
 <script type="module" src="./js/progressBar.js"></script>
- 
 </html>

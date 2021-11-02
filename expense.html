@@ -12,51 +12,46 @@
     <title>DinBudget</title>
   </head>
 
-  <body>
-    <main>
-      <div class="logoHeader">
-        <img src="css/profile.jpg" width="70px" height="70px" />
-        <div id="profileName"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
+  <link rel="stylesheet" href="./css/expense.css" />
+  <link rel="stylesheet" href="./css/table.css" />
+  <link rel="stylesheet" href="./css/forms.css" />
+  <link rel="stylesheet" href="./css/popup.css" />
+  <link rel="stylesheet" href="./css/animation.css" />
+  <title>DinBudget</title>
+</head>
+
+<body>
+  <main>
+    <div class="logoHeader">
+      <img src="css/profile.jpg" width=70px height=70px>
+      <div id="profileName"></div>
+    </div>
+    <div class="textHeader">
+      <div id="dateSelector" >
+          <div id="arrowLeft" > 🡰 </div>
+          <div id="Month"></div>
+          <div id="Year"></div>
+          <div id="arrowRight"> 🡲 </div>
       </div>
-      <div class="textHeader">
-        <div id="dateSelector">Maj 2021</div>
-        <div id="logo">
-          B.I.M <br />
-          <p id="bim">Budget in mind</p>
-        </div>
-        <hr class="line" />
-        <div class="animation-container">
-          <div class="animation-wrapper"></div>
-        </div>
-      </div>
-      <div class="sidebarBox">
-        <ul class="sidebarList">
-          <li class="homepage" onclick="location.href='./homepage.html'">
-            🏠 Homepage
-          </li>
-          <li class="budget" onclick="location.href = './budget.html'">
-            📈 Budget
-          </li>
-          <li class="expense" onclick="location.href='./expense.html'">
-            💸 Expense
-          </li>
-          <li class="income" onclick="location.href='./income.html'">
-            💰 Income
-          </li>
-          <li class="saving-goal" onclick="location.href= './saving-goal.html'">
-            🚀 Saving Goal
-          </li>
-          <li class="social" onclick="location.href= './social.html'">
-            👥 Social
-          </li>
-          <li class="subscribe" onclick="location.href= './subscription.html'">
-            📌 Subscription
-          </li>
-          <li class="sign-out" onclick="location.href= './index.html'">
-            🚪 Sign out
-          </li>
-        </ul>
-      </div>
+      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+      <hr class="line">
+  </div>
+    <div class="sidebarBox">
+      <ul class="sidebarList">
+        <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
+        <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
+        <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
+        <li class="income" onclick="location.href='./income.html'">💰 Income</li>
+        <li class="saving-goal" onclick="location.href= './saving-goal.html'">🚀 Saving Goal</li>
+        <li class="social" onclick="location.href= './social.html'">👥 Social</li>
+        <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
+        <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
+      </ul>
+    </div>
       <div class="maincontent">
         <div class="maincontentBox">
           <form id="forms">
@@ -113,9 +108,12 @@
             </div>
           </div>
         </div>
-        <span>EeesSa Solutions</span>
-      </footer>
-    </main>
-    <script type="module" src="./js/expense.js"></script>
-  </body>
+      </div>
+      <span>EeesSa Solutions</span>
+    </footer>
+  </main>
+  <script type="module" src="./js/expense.js"></script>
+  <script type="module" src="./js/dateSelector.js"></script>
+</body>
+
 </html>

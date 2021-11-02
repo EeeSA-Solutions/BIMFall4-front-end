@@ -132,4 +132,12 @@ main {
 #dateSelector {
   padding: 15px;
   padding-left: 65px;
+  width: 15em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#arrowLeft, #arrowRight:hover{
+  cursor: pointer;
 }
