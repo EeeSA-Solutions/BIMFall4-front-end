@@ -1,7 +1,6 @@
 import generateTable from "./tableGenerator.js";
 import { getDataByName } from "./fetches.js"
 import { feedbackResponse } from "./workhorse.js"
-import {welcomeMessage} from "./homepage.js";
 import { cookieUserID } from "./cookiecutter.js";
 import {token} from "./cookiecutter.js"
 forms.onsubmit = (e) => {

@@ -10,31 +10,6 @@ footer {
 width: auto;
 }
 
-.summaryBudget{
-  background: rgb(86,170,253);
-  background: var(--gradeBlue);
-  border-radius: 25px;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--lightBlue);
-  width:100%;
-  height: 100%;
-}
-.progress::before{
-  content: attr(data-label);
-  vertical-align: 0;
-  
-}
-.progress{
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  width: 80%;
-  height: 100%;
-}
-
 .underText{
   padding-top: 15px;
   font-size: 50%;

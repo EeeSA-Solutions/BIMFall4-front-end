@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="./css/forms.css" />
   <link rel="stylesheet" href="./css/popup.css" />
   <link rel="stylesheet" href="./css/animation.css">
-  
+  <link rel="stylesheet" href="./css/progressBar.css">
+  <script type="text/javascript" src="./js/TESTPROGRESS.js"></script>
   <title>BIM-Budget</title>
 </head>
 
@@ -22,7 +23,9 @@
     </div>
     <div class="textHeader">
       <div id="dateSelector">Maj 2021</div>
-      <div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
+      <div id="logo">B.I.M <br>
+        <p id="bim">Budget in mind</p>
+      </div>
       <hr class="line">
     </div>
     <div class="sidebarBox">
@@ -39,49 +42,45 @@
     </div>
     <div class="maincontent">
       <div class="maincontentBox">
-        
+
         <div class="containerBudget">
-        <div class="addBudget" id="addBudgetID"></div>
-        <div class="summaryBudget" id="summaryBudgetID">
-          <progress class="progress" value="12" max="100" data-label="Total Budget: 1500 / 12.000"></progress>
-          <progress class="progress" value="50" max="100" data-label="Total Fixed Costs: 1500 / 3000"></progress>
-          <progress class="progress" value="0" max="100" data-label="Total Entertainment: 0 / 3000"></progress>
-          <progress class="progress" value="0" max="100" data-label="Total Income: 0 / 3000"></progress>
-          <progress class="progress" value="0" max="100" data-label="Total Saving Goals: 0 / 3000"></progress>
-        </div>
-      </div>
-      <button id="planbudget">Plan budget.</button>
-            <div class="animation-wrapper"></div>
+          <div class="addBudget" id="addBudgetID"></div>
+          <div class="summaryBudget" id="summaryBudgetID">
+          </div>
         
-
-          <form id="forms">
-            <div class="newBudgetLabel">
-              <h2>New budget</h2>
-            </div>
-            <div>
-              <select name="category" id="category">
-                <option value="Groceries">Groceries</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Fixed Cost">Fixed Cost</option>
-              </select>
-            </div>
-            <div>
-              <input placeholder="Budget Amount" type="number" step="0.01" required min="0" />
-            </div>
-            <div>
-              <input type="month" id="start" name="start" />
-            </div>
-            <div>
-              <button type="submit">Send</button>
-            </div>
-            <div class="animation-wrapper"></div>
-          </form> 
-
-
         </div>
-        <div id="table-div"></div>
+        <button id="planbudget">Plan budget.</button>
+        <div class="animation-wrapper"></div>
+
+
+        <form id="forms">
+          <div class="newBudgetLabel">
+            <h2>New budget</h2>
+          </div>
+          <div>
+            <select name="category" id="category">
+              <option value="Groceries">Groceries</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Fixed Cost">Fixed Cost</option>
+            </select>
+          </div>
+          <div>
+            <input placeholder="Budget Amount" type="number" step="0.01" required min="0" />
+          </div>
+          <div>
+            <input type="month" id="start" name="start" />
+          </div>
+          <div>
+            <button type="submit">Send</button>
+          </div>
+          <div class="animation-wrapper"></div>
+        </form>
+
+
       </div>
-      <div id="overlay-container"></div>
+      <div id="table-div"></div>
+    </div>
+    <div id="overlay-container"></div>
     </div>
     <footer>
       <div class="box">
@@ -99,7 +98,9 @@
       <span>EeesSa Solutions</span>
     </footer>
   </main>
+
 </body>
 <script type="module" src="./js/monthly-budget.js"></script>
-
+<script type="module" src="./js/progressBar.js"></script>
+ 
 </html>
