@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+.create-budget-container {
+  width: 25rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+
+  background: rgb(86, 170, 253);
+  background: linear-gradient(
+    190deg,
+    rgba(86, 170, 253, 1) 33%,
+    rgba(113, 185, 255, 1) 33%,
+    rgba(105, 179, 250, 1) 73%,
+    rgba(123, 190, 255, 1) 73%
+  );
+}
+.create-budget-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.header-container > h2 {
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+.input-container {
+  height: 10rem;
+  overflow: scroll;
+}
