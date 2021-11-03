@@ -15,7 +15,7 @@ getDataByName("Calculate")
         res[1].forEach(budgetElement => {
             let cat = document.createElement("Div")
             cat.style.cssText = "--progress: 0; --color:#f60; --radius: .3"
-            cat.id = budgetElement.Category
+            cat.id = "Category"
             cat.className = "summaryBudget1"
             cat.innerHTML = `${budgetElement.Category} 0/${budgetElement.Amount}`
             res[0].forEach(expele => {

@@ -1,7 +1,7 @@
 .containerBudget{
-  
   background: var(--gradeBlue);
   border-radius: 20px;
+  
 }
 .summaryBudget{
   
@@ -15,12 +15,13 @@
   
   width: 420px;
   background-color: indianred;
-  box-shadow: calc(420*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset;
+  box-shadow: calc(420*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
 }
 .summaryBudget1{
   --width: 370;
   --height: 32px;
 
+  
   margin-bottom: 15px;
   background: var(--color);
   height: var(--height);
@@ -31,7 +32,7 @@
   justify-content: center;
   color:  #000;
   transition: box-shadow 1s;
-  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset;
+  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
   border-radius: calc(var(--height) * var(--radius));
   }
   
