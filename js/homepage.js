@@ -1,12 +1,12 @@
-import {cookieUserID} from "./cookiecutter.js";
+import { cookieUserID } from "./cookiecutter.js";
 import { getDataByName } from "./fetches.js";
-
 
 export function welcomeMessage() {
   if (cookieUserID != "") {
-    getDataByName("user").then((data) => {
-      return data.FirstName;
-    })
+    getDataByName("user")
+      .then((data) => {
+        return data.FirstName;
+      })
       .then((result) => {
         var welcomeText = document.createElement("h3");
         welcomeText.appendChild(document.createTextNode(result));

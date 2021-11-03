@@ -4,7 +4,7 @@ import { popupConfirmation } from "./popupConfirmation.js";
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
-  dotAnimation.show();
+  // dotAnimation.show();
 
   return fetch(`https://localhost:44357/api/${name}`, {
     method: "GET",
@@ -20,19 +20,19 @@ export const getDataByName = (name) => {
       //dotAnimation.errorMessage("Unable to retrieve data");
     })
     .finally(() => {
-      dotAnimation.hide();
+      // dotAnimation.hide();
     });
 };
 
 export const deleteByID = (model, id) => {
   popupConfirmation(
     () => {
-      dotAnimation.show();
+      // dotAnimation.show();
       fetch("https://localhost:44357/api/" + model, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(id),
       })
@@ -43,7 +43,7 @@ export const deleteByID = (model, id) => {
           //dotAnimation.errorMessage("Unable to delete");
         })
         .finally(() => {
-          dotAnimation.hide();
+          // dotAnimation.hide();
         });
     },
     () => {
@@ -58,7 +58,7 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(wantedstatus),
   });
@@ -95,8 +95,8 @@ export const putByID = (requestObject, model, parent) => {
 };
 
 export const postByModel = (requestObject, model) => {
-  dotAnimation.deleteMessage();
-  dotAnimation.show();
+  // dotAnimation.deleteMessage();
+  // dotAnimation.show();
   fetch("https://localhost:44357/api/" + model, {
     method: "POST",
     headers: {
@@ -109,9 +109,9 @@ export const postByModel = (requestObject, model) => {
       window.location.reload();
     })
     .catch(() => {
-      dotAnimation.errorMessage("Unable to add");
+      // dotAnimation.errorMessage("Unable to add");
     })
     .finally(() => {
-      dotAnimation.hide();
+      // dotAnimation.hide();
     });
 };
