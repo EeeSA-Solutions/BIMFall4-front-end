@@ -1,27 +1,25 @@
 .containerBudget{
   background: var(--gradeBlue);
   border-radius: 20px;
-  
 }
 .summaryBudget{
-  
+  font-size: x-large;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 #summaryTotalId{
+  text-decoration: underline;
+  width: 900;
   margin-top: 15px;
-  
-  width: 420px;
-  background-color: indianred;
-  box-shadow: calc(420*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
+  box-shadow: calc(900 *(1 - var(--progress, 0))*-1px) 0 0 white inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
 }
 .summaryBudget1{
-  --width: 370;
-  --height: 32px;
+  --width: 700;
+  --height: 40px;
 
-  
   margin-bottom: 15px;
   background: var(--color);
   height: var(--height);
@@ -32,7 +30,7 @@
   justify-content: center;
   color:  #000;
   transition: box-shadow 1s;
-  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 #ddd inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
+  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 white inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
   border-radius: calc(var(--height) * var(--radius));
   }
   

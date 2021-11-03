@@ -15,7 +15,6 @@ getDataByName("Calculate")
         res[1].forEach(budgetElement => {
             let cat = document.createElement("Div")
             cat.style.cssText = "--progress: 0; --color:#f60; --radius: .3"
-            cat.id = "Category"
             cat.className = "summaryBudget1"
             cat.innerHTML = `${budgetElement.Category} 0/${budgetElement.Amount}`
             res[0].forEach(expele => {
@@ -33,7 +32,7 @@ getDataByName("Calculate")
     })
 
 function getColor(value) {
-    return (value < 0.6) ? '#0c6' : ((value < 1) ? '#f63' : '#c03');
+    return (value < 0.6) ? 'var(--progressbarBlue)' : ((value < 1) ? 'var(--progressbarOrange)' : 'var(--progressbarRed)');
 }
 
 const totalExpenseBudget = (arrayOfBudExp) => {
