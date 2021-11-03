@@ -1,6 +1,7 @@
 import { cookieUserID } from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
+import { monthArr } from "./dateSelector.js";
 import { welcomeMessage } from "./homepage.js";
 
 forms.onsubmit = (e) => {
@@ -17,8 +18,14 @@ forms.onsubmit = (e) => {
 };
 
 getDataByName("Expense").then((data) => {
+  debugger;
   data.forEach((obj) => {
     obj.Date = obj.Date.slice(0, 10);
+
+    obj.Month = obj.Date.slice(5, 7);
+    obj.Month = parseInt(obj.Month, 10);
+    obj.Year = obj.Date.slice(0, 4);
+    
     obj["Edit"] = obj;
     obj["Delete"] = obj.ID;
     delete obj["ID"];

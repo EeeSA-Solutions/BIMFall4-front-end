@@ -1,4 +1,4 @@
-const monthArr = [
+export const monthArr = [
     'January',
     'February',
     'March',
