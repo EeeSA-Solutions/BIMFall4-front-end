@@ -48,15 +48,17 @@ const totalExpenseBudget = (arrayOfBudExp) => {
     arrayOfBudExp[1].forEach(bud => {
         totalBud += bud.Amount
     })
-    let cat = document.createElement("Div")
-    cat.style.cssText = "--progress: 0; --color:#f60;  --radius: .3;  font-weight: bold;"
-    cat.id = "summaryTotalId"
-    cat.className = "summaryBudget1"
-    let value = totalExp / totalBud;
-    let value2 = value > 1 ? 1 : value
-    cat.style.setProperty('--progress', value2)
-    cat.style.setProperty('--color', getColor(value2))
-    const parentDiv = document.getElementById("summaryBudgetID")
-    cat.innerHTML = `Total: ${totalExp}/${totalBud}`
-    parentDiv.appendChild(cat)
+    if (totalBud > 0) {
+        let cat = document.createElement("Div")
+        cat.style.cssText = "--progress: 0; --color:#f60;  --radius: .3;  font-weight: bold;"
+        cat.id = "summaryTotalId"
+        cat.className = "summaryBudget1"
+        let value = totalExp / totalBud;
+        let value2 = value > 1 ? 1 : value
+        cat.style.setProperty('--progress', value2)
+        cat.style.setProperty('--color', getColor(value2))
+        const parentDiv = document.getElementById("summaryBudgetID")
+        cat.innerHTML = `Total: ${totalExp}/${totalBud}`
+        parentDiv.appendChild(cat)
+    }
 }
