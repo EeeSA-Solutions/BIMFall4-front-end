@@ -4,7 +4,7 @@ import { popupConfirmation } from "./popupConfirmation.js";
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
-  dotAnimation.show();
+  // dotAnimation.show();
 
   return fetch(`https://localhost:44357/api/${name}`, {
     method: "GET",
@@ -20,7 +20,7 @@ export const getDataByName = (name) => {
       //dotAnimation.errorMessage("Unable to retrieve data");
     })
     .finally(() => {
-      dotAnimation.hide();
+      // dotAnimation.hide();
     });
 };
 
@@ -32,7 +32,7 @@ export const deleteByID = (model, id) => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(id),
       })
@@ -58,7 +58,7 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(wantedstatus),
   });
