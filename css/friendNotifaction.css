@@ -1,21 +1,22 @@
-#notification1{
-    display: inline;
-
-justify-content: center;
-align-items: center;
-position: absolute;
-left: 100px;
-bottom:35px;
-font-size: small;
+#notificationDiv{
+margin-left: 4px;
+display: inline-block;
 border-radius: 25px;
 color: white;
-margin:0;
-width:1em;
-height: 1em;
+width:0.7em;
+height: 0.7em;
 background-color: indianred;
-text-align: center;
+animation: notification 1s alternate infinite linear;
+}   
+
+#notificationText{
+    font-size: 10px;
+    text-align:center;
 }
 
 @keyframes notification {
-    
+    0%{transform:translateY(-3px)}
+
+    100%{transform:translateY(-10px)}
+
 }
