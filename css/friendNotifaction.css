@@ -1,0 +1,21 @@
+#notification1{
+    display: inline;
+
+justify-content: center;
+align-items: center;
+position: absolute;
+left: 100px;
+bottom:35px;
+font-size: small;
+border-radius: 25px;
+color: white;
+margin:0;
+width:1em;
+height: 1em;
+background-color: indianred;
+text-align: center;
+}
+
+@keyframes notification {
+    
+}
