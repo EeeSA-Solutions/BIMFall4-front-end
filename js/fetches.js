@@ -27,7 +27,7 @@ export const getDataByName = (name) => {
 export const deleteByID = (model, id) => {
   popupConfirmation(
     () => {
-      dotAnimation.show();
+      // dotAnimation.show();
       fetch("https://localhost:44357/api/" + model, {
         method: "DELETE",
         headers: {
@@ -43,7 +43,7 @@ export const deleteByID = (model, id) => {
           //dotAnimation.errorMessage("Unable to delete");
         })
         .finally(() => {
-          dotAnimation.hide();
+          // dotAnimation.hide();
         });
     },
     () => {
@@ -95,8 +95,8 @@ export const putByID = (requestObject, model, parent) => {
 };
 
 export const postByModel = (requestObject, model) => {
-  dotAnimation.deleteMessage();
-  dotAnimation.show();
+  // dotAnimation.deleteMessage();
+  // dotAnimation.show();
   fetch("https://localhost:44357/api/" + model, {
     method: "POST",
     headers: {
@@ -109,9 +109,9 @@ export const postByModel = (requestObject, model) => {
       window.location.reload();
     })
     .catch(() => {
-      dotAnimation.errorMessage("Unable to add");
+      // dotAnimation.errorMessage("Unable to add");
     })
     .finally(() => {
-      dotAnimation.hide();
+      // dotAnimation.hide();
     });
 };

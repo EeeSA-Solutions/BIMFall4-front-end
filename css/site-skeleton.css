@@ -24,6 +24,27 @@
     var(--mediumGrey) 40%,
     var(--lightGrey) 40%
   );
+  --progressbarBlue: repeating-linear-gradient(
+    45deg,
+    #7cadff,
+    #7cadff 15px,
+    #99beff 15px,
+    #99beff 30px
+  );
+  --progressbarOrange: repeating-linear-gradient(
+    45deg,
+    #ffae4a,
+    #ffae4a 15px,
+    #fec57e 15px,
+    #fec57e 30px
+  );
+  --progressbarRed: repeating-linear-gradient(
+    45deg,
+    #ff9898,
+    #ff9898 15px,
+    #ffb6b6 15px,
+    #ffb6b6 30px
+  );
 }
 
 @font-face {
