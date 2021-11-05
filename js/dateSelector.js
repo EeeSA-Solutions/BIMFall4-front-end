@@ -1,3 +1,5 @@
+import { monthCookie, yearCookie } from "./cookiecutter.js";
+
 export const monthArr = [
     'January',
     'February',
@@ -12,8 +14,25 @@ export const monthArr = [
     'November',
     'December']
     
-let monthToday = new Date().getMonth()
-let yearToday = new Date().getFullYear()
+// let monthToday = new Date().getMonth()
+// let yearToday = new Date().getFullYear()
+export let monthToday;
+export let yearToday;
+// const getMonthCookie = monthCookie;
+// const getYearCookie = yearCookie;
+
+function SetDateCookie(){
+    if(!monthCookie && !yearCookie){
+        monthToday = new Date().getMonth()
+        yearToday = new Date().getFullYear()
+    }else {
+        monthToday = monthCookie;
+        yearToday = yearCookie;
+    }
+}
+SetDateCookie();
+
+export let fullDate;
 
 var currentMonth = document.getElementById("Month")
 var currentYear = document.getElementById("Year")
@@ -24,6 +43,7 @@ var LeftArrow = document.getElementById("arrowLeft")
 currentMonth.append(`${monthArr[monthToday]}`)
 currentYear.append(`${yearToday}`)
 
+
 function writeMonth(){
     currentMonth.innerHTML = `${monthArr[monthToday]}` 
 }
@@ -33,6 +53,9 @@ function writeYear(){
 }
 
 function arrowLeft(){
+    monthToday = parseInt(monthToday)
+    yearToday = parseInt(yearToday)
+
     if(monthToday < 1){
         monthToday = 11
         yearToday = yearToday -1
@@ -42,12 +65,21 @@ function arrowLeft(){
     }
     else{
         monthToday = monthToday -1
+
         writeMonth()
         writeYear()
     }
+    fullDate = new Date(`${monthToday+1} 01, ${yearToday}`);
+    setCookie("Month", monthToday);
+    setCookie("Year", yearToday);
+    // console.log(dateCookie);
+    console.log(fullDate)
+    // location.reload();
 }
 
 function arrowRight(){
+    monthToday = parseInt(monthToday);
+    yearToday = parseInt(yearToday)
     if(monthToday > 10){
         monthToday = 0
         yearToday = yearToday +1
@@ -57,10 +89,20 @@ function arrowRight(){
     }
     else{
         monthToday = monthToday +1
+
         writeMonth()
         writeYear()
     }
+    fullDate = new Date(`${monthToday+1} 01, ${yearToday}`);
+    setCookie("Month", monthToday);
+    setCookie("Year", yearToday);
+
+    location.reload();
 }
+
+function setCookie(cname, cvalue) {
+    document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+  }
 
 LeftArrow.addEventListener("click", arrowLeft)
 rightArrow.addEventListener("click", arrowRight)

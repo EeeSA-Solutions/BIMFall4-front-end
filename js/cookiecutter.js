@@ -15,4 +15,6 @@ function getCookie(cname) {
 }
 export var cookieUserID = getCookie("User");
 export var token =  getCookie("Token")
+export var monthCookie = getCookie("Month");
+export var yearCookie = getCookie("Year");
 // export default cookieUserID;
