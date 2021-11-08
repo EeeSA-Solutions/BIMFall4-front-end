@@ -1,12 +1,14 @@
 import { token } from "./cookiecutter.js";
 import { dotAnimation } from "./animations.js";
 import { popupConfirmation } from "./popupConfirmation.js";
+import { fullDate } from "./dateSelector.js";
+
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
   // dotAnimation.show();
 
-  return fetch(`https://localhost:44357/api/${name}`, {
+  return fetch(`https://localhost:44357/api/${name}/?date=${fullDate}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
