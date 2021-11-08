@@ -1,19 +1,20 @@
 import { monthCookie, yearCookie } from "./cookiecutter.js";
 
 export const monthArr = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December']
-    
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 // let monthToday = new Date().getMonth()
 // let yearToday = new Date().getFullYear()
 export let monthToday;
@@ -21,88 +22,86 @@ export let yearToday;
 // const getMonthCookie = monthCookie;
 // const getYearCookie = yearCookie;
 
-function SetDateCookie(){
-    if(!monthCookie && !yearCookie){
-        monthToday = new Date().getMonth()
-        yearToday = new Date().getFullYear()
-    }else {
-        monthToday = monthCookie;
-        yearToday = yearCookie;
-    }
+function GetDateFromCookie() {
+  if (!monthCookie && !yearCookie) {
+    monthToday = new Date().getMonth();
+    yearToday = new Date().getFullYear();
+  } else {
+    monthToday = monthCookie;
+    yearToday = yearCookie;
+  }
 }
-SetDateCookie();
+GetDateFromCookie();
 
-export let fullDate;
+var currentMonth = document.getElementById("Month");
+var currentYear = document.getElementById("Year");
 
-var currentMonth = document.getElementById("Month")
-var currentYear = document.getElementById("Year")
+var rightArrow = document.getElementById("arrowRight");
+var LeftArrow = document.getElementById("arrowLeft");
 
-var rightArrow = document.getElementById("arrowRight")
-var LeftArrow = document.getElementById("arrowLeft")
+currentMonth.append(`${monthArr[monthToday]}`);
+currentYear.append(`${yearToday}`);
 
-currentMonth.append(`${monthArr[monthToday]}`)
-currentYear.append(`${yearToday}`)
-
-
-function writeMonth(){
-    currentMonth.innerHTML = `${monthArr[monthToday]}` 
+function writeMonth() {
+  currentMonth.innerHTML = `${monthArr[monthToday]}`;
 }
 
-function writeYear(){
-    currentYear.innerHTML = `${yearToday}`
+function writeYear() {
+  currentYear.innerHTML = `${yearToday}`;
 }
 
-function arrowLeft(){
-    monthToday = parseInt(monthToday)
-    yearToday = parseInt(yearToday)
+function arrowLeft() {
+  monthToday = parseInt(monthToday);
+  yearToday = parseInt(yearToday);
 
-    if(monthToday < 1){
-        monthToday = 11
-        yearToday = yearToday -1
+  if (monthToday < 1) {
+    monthToday = 11;
+    yearToday = yearToday - 1;
 
-        writeMonth()
-        writeYear()
-    }
-    else{
-        monthToday = monthToday -1
+    writeMonth();
+    writeYear();
+  } else {
+    monthToday = monthToday - 1;
 
-        writeMonth()
-        writeYear()
-    }
-    fullDate = new Date(`${monthToday+1} 01, ${yearToday}`);
-    setCookie("Month", monthToday);
-    setCookie("Year", yearToday);
-    // console.log(dateCookie);
-    console.log(fullDate)
-    // location.reload();
+    writeMonth();
+    writeYear();
+  }
+
+  setCookie("Month", monthToday);
+  setCookie("Year", yearToday);
+
+  location.reload();
 }
 
-function arrowRight(){
-    monthToday = parseInt(monthToday);
-    yearToday = parseInt(yearToday)
-    if(monthToday > 10){
-        monthToday = 0
-        yearToday = yearToday +1
+function arrowRight() {
+  monthToday = parseInt(monthToday);
+  yearToday = parseInt(yearToday);
+  if (monthToday > 10) {
+    monthToday = 0;
+    yearToday = yearToday + 1;
 
-        writeMonth()
-        writeYear()
-    }
-    else{
-        monthToday = monthToday +1
+    writeMonth();
+    writeYear();
+  } else {
+    monthToday = monthToday + 1;
 
-        writeMonth()
-        writeYear()
-    }
-    fullDate = new Date(`${monthToday+1} 01, ${yearToday}`);
-    setCookie("Month", monthToday);
-    setCookie("Year", yearToday);
+    writeMonth();
+    writeYear();
+  }
 
-    location.reload();
+  setCookie("Month", monthToday);
+  setCookie("Year", yearToday);
+
+  location.reload();
 }
 
 function setCookie(cname, cvalue) {
-    document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-  }
+  document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+}
 
-LeftArrow.addEventListener("click", arrowLeft)
-rightArrow.addEventListener("click", arrowRight)
+let newMonthToday = parseInt(monthToday);
+let newYearToday = parseInt(yearToday);
+export var fullDate = `${newMonthToday + 1}/${newYearToday}`.toString();
+
+LeftArrow.addEventListener("click", arrowLeft);
+rightArrow.addEventListener("click", arrowRight);

@@ -2,25 +2,18 @@ import { token } from "./cookiecutter.js";
 import { dotAnimation } from "./animations.js";
 import { popupConfirmation } from "./popupConfirmation.js";
 import { fullDate } from "./dateSelector.js";
-import { monthToday, yearToday } from "./dateSelector.js";
+
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
   // dotAnimation.show();
-  const requestObject = new Date(`${yearToday}-0${monthToday+1}-01T03:24:00`)
-  let newMonthToday = parseInt(monthToday);
-  let newYearToday = parseInt(yearToday)
-  var fullDate = new Date(`${newMonthToday+1} 01, ${newYearToday}`);
-  fullDate = fullDate.toString();
-  return fetch(`https://localhost:44357/api/${name}`, {
-    
+
+  return fetch(`https://localhost:44357/api/${name}/?date=${fullDate}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
-      Date: fullDate,
     },
-    //body: JSON.stringify(requestObject),
   })
     .then((response) => {
       return response.json();
