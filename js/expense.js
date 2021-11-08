@@ -13,7 +13,8 @@ forms.onsubmit = (e) => {
     Name: e.target[1].value,
     Date: e.target[2].value,
     Amount: e.target[3].value,
-    UserID: cookieUserID
+    UserID: cookieUserID,
+    Repeat: e.target[4].checked,
   };
   postByModel(requestObject, "Expense");
 };

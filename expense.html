@@ -43,11 +43,12 @@
     </div>
       <div class="maincontent">
         <div class="maincontentBox">
+          <div class="form-container">
           <form id="forms">
             <div class="newBudgetLabel">
               <h2>New expense</h2>
             </div>
-            <div>
+            <div class="select-wrapper" >
               <select name="category" id="category">
                 <option value="Groceries">Groceries</option>
                 <option value="Entertainment">Entertainment</option>
@@ -59,7 +60,7 @@
             <div>
               <input placeholder="Expense Name" type="text" required />
             </div>
-            <div>
+            <div class="label-input-wrapper">
               <label for="date">Date</label>
               <input placeholder="Transaction date" type="date" required />
             </div>
@@ -73,9 +74,16 @@
               />
             </div>
             <div>
+              <label for="checkbox">
+                <h2>Repeat</h2>
+                <input id="checkbox" class="checkbox-repeat" type="checkbox">
+              </label>
+            </div>
+            <div>
               <button type="submit">Send</button>
             </div>
           </form>
+        </div>
           <div id="expenseDiv"></div>
           <div id="table-div"></div>
           <div id="overlay-container"></div>

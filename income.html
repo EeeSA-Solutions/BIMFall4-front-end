@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/table.css" />
     <link rel="stylesheet" href="./css/popup.css" />
     <link rel="stylesheet" href="./css/animation.css" />
+    <link rel="stylesheet" href="./css/createBudget.css">
     <title>DinBudget</title>
   </head>
 <body>
@@ -41,11 +42,13 @@
         <li class="social" onclick="location.href= './social.html'">👥 Social</li>
         <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
         <li class="sign-out" onclick="location.href= './Landingpage.html'">🚪 Sign out</li>
+
       </ul>
     </div>
       <div class="maincontent">
         <div class="maincontentBox">
-          <form id="forms">
+          <div class="form-container">
+              <form id="forms">
             <div class="newBudgetLabel">
               <h2>New income</h2>
             </div>
@@ -61,7 +64,7 @@
                 min="1"
               />
             </div>
-            <div>
+            <div class="label-input-wrapper">
               <label for="date">Date</label>
               <input
                 id="date"
@@ -72,9 +75,16 @@
               />
             </div>
             <div>
+              <label for="checkbox">
+                <h2>Repeat</h2>
+                <input id="checkbox" class="checkbox-repeat" type="checkbox">
+              </label>
+            </div>
+            <div>
               <button type="submit">Send</button>
             </div>
           </form>
+        </div>
           <div id="table-div">
             <div id="overlay-container"></div>
           </div>
