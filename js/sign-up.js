@@ -1,6 +1,7 @@
 registerForm.onsubmit = (e) => {
   e.preventDefault();
 
+  if(e.target[3].value === e.target[4].value){
   let requestObject = {
     FirstName: e.target[0].value,
     LastName: e.target[1].value,
@@ -23,4 +24,8 @@ registerForm.onsubmit = (e) => {
         register_swipe();
       }
     })
+  }
+  else{
+    alert('Passwords do not match!')
+  }
 };
