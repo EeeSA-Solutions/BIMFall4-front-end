@@ -1,5 +1,6 @@
 import { cookieUserID } from "./cookiecutter.js";
 import { getDataByName } from "./fetches.js";
+import {friendRequests} from "./friendNotification.js";
 
 export function welcomeMessage() {
   if (cookieUserID != "") {
@@ -23,3 +24,4 @@ export function welcomeMessage() {
   }
 }
 welcomeMessage();
+friendRequests();
