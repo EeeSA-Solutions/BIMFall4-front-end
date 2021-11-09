@@ -2,18 +2,27 @@ import { cookieUserID } from "./cookiecutter.js";
 import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
 import { welcomeMessage } from "./homepage.js";
+import { popupConfirmation } from "./popupConfirmation.js";
 
 // welcomeMessage();
-getDataByName("budget").then((data) => {
-  data.forEach((obj) => {
-    obj.Date = obj.Date.slice(0, 10);
-    //delete and edit columns with the important value
-    obj["Edit"] = obj;
-    obj["Delete"] = obj.ID;
-    delete obj["ID"];
+const renderTable = () => {
+  getDataByName("budget").then((data) => {
+    const newData = data.map((obj) => {
+      return manipulateRequestObject(obj);
+    });
+    generateTable(newData, "table-div", "budget");
   });
-  generateTable(data, "table-div", "budget");
-});
+};
+const manipulateRequestObject = (obj) => {
+  obj.Date = obj.Date.slice(0, 7);
+  //delete and edit columns with the important value
+  obj["Edit"] = obj;
+  obj["Delete"] = obj.ID;
+  delete obj["ID"];
+  return obj;
+};
+
+renderTable();
 
 const planBtn = document.getElementById("planbudget");
 const createBudgetBody = document.getElementById("create-budget-body");
@@ -61,11 +70,13 @@ createBudgetForm.onsubmit = (e) => {
       Repeat: e.target[9].checked,
     },
   ];
-
   reqObjects.forEach((obj) => {
     if (obj.Amount > 0) {
-      console.log(obj);
-      postByModel(obj, "budget");
+      postByModel(obj, "budget").then((res) => {
+        if (res?.status === 405) {
+          overrideConfirm(obj);
+        }
+      });
     }
   });
 
@@ -87,3 +98,17 @@ planBtn.addEventListener("click", (e) => {
   planBtn.style.display = "none";
   containerBudget.style.display = "none";
 });
+
+const overrideConfirm = (obj) => {
+  obj["Override"] = true;
+  popupConfirmation(
+    () => {
+      postByModel(obj, "budget");
+      renderTable();
+    },
+    () => {
+      return;
+    },
+    `Budget for ${obj.Category} already exist for this month, do you want to override it?`
+  );
+};
