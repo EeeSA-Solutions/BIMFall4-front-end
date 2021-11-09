@@ -3,7 +3,7 @@ import generateTable from "./tableGenerator.js";
 import { getDataByName, postByModel } from "./fetches.js";
 import { welcomeMessage } from "./homepage.js";
 import { popupConfirmation } from "./popupConfirmation.js";
-
+import { fullDate } from "./dateSelector.js";
 // welcomeMessage();
 const renderTable = () => {
   getDataByName("budget").then((data) => {
@@ -38,35 +38,35 @@ createBudgetForm.onsubmit = (e) => {
       Category: "Groceries",
       Amount: e.target[0].value,
       UserID: cookieUserID,
-      Date: yearMonth,
+      Date: fullDate,
       Repeat: e.target[1].checked,
     },
     {
       Category: "Entertainment",
       Amount: e.target[2].value,
       UserID: cookieUserID,
-      Date: yearMonth,
+      Date: fullDate,
       Repeat: e.target[3].checked,
     },
     {
       Category: "Fixed Cost",
       Amount: e.target[4].value,
       UserID: cookieUserID,
-      Date: yearMonth,
+      Date: fullDate,
       Repeat: e.target[5].checked,
     },
     {
       Category: "Transport",
       Amount: e.target[6].value,
       UserID: cookieUserID,
-      Date: yearMonth,
+      Date: fullDate,
       Repeat: e.target[7].checked,
     },
     {
       Category: "Other",
       Amount: e.target[8].value,
       UserID: cookieUserID,
-      Date: yearMonth,
+      Date: fullDate,
       Repeat: e.target[9].checked,
     },
   ];
