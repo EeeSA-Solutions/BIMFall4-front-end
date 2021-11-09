@@ -63,7 +63,9 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(wantedstatus),
-  });
+  }).then (() => {
+    window.location.reload()
+  })
 };
 
 export const putByID = (requestObject, model, parent) => {

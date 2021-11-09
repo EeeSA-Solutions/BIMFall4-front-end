@@ -5,7 +5,6 @@ import { cookieUserID } from "./cookiecutter.js";
 import {token} from "./cookiecutter.js"
 import { welcomeMessage } from "./homepage.js";
 forms.onsubmit = (e) => {
-  e.preventDefault();
 
   let requestObject = {
     ID: cookieUserID,
@@ -52,7 +51,19 @@ function friendListSorter(list) {
       friends.push(obj)
     }
   })
-  generateTable(sent, "sent", "Friend")
-  generateTable(received, "received", "Friend")
-  generateTable(friends, "friends", "Friend")
+  if(sent.length){
+    let sentCaption = document.getElementById("caption-sent")
+    sentCaption.style.visibility = "unset"
+    generateTable(sent, "sent", "Friend")
+  }
+  if(received.length){
+    let receivedCaption = document.getElementById("caption-received")
+    receivedCaption.style.visibility = "unset"
+    generateTable(received, "received", "Friend")
+  }
+  if(friends.length){
+    let friendCaption = document.getElementById("caption-friend")
+    friendCaption.style.visibility = "unset"
+    generateTable(friends, "friends", "Friend")
+  }
 }

@@ -1,3 +1,14 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#forms{
+  width: 20rem;
+}
+
 .sidebarList > .social {
   
   background: linear-gradient(
@@ -13,17 +24,12 @@ footer {
   justify-content: space-between;
 }
 
-#feedback {
-  display: flex;
-  justify-content: center;
-  color: indianred;
-}
-
-#forms {
-  width: 80%;
-}
-
 label {
   color: Black;
   text-shadow: none;
+}
+
+caption{
+  text-align: start;
+  visibility: hidden;
 }
