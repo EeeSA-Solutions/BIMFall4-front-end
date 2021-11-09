@@ -8,9 +8,14 @@ const generateTable = (data, tableDiv, model) => {
   if (data[0]) {
     // get the reference for the body
     var tableDiv = document.getElementById(tableDiv);
+    // if (document.getElementById("main-tbl")) {
+    //   document.getElementById("main-tbl").remove();
+    // }
     // create table and table body
     var tbl = document.createElement("table");
+    // tbl.id = "main-tbl";
     var tblBody = document.createElement("tbody");
+    // tblBody.id = "main-tbl-body";
 
     //Declare the object keys from data - "[0]" because we know the obj keys won't change
     //objKey is gonna be the table headers
@@ -53,7 +58,6 @@ const generateTable = (data, tableDiv, model) => {
           var pTag = document.createElement("button");
           //giving value to p-tag so we know what to edit. ObjValue is all values of current row
           pTag.editData = objValue[c];
-          console.log(pTag.value)
           var btnName = document.createTextNode("✎");
           pTag.className = "editButton";
           pTag.appendChild(btnName);
@@ -71,7 +75,6 @@ const generateTable = (data, tableDiv, model) => {
           pTag.appendChild(btnName);
           td.appendChild(pTag);
           row.appendChild(td);
-        
         } else {
           var td = document.createElement("td");
           var cellText = document.createTextNode(objValue[c]);
@@ -108,29 +111,30 @@ const generateTable = (data, tableDiv, model) => {
         const relId = e.target.value;
         setFriendStatus(relId, "Accepted")
           .then((response) => {
-            feedbackResponse(response, "feedback")
-          })
-          .then(() => { getDataByName("Friend") }).then((data) => {
-            generateTable(data, "friendtable");
-          })
-      }
-      else if (e.target.className === "declineButton") {
-        const relId = parseInt(e.target.value);
-        setFriendStatus(relId, "Denied")
-          .then((response) => {
-            feedbackResponse(response, "feedback")
+            feedbackResponse(response, "feedback");
           })
           .then(() => {
-            getDataByName("Friend")
+            getDataByName("Friend");
           })
           .then((data) => {
             generateTable(data, "friendtable");
+          });
+      } else if (e.target.className === "declineButton") {
+        const relId = parseInt(e.target.value);
+        setFriendStatus(relId, "Denied")
+          .then((response) => {
+            feedbackResponse(response, "feedback");
           })
+          .then(() => {
+            getDataByName("Friend");
+          })
+          .then((data) => {
+            generateTable(data, "friendtable");
+          });
       }
     });
-  }
-  else {
-    console.log("No data found")
+  } else {
+    console.log("No data found");
   }
 };
 
