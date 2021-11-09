@@ -99,7 +99,7 @@ export const putByID = (requestObject, model, parent) => {
 export const postByModel = (requestObject, model) => {
   // dotAnimation.deleteMessage();
   // dotAnimation.show();
-  fetch("https://localhost:44357/api/" + model, {
+  const fetchedData = fetch("https://localhost:44357/api/" + model, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -107,8 +107,12 @@ export const postByModel = (requestObject, model) => {
     },
     body: JSON.stringify(requestObject),
   })
-    .then(() => {
-      window.location.reload();
+    .then((res) => {
+      if (res.status === 405 && model === "budget") {
+        return res;
+      } else {
+        window.location.reload();
+      }
     })
     .catch(() => {
       // dotAnimation.errorMessage("Unable to add");
@@ -116,4 +120,5 @@ export const postByModel = (requestObject, model) => {
     .finally(() => {
       // dotAnimation.hide();
     });
+  return fetchedData;
 };
