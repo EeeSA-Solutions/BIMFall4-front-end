@@ -1,61 +1,128 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(125, 146, 197, 0.7);
-    /* transition: all 400ms ease-in-out; */
-    visibility: hidden;
-    opacity: 1;
-  }
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(139, 139, 139, 0.781);
+  /* transition: all 400ms ease-in-out; */
+  visibility: hidden;
+  opacity: 1;
+}
 
-  .overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .popup {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 70px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    width: 40%;
-    position: relative;
-    z-index: 1;
-  }
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
 
-  .popupb {
-    top: 50%;
-    width: 80%;
-   
-  }
-  
-  .popup h1 {
-    margin-top: 0;
-    color: rgb(61, 61, 61);
-  }
-  
-  .popup .close {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
+.popup {
+  top: 40%;
+  left: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+  padding: 20px;
 
-  .popup .close:hover {
-    color: #7d92c5;
-  }
+  border-radius: 15px;
+  width: 25rem;
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(
+    190deg,
+    rgba(86, 170, 253, 1) 33%,
+    rgba(113, 185, 255, 1) 33%,
+    rgba(105, 179, 250, 1) 73%,
+    rgba(123, 190, 255, 1) 73%
+  );
+  color: white;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.165);
+}
 
-  .editLabel {
-    color: black;
-    text-shadow: none;
-  }
+#popupForm {
+  flex-direction: column;
+  width: 100%;
+}
+
+#popupForm div {
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+}
+
+#popupForm input,
+#popupForm select {
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  width: 10rem;
+}
+
+/* .popupb {
+  top: 50%;
+  width: 80%;
+} */
+
+.popup h1 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 8px;
+  right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.popup .close:hover {
+  color: indianred;
+  cursor: pointer;
+}
+
+.editLabel {
+  color: black;
+  text-shadow: none;
+}
+
+.editInput {
+  width: 100%;
+}
+
+#popupForm div {
+  margin-bottom: 0.5rem;
+}
+
+#popupForm button {
+  position: relative;
+  left: 20%;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  background: #33c02000;
+  width: 100px;
+  height: 30px;
+  border: 3px solid #f1f1f1;
+  border-radius: 100px;
+  display: inline-block;
+  transition: all 1s ease 0s;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}
+
+#popupForm button:hover {
+  background: transparent;
+  color: #f1f1f1;
+  border-radius: 1px;
+  border-color: #f1f1f1;
+  transition: all 0.3s ease 0s;
+  border-top: #fdfdfd00;
+  border-left: #fdfdfd00;
+  border-right: #fdfdfd00;
+}
