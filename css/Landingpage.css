@@ -1,136 +1,138 @@
-body{
-    height: 100vh;
-    background-image: url("/css/wp6928859.webp");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  height: 100vh;
+  background-image: url("/img/wp6928859.webp");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-wrapper {
-    overflow: hidden;
-    backdrop-filter: blur(5px);
-    height: 550px;
-    width: 400px;
-    border: 0.5px solid rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    padding-top: 2em;
-    box-shadow: 10px 10px 30px black;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  height: 550px;
+  width: 400px;
+  border: 0.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  padding-top: 2em;
+  box-shadow: 10px 10px 30px black;
 }
 
 @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
-h1{
-    text-align: center;
-    color: white;
+h1 {
+  text-align: center;
+  color: white;
 }
-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
-#ErrorMessage{
-    visibility: hidden;
-    color: white;
-}
-
-input{
-    border: 0;
-    border-bottom: 2px solid white;
-    background-color: transparent;
-    margin: 5px;
-    padding: 5px;
-    color: white;
+#ErrorMessage {
+  visibility: hidden;
+  color: white;
 }
 
-input:focus{
-    outline: 0;
+input {
+  border: 0;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  margin: 5px;
+  padding: 5px;
+  color: white;
 }
 
-input::placeholder{
-    color: white;
+input:focus {
+  outline: 0;
 }
 
-button{
-    border: none;
-    border-radius: 5px;
-    width: 14em;
-    padding: 0.3em;
-    margin: 2em;
-    background-image: linear-gradient(to right top, #d4dadd,  #99d8e0);
-    box-shadow: 5px 5px 10px;
+input::placeholder {
+  color: white;
 }
 
-button:hover{
-    cursor: pointer;
-
-}
-.signup-div, .signin-div{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    color: white;
-}
-#sign-up, #sign-in{
-    padding-left: 5px;
-    font-style: bold;
-    cursor: pointer;
+button {
+  border: none;
+  border-radius: 5px;
+  width: 14em;
+  padding: 0.3em;
+  margin: 2em;
+  background-image: linear-gradient(to right top, #d4dadd, #99d8e0);
+  box-shadow: 5px 5px 10px;
 }
 
-#sign-up:hover, #sign-in:hover{
-    border-bottom: 1px solid white;
+button:hover {
+  cursor: pointer;
+}
+.signup-div,
+.signin-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: white;
+}
+#sign-up,
+#sign-in {
+  padding-left: 5px;
+  font-style: bold;
+  cursor: pointer;
 }
 
-#loginForm{
-    position: absolute;
+#sign-up:hover,
+#sign-in:hover {
+  border-bottom: 1px solid white;
 }
 
-#registerForm{
-    left: 400px;
-    top: 0;
-    position: absolute;
-    /* width: 100%;
+#loginForm {
+  position: absolute;
+}
+
+#registerForm {
+  left: 400px;
+  top: 0;
+  position: absolute;
+  /* width: 100%;
     display: flex;
     align-items: center;
     justify-content: center; */
 }
 
-.input-group{
-    transition: 0.5s;
+.input-group {
+  transition: 0.5s;
 }
 
-.ball{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: large; 
-    height: 6em;
-    width: 6em;
-    background: linear-gradient(to right, #2980b9, #6dd5fa, #9bd4eb);;
-    border-radius: 75px;
-    box-shadow: inset -10px -10px 30px rgb(16, 120, 218); 
-    position: absolute;
-    animation: linear infinite;
-    animation-name: moveit;
-    animation-duration: 35s;
+.ball {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  height: 6em;
+  width: 6em;
+  background: linear-gradient(to right, #2980b9, #6dd5fa, #9bd4eb);
+  border-radius: 75px;
+  box-shadow: inset -10px -10px 30px rgb(16, 120, 218);
+  position: absolute;
+  animation: linear infinite;
+  animation-name: moveit;
+  animation-duration: 35s;
 }
 
 @keyframes moveit {
-    0% {
-        transform: rotate(0deg)translate(-280px)rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg)translate(-280px)rotate(-360deg);
-    }
+  0% {
+    transform: rotate(0deg) translate(-280px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-280px) rotate(-360deg);
+  }
 }
