@@ -1,8 +1,9 @@
-.containerBudget{
+.containerBudget {
   background: var(--gradeBlue);
   border-radius: 20px;
+  min-width: 750px;
 }
-.summaryBudget{
+.summaryBudget {
   font-size: x-large;
   font-weight: bold;
   display: flex;
@@ -10,27 +11,28 @@
   align-items: center;
   justify-content: center;
 }
-#summaryTotalId{
-  width: 900px;
+#summaryTotalId {
+  width: 700px;
   margin-top: 15px;
-  box-shadow: calc(900 *(1 - var(--progress, 0))*-1px) 0 0 white inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
+  box-shadow: calc(700 * (1 - var(--progress, 0)) * -1px) 0 0 white inset,
+    0px 3px 10px 0px rgba(0, 0, 68, 0.555);
 }
-.summaryBudget1{
-  --width: 700;
-  --height: 40px;
+.summaryBudget1 {
+  --width: 600;
+  --height: 35px;
 
   margin-bottom: 15px;
   background: var(--color);
   height: var(--height);
-  width: calc(var(--width)*1px);
+  width: calc(var(--width) * 1px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color:  #000;
+  color: #000;
   transition: box-shadow 1s;
-  box-shadow: calc(var(--width)*(1 - var(--progress, 0))*-1px) 0 0 white inset, 0px 3px 10px 0px rgba(0, 0, 68, 0.555);
+  box-shadow: calc(var(--width) * (1 - var(--progress, 0)) * -1px) 0 0 white
+      inset,
+    0px 3px 10px 0px rgba(0, 0, 68, 0.555);
   border-radius: calc(var(--height) * var(--radius));
-  }
-  
-  
+}

@@ -1,9 +1,9 @@
-import { cookieUserID } from "./cookiecutter.js";
-import generateTable from "./tableGenerator.js";
-import { getDataByName, postByModel } from "./fetches.js";
+import { cookieUserID } from "../helpers/cookie.js";
+import generateTable from "../components/tableGenerator.js";
+import { getDataByName, postByModel } from "../fetches.js";
 import { welcomeMessage } from "./homepage.js";
-import { popupConfirmation } from "./popupConfirmation.js";
-import { fullDate } from "./dateSelector.js";
+import { popupConfirmation } from "../components/popupConfirmation.js";
+import { fullDate } from "../components/dateSelector.js";
 // welcomeMessage();
 const renderTable = () => {
   getDataByName("budget").then((data) => {

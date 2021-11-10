@@ -1,7 +1,10 @@
-import { cookieUserID } from "./cookiecutter.js";
-import generateTable from "./tableGenerator.js";
-import { getDataByName, postByModel } from "./fetches.js";
+import { cookieUserID } from "../helpers/cookie.js";
+import generateTable from "../components/tableGenerator.js";
+import { getDataByName, postByModel } from "../fetches.js";
 import { welcomeMessage } from "./homepage.js";
+import { getDefaultDateForInput } from "../helpers/date.js";
+
+document.getElementById("date").value = getDefaultDateForInput();
 
 forms.onsubmit = (e) => {
   e.preventDefault();
@@ -47,8 +50,8 @@ getDataByName("savinggoal").then((data) => {
     delete obj["StartDate"];
     delete obj["ReachDate"];
     //adding new obj key and value to object
-    obj["Save every day"] = "~" + saveEveryDay.toFixed(0) + "kr";
-    obj["Save every month"] = "~" + saveEveryMonth.toFixed(0) + "kr";
+    obj["Save every day"] = "ca " + saveEveryDay.toFixed(0) + "kr";
+    obj["Save every month"] = "ca " + saveEveryMonth.toFixed(0) + "kr";
     //delete and edit columns with the important value
     obj["Edit"] = obj;
     obj["Delete"] = obj.ID;

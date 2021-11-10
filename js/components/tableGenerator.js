@@ -1,8 +1,7 @@
-import { deleteByID } from "./fetches.js";
-import { setFriendStatus, getDataByName } from "./fetches.js";
+import { deleteByID } from "../fetches.js";
+import { setFriendStatus, getDataByName } from "../fetches.js";
 import popup from "./popup.js";
-import { feedbackResponse } from "./workhorse.js";
-
+import { feedbackResponse } from "../helpers/response.js";
 //-----------------------------------------
 const generateTable = (data, tableDiv, model) => {
   if (data[0]) {

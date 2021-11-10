@@ -1,4 +1,4 @@
-import { monthCookie, yearCookie } from "./cookiecutter.js";
+import { monthCookie, yearCookie } from "../helpers/cookie.js";
 
 export const monthArr = [
   "January",

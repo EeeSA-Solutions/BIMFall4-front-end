@@ -1,7 +1,7 @@
-import { token } from "./cookiecutter.js";
-import { dotAnimation } from "./animations.js";
-import { popupConfirmation } from "./popupConfirmation.js";
-import { fullDate } from "./dateSelector.js";
+import { token } from "./helpers/cookie.js";
+import { dotAnimation } from "./components/animations.js";
+import { popupConfirmation } from "./components/popupConfirmation.js";
+import { fullDate } from "./components/dateSelector.js";
 
 //---------------------Collection of "fetch" functions----------------------
 
@@ -63,9 +63,9 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(wantedstatus),
-  }).then (() => {
-    window.location.reload()
-  })
+  }).then(() => {
+    window.location.reload();
+  });
 };
 
 export const putByID = (requestObject, model, parent) => {

@@ -1,5 +1,5 @@
-import { cookieUserID } from "./cookiecutter.js";
-import { putByID } from "./fetches.js";
+import { cookieUserID } from "../helpers/cookie.js";
+import { putByID } from "../fetches.js";
 
 const popup = (editObj, model, id) => {
   //Get overlay container
@@ -22,6 +22,12 @@ const popup = (editObj, model, id) => {
   close.appendChild(x);
   popup.appendChild(close);
 
+  //creating Header to Popup
+  const headerpopup = document.createElement("h1");
+  const headertext = document.createTextNode("Edit");
+  headerpopup.appendChild(headertext);
+  popup.appendChild(headerpopup);
+
   //Creating Form
   const form = document.createElement("form");
   form.id = "popupForm";
@@ -39,17 +45,20 @@ const popup = (editObj, model, id) => {
   }
   for (var i = 0; i < Object.values(editObj).length - nr; i++) {
     //create inputs in popup
-
+    const elementWrapper = document.createElement("div");
     const label = document.createElement("label");
     label.htmlFor = "input" + i;
     label.className = "editLabel";
     const valueName = document.createTextNode(Object.keys(editObj)[i]);
+
     label.appendChild(valueName);
-    form.appendChild(label);
+    elementWrapper.appendChild(label);
+    form.appendChild(elementWrapper);
 
     if (Object.keys(editObj)[i] !== "Category") {
       const input = document.createElement("input");
       input.id = "input" + i;
+      input.className = "editInput";
       input.value = Object.values(editObj)[i];
       input.required = true;
       if (
@@ -63,7 +72,8 @@ const popup = (editObj, model, id) => {
       } else {
         input.type = "text";
       }
-      form.appendChild(input);
+      elementWrapper.appendChild(input);
+      form.appendChild(elementWrapper);
     } else if (Object.keys(editObj)[i] === "Category") {
       const select = document.createElement("select");
       const optext1 = document.createTextNode("Groceries");
@@ -100,13 +110,14 @@ const popup = (editObj, model, id) => {
       option4.appendChild(optext4);
       option5.appendChild(optext5);
       select.id = "input" + i;
-
+      select.className = "editInput";
       select.appendChild(option1);
       select.appendChild(option2);
       select.appendChild(option3);
       select.appendChild(option4);
       select.appendChild(option5);
-      form.appendChild(select);
+      elementWrapper.appendChild(select);
+      form.appendChild(elementWrapper);
     }
   }
 
