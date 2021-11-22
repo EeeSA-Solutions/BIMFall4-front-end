@@ -24,9 +24,9 @@ loginForm.onsubmit = (e) => {
         Token = result.UserToken;
         setCookie("User", UserID);
         setCookie("Token", Token);
-        window.location.href = "homepage.html";
+        window.location.href = "summary.html";
       } else {
-        document.getElementById("ErrorMessage").style.visibility = "Visible"
+        document.getElementById("ErrorMessage").style.visibility = "Visible";
       }
     });
   function setCookie(cname, cvalue) {
@@ -34,15 +34,25 @@ loginForm.onsubmit = (e) => {
   }
 };
 
-var x = document.getElementById('loginForm')
-var y = document.getElementById('registerForm')
+var x = document.getElementById("loginForm");
+var y = document.getElementById("registerForm");
 
-function login_swipe(){
-  x.style.left = '-400px'
-  y.style.left = '440px'
+// function login_swipe() {
+//   x.style.left = "-400px";
+//   y.style.left = "440px";
+// }
+
+// function register_swipe() {
+//   x.style.left = "0px";
+//   y.style.left = "400px";
+// }
+
+function login_swipe() {
+  x.style.left = "-100%";
+  y.style.left = "98%";
 }
 
-function register_swipe(){
-  x.style.left = '0px'
-  y.style.left = '400px'
+function register_swipe() {
+  x.style.left = "0%";
+  y.style.left = "100%";
 }

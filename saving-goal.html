@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
+    <link rel="stylesheet" href="./css/friendNotifaction.css">
+
     <link rel="stylesheet" href="./css/saving-goal.css" />
     <link rel="stylesheet" href="./css/forms.css" />
     <link rel="stylesheet" href="./css/table.css" />
     <link rel="stylesheet" href="./css/popup.css" />
     <link rel="stylesheet" href="./css/animation.css" />
-    <title>DinBudget</title>
-  </head>
+    <title>B.I.M Budget Impossible Manager</title>  </head>
 
   <body>
     <main>
       <div class="logoHeader">
-        <img src="css/profile.jpg" width="70px" height="70px" />
+        <img src="img/profile.jpg" width=70px height=70px>
         <div id="profileName"></div>
       </div>
          </div>
@@ -35,8 +36,8 @@
       </div>
       <div class="sidebarBox">
         <ul class="sidebarList">
-          <li class="homepage" onclick="location.href='./homepage.html'">
-            🏠 Homepage
+          <li class="homepage" onclick="location.href='./summary.html'">
+            🏠 Summary
           </li>
           <li class="budget" onclick="location.href = './budget.html'">
             📈 Budget
@@ -51,19 +52,17 @@
             🚀 Saving Goal
           </li>
           <li class="social" onclick="location.href= './social.html'">
-            👥 Social
-          </li>
+            👥 Social</li>
           <li class="subscribe" onclick="location.href= './subscription.html'">
             📌 Subscription
           </li>
-          <li class="sign-out" onclick="location.href= './Landingpage.html'">
-            🚪 Sign out
-          </li>
+          <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
+
         </ul>
       </div>
       <div class="maincontent">
         <div class="maincontentBox">
-          <div>
+          <div class="form-container">
             <form id="forms">
               <div class="newBudgetLabel">
                 <h2>New saving goal</h2>
@@ -78,11 +77,15 @@
                   required
                 />
               </div>
-              <div>
+              <div class="label-input-wrapper">
                 <label for="">Start Date</label>
-                <input placeholder="Start Date" type="date" required />
+                <input 
+                  id="date"
+                  placeholder="Start Date" 
+                  type="date" 
+                  required />
               </div>
-              <div>
+              <div class="label-input-wrapper">
                 <label for="">Reach Date</label>
                 <input placeholder="Reach Date" type="date" required />
               </div>
@@ -118,6 +121,8 @@
       </footer>
     </main>
 </body>
-<script type="module" src="./js/saving-goal.js"></script>
-<script type="module" src="./js/dateSelector.js"></script>
+<script type="module" src="./js/views/saving-goal.js"></script>
+<script type="module" src="./js/components/dateSelector.js"></script>
+<!-- <script type="module" src="./js/dateTime.js"></script> -->
+
 </html>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/friendNotifaction.css">
     <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
     <link rel="stylesheet" href="./css/expense.css" />
     <link rel="stylesheet" href="./css/table.css" />
@@ -10,13 +11,12 @@
     <link rel="stylesheet" href="./css/popup.css" />
     <link rel="stylesheet" href="./css/animation.css" />
     
-    <title>DinBudget</title>
-  </head>
+    <title>B.I.M Budget Impossible Manager</title>  </head>
 
 <body>
   <main>
     <div class="logoHeader">
-      <img src="css/profile.jpg" width=70px height=70px>
+      <img src="img/profile.jpg" width=70px height=70px>
       <div id="profileName"></div>
     </div>
     <div class="textHeader">
@@ -31,23 +31,24 @@
   </div>
     <div class="sidebarBox">
       <ul class="sidebarList">
-        <li class="homepage" onclick="location.href='./homepage.html'">🏠 Homepage</li>
+        <li class="homepage" onclick="location.href='./summary.html'">🏠 Summary</li>
         <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
         <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
         <li class="income" onclick="location.href='./income.html'">💰 Income</li>
         <li class="saving-goal" onclick="location.href= './saving-goal.html'">🚀 Saving Goal</li>
         <li class="social" onclick="location.href= './social.html'">👥 Social</li>
         <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
-        <li class="sign-out" onclick="location.href= './Landingpage.html'">🚪 Sign out</li>
+        <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
       </ul>
     </div>
       <div class="maincontent">
         <div class="maincontentBox">
+          <div class="form-container">
           <form id="forms">
             <div class="newBudgetLabel">
               <h2>New expense</h2>
             </div>
-            <div>
+            <div class="select-wrapper" >
               <select name="category" id="category">
                 <option value="Groceries">Groceries</option>
                 <option value="Entertainment">Entertainment</option>
@@ -59,9 +60,13 @@
             <div>
               <input placeholder="Expense Name" type="text" required />
             </div>
-            <div>
+            <div class="label-input-wrapper">
               <label for="date">Date</label>
-              <input placeholder="Transaction date" type="date" required />
+              <input 
+                id="date"
+                placeholder="Transaction date"
+                type="date"
+                required />
             </div>
             <div>
               <input
@@ -73,9 +78,16 @@
               />
             </div>
             <div>
+              <label for="checkbox">
+                <h2>Repeat</h2>
+                <input id="checkbox" class="checkbox-repeat" type="checkbox">
+              </label>
+            </div>
+            <div>
               <button type="submit">Send</button>
             </div>
           </form>
+        </div>
           <div id="expenseDiv"></div>
           <div id="table-div"></div>
           <div id="overlay-container"></div>
@@ -101,8 +113,9 @@
       <span>EeesSa Solutions</span>
     </footer>
   </main>
-  <script type="module" src="./js/expense.js"></script>
-  <script type="module" src="./js/dateSelector.js"></script>
+  <script type="module" src="./js/views/expense.js"></script>
+  <script type="module" src="./js/components/dateSelector.js"></script>
+  <!-- <script type="module" src="./js/dateTime.js"></script> -->
 </body>
 
 </html>

@@ -1,5 +1,14 @@
-import { cookieUserID } from "./cookiecutter.js";
-import { getDataByName } from "./fetches.js";
+import { cookieUserID } from "../helpers/cookie.js";
+import { getDataByName } from "../fetches.js";
+import { friendRequests } from "../components/friendNotification.js";
+import { calculateBudgetsAndExpense } from "../helpers/calculate.js";
+import generateTable from "../components/tableGenerator.js";
+
+calculateBudgetsAndExpense().then((result) => {
+  generateTable([result[0]], "remaining");
+  generateTable([result[1]], "budget");
+  generateTable([result[2]], "expense");
+});
 
 export function welcomeMessage() {
   if (cookieUserID != "") {
@@ -23,3 +32,4 @@ export function welcomeMessage() {
   }
 }
 welcomeMessage();
+friendRequests();

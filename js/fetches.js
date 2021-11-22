@@ -1,12 +1,14 @@
-import { token } from "./cookiecutter.js";
-import { dotAnimation } from "./animations.js";
-import { popupConfirmation } from "./popupConfirmation.js";
+import { token } from "./helpers/cookie.js";
+import { dotAnimation } from "./components/animations.js";
+import { popupConfirmation } from "./components/popupConfirmation.js";
+import { fullDate } from "./components/dateSelector.js";
+
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
   // dotAnimation.show();
 
-  return fetch(`https://localhost:44357/api/${name}`, {
+  return fetch(`https://localhost:44357/api/${name}/?date=${fullDate}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -61,6 +63,8 @@ export const setFriendStatus = (relationshipID, wantedstatus) => {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(wantedstatus),
+  }).then(() => {
+    window.location.reload();
   });
 };
 
@@ -97,7 +101,7 @@ export const putByID = (requestObject, model, parent) => {
 export const postByModel = (requestObject, model) => {
   // dotAnimation.deleteMessage();
   // dotAnimation.show();
-  fetch("https://localhost:44357/api/" + model, {
+  const fetchedData = fetch("https://localhost:44357/api/" + model, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -105,8 +109,12 @@ export const postByModel = (requestObject, model) => {
     },
     body: JSON.stringify(requestObject),
   })
-    .then(() => {
-      window.location.reload();
+    .then((res) => {
+      if (res.status === 405 && model === "budget") {
+        return res;
+      } else {
+        window.location.reload();
+      }
     })
     .catch(() => {
       // dotAnimation.errorMessage("Unable to add");
@@ -114,4 +122,5 @@ export const postByModel = (requestObject, model) => {
     .finally(() => {
       // dotAnimation.hide();
     });
+  return fetchedData;
 };
