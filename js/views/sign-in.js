@@ -37,12 +37,22 @@ loginForm.onsubmit = (e) => {
 var x = document.getElementById("loginForm");
 var y = document.getElementById("registerForm");
 
+// function login_swipe() {
+//   x.style.left = "-400px";
+//   y.style.left = "440px";
+// }
+
+// function register_swipe() {
+//   x.style.left = "0px";
+//   y.style.left = "400px";
+// }
+
 function login_swipe() {
-  x.style.left = "-400px";
-  y.style.left = "440px";
+  x.style.left = "-100%";
+  y.style.left = "98%";
 }
 
 function register_swipe() {
-  x.style.left = "0px";
-  y.style.left = "400px";
+  x.style.left = "0%";
+  y.style.left = "100%";
 }

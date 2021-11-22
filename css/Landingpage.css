@@ -11,8 +11,8 @@ body {
 .form-wrapper {
   overflow: hidden;
   backdrop-filter: blur(5px);
-  height: 550px;
-  width: 400px;
+  height: 30em;
+  width: 20em;
   border: 0.5px solid rgba(255, 255, 255, 0.4);
   border-radius: 15px;
   position: relative;
