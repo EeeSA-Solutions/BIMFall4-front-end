@@ -47,6 +47,25 @@
   );
 }
 
+html {
+  overflow-y: scroll;
+  overflow-y: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(113, 185, 255);
+  border-radius: 10px;
+  border: solid 3px #f1f1f1;
+}
+
 @font-face {
   font-family: "Saira_Expanded";
   src: url(Saira_Expanded-Light.ttf);
@@ -160,6 +179,7 @@ main {
   justify-content: space-between;
 }
 
-#arrowLeft, #arrowRight:hover{
+#arrowLeft,
+#arrowRight:hover {
   cursor: pointer;
 }
