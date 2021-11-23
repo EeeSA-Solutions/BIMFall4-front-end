@@ -100,14 +100,20 @@ planBtn.addEventListener("click", (e) => {
 });
 
 const overrideConfirm = (obj) => {
+  let noMoreConfirms =
+    document.getElementById("overlay-container").childElementCount === 0;
   obj["Override"] = true;
   popupConfirmation(
     () => {
       postByModel(obj, "budget");
-      renderTable();
+      if (noMoreConfirms) {
+        window.location.reload();
+      }
     },
     () => {
-      return;
+      if (noMoreConfirms) {
+        window.location.reload();
+      }
     },
     `Budget for ${obj.Category} already exist for this month, do you want to override it?`
   );

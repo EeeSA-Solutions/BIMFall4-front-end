@@ -117,7 +117,7 @@ export const postByModel = (requestObject, model) => {
     .then((res) => {
       if (res.status === 405 && model === "budget") {
         return res;
-      } else {
+      } else if (model !== "budget") {
         window.location.reload();
       }
     })
