@@ -4,7 +4,9 @@ import { getDataByName, postByModel } from "../fetches.js";
 import { welcomeMessage } from "./homepage.js";
 import { getDefaultDateForInput } from "../helpers/date.js";
 
-document.getElementById("date").value = getDefaultDateForInput();
+document.getElementById("start-date").value = getDefaultDateForInput();
+
+var today = getDefaultDateForInput();
 
 forms.onsubmit = (e) => {
   e.preventDefault();
@@ -16,7 +18,12 @@ forms.onsubmit = (e) => {
     Name: e.target[3].value,
     UserID: cookieUserID,
   };
-  postByModel(requestObject, "savinggoal");
+
+  if(requestObject.ReachDate > today){
+    postByModel(requestObject, "savinggoal");
+  }else{ 
+    return
+  }
 };
 
 const getMonthdiff = (StartDate, ReachDate) => {
