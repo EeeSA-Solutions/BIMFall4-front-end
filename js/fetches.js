@@ -6,6 +6,7 @@ import { fullDate } from "./components/dateSelector.js";
 //---------------------Collection of "fetch" functions----------------------
 
 export const getDataByName = (name) => {
+  dotAnimation.deleteMessage();
   dotAnimation.show();
 
   return fetch(`https://localhost:44357/api/${name}/?date=${fullDate}`, {
@@ -30,6 +31,7 @@ export const getDataByName = (name) => {
 export const deleteByID = (model, id) => {
   popupConfirmation(
     () => {
+      dotAnimation.deleteMessage();
       dotAnimation.show();
       fetch("https://localhost:44357/api/" + model, {
         method: "DELETE",

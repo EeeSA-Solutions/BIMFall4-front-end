@@ -21,6 +21,7 @@ export const dotAnimation = {
     AnimationWrapper.appendChild(divAnimation3);
   },
   hide: () => {
+    debugger;
     if (AnimationWrapper && AnimationWrapper.hasChildNodes()) {
       if (AnimationWrapper.childNodes[0].nodeName == "#text") {
         AnimationWrapper.removeChild(AnimationWrapper.childNodes[0]);
