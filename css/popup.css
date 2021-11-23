@@ -46,12 +46,11 @@
 
 #popupForm div {
   flex-direction: row;
-  justify-content: space-evenly;
-
+  justify-content: space-between;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   margin-bottom: 0.5rem;
+  margin: 0 2rem 0 2rem;
 }
 
 #popupForm input,
@@ -96,7 +95,7 @@
 
 #popupForm button {
   position: relative;
-  left: 20%;
+  left: 63%;
   color: #f1f1f1;
   text-transform: uppercase;
   background: #33c02000;
@@ -107,7 +106,7 @@
   display: inline-block;
   transition: all 1s ease 0s;
   cursor: pointer;
-  margin-top: 0.25rem;
+  margin-top: 1rem;
 }
 
 #popupForm button:hover {
