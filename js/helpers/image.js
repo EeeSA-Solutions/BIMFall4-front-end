@@ -1,15 +1,26 @@
 const uploadImage = () => {
   file.click();
 };
-const encodeImageFileAsURL = (img) => {
-  var file = img.files[0];
-  var reader = new FileReader();
-  reader.onloadend = function () {
-    console.log(reader.result);
-  };
-  reader.readAsDataURL(file);
+const encodeImageFileAsURL = async (img) => {
+  const filePromises = new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = async function () {
+      try {
+        const response = reader.result;
+        //resolve the promise with res value
+        resolve(response);
+      } catch (error) {
+        reject(error);
+      }
+    };
+    reader.onerror = (error) => {
+      reject(error);
+    };
+    reader.readAsDataURL(img.files[0]);
+  });
+  // Wait for promise to be resolved
+  return await filePromises;
 };
-
 //create file input
 var file = document.createElement("input");
 file.style.display = "none";
@@ -22,5 +33,7 @@ var profileImg = document.getElementById("profileImage");
 profileImg.addEventListener("click", () => uploadImage());
 
 file.addEventListener("change", () => {
-  encodeImageFileAsURL(file);
+  encodeImageFileAsURL(file).then((res) => {
+    console.log(res);
+  });
 });
