@@ -34,6 +34,6 @@ profileImg.addEventListener("click", () => uploadImage());
 
 file.addEventListener("change", () => {
   encodeImageFileAsURL(file).then((res) => {
-    console.log(res);
+    profileImg.src = res;
   });
 });
