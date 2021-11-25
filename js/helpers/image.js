@@ -1,3 +1,6 @@
+import {getDataByName, postByModel} from "../fetches.js";
+import { cookieUserID } from "./cookie.js";
+
 const uploadImage = () => {
   file.click();
 };
@@ -32,8 +35,21 @@ var profileImg = document.getElementById("profileImage");
 //events
 profileImg.addEventListener("click", () => uploadImage());
 
+
+
 file.addEventListener("change", () => {
   encodeImageFileAsURL(file).then((res) => {
+    let requestObject = {
+      ImageURL : res,
+      UserID : cookieUserID
+    }
+    postByModel(requestObject, "Image")
     profileImg.src = res;
   });
 });
+
+(function () {
+  getDataByName("image").then((res) => {
+    profileImg.setAttribute("src", res.ImageURL);
+  })
+})();
