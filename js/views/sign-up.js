@@ -13,7 +13,6 @@ registerForm.onsubmit = (e) => {
   };
   dotAnimation.deleteMessage();
   dotAnimation.show();
-  debugger;
   fetch("https://localhost:44357/api/user", {
     method: "POST",
     headers: {
