@@ -7,6 +7,7 @@
     <title>B.I.M Budget Impossible Manager</title>
     <link rel="stylesheet" href="css/site-skeleton.css"/>
     <link rel="stylesheet" href="css/Landingpage.css"/>
+    <link rel="stylesheet" href="css/animation.css"/>
 </head>
 <body>
   <div class="ball"><strong> B.I.M </strong></div>
@@ -23,7 +24,7 @@
                 <button type="submit" class="sign-in-btn">Sign in</button>
                 <div class="signup-div">
                     <p>Don't have an account?</p>
-                    <strong id="sign-up"><em onclick="login_swipe()">Sign Up</em></strong>
+                    <strong id="sign-up"><em>Sign Up</em></strong>
                 </div>
                 <p id="ErrorMessage">Wrong Email or password. Please try again</p>
         </form>
@@ -48,12 +49,15 @@
               <button type="submit" class="sign-in-btn">Register</button>
                 <div class="signin-div">
                     <p>Already have an account?</p>
-                    <strong id="sign-in"><em onclick="register_swipe()">Sign In</em></strong>
+                    <strong id="sign-in"><em>Sign In</em></strong>
                 </div>
             </div>
           </form>
-    </div>
+        </div>
+        <div class="animation-container" style="margin-bottom: 0.5rem;">
+          <div class="animation-wrapper"></div>
+        </div>
 </body>
-<script src="./js/views/sign-up.js"></script>
-<script src="./js/views/sign-in.js"></script>
+<script type="module" src="./js/views/sign-up.js"></script>
+<script type="module" src="./js/views/sign-in.js"></script>
 </html>

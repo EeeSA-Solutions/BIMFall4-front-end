@@ -1,4 +1,7 @@
+import { dotAnimation } from "../components/animations.js";
+
 let UserID;
+let Token;
 
 loginForm.onsubmit = (e) => {
   e.preventDefault();
@@ -8,7 +11,8 @@ loginForm.onsubmit = (e) => {
     Email: e.target[0].value,
     Password: e.target[1].value,
   };
-
+  dotAnimation.deleteMessage();
+  dotAnimation.show();
   fetch("https://localhost:44357/api/Login", {
     method: "POST",
     headers: {
@@ -28,6 +32,7 @@ loginForm.onsubmit = (e) => {
       } else {
         document.getElementById("ErrorMessage").style.visibility = "Visible";
       }
+      dotAnimation.hide();
     });
   function setCookie(cname, cvalue) {
     document.cookie = cname + "=" + cvalue + ";" + ";path=/";
@@ -52,7 +57,15 @@ function login_swipe() {
   y.style.left = "98%";
 }
 
-function register_swipe() {
+export function register_swipe() {
   x.style.left = "0%";
   y.style.left = "100%";
 }
+
+document.getElementById("sign-in").addEventListener("click", () => {
+  register_swipe();
+});
+
+document.getElementById("sign-up").addEventListener("click", () => {
+  login_swipe();
+});
