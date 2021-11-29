@@ -137,6 +137,11 @@ main {
   padding-left: 10px;
 }
 
+#profileImage {
+  object-fit: cover;
+  border-radius: 6px;
+}
+
 .textHeader {
   color: var(--textDarkBlue);
   padding: 10px;

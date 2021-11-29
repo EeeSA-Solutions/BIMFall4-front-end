@@ -1,3 +1,6 @@
+import { dotAnimation } from "../components/animations.js";
+import { register_swipe } from "./sign-in.js";
+
 registerForm.onsubmit = (e) => {
   e.preventDefault();
 
@@ -8,6 +11,8 @@ registerForm.onsubmit = (e) => {
     Email: e.target[2].value,
     Password: e.target[3].value,
   };
+  dotAnimation.deleteMessage();
+  dotAnimation.show();
   fetch("https://localhost:44357/api/user", {
     method: "POST",
     headers: {
@@ -23,6 +28,7 @@ registerForm.onsubmit = (e) => {
       else {
         register_swipe();
       }
+      dotAnimation.hide();
     })
   }
   else{
