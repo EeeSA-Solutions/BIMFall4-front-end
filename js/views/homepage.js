@@ -28,7 +28,18 @@ export function welcomeMessage() {
   }
 }
 buildSummaryObj().then((res) => {
-  console.log(res);
+  const dropdownBudget = document.getElementById("budget");
+  const dropdownExpense = document.getElementById("expense");
+  const dropdownRemaning = document.getElementById("remaining");
+  dropdownBudget
+    .getElementsByClassName("flexboxText")[0]
+    .append("Total Budget: " + res.totalBudget);
+  dropdownExpense
+    .getElementsByClassName("flexboxText")[0]
+    .append("Total Expense: " + res.totalExpense);
+  dropdownRemaning
+    .getElementsByClassName("flexboxText")[0]
+    .append("Total Remaining Budget: " + res.totalRemainingBudget);
 });
 
 welcomeMessage();
@@ -37,20 +48,26 @@ friendRequests();
 const dropdownBudget = document.getElementById("budget");
 if (dropdownBudget) {
   dropdownBudget.addEventListener("click", () => {
-    openDrop('budget');
+    buildSummaryObj().then((res) => {
+      openDrop("budget", res.detailedBudget, "budget-ul");
+    });
   });
 }
 
 const dropdownExpense = document.getElementById("expense");
 if (dropdownExpense) {
   dropdownExpense.addEventListener("click", () => {
-    openDrop('expense');
+    buildSummaryObj().then((res) => {
+      openDrop("expense", res.detailedExpense, "expense-ul");
+    });
   });
 }
 
 const dropdownRemaning = document.getElementById("remaining");
 if (dropdownRemaning) {
   dropdownRemaning.addEventListener("click", () => {
-    openDrop('remaining');
+    buildSummaryObj().then((res) => {
+      openDrop("remaining", res.detailedRemainingBudget, "remaining-ul");
+    });
   });
 }

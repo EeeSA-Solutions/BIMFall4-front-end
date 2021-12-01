@@ -37,6 +37,7 @@ const buildDetailedObj = (obj) => {
   };
   return detailedObj;
 };
+
 const buildDetailedRemainingObj = (obj1, obj2) => {
   const detailedObj = {
     Groceries: getDifferValue(obj1, obj2, "Groceries"),
