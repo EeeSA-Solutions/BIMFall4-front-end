@@ -91,3 +91,34 @@ export const calculateBudgets = (arr, earr) => {
   ];
   return returnArray;
 };
+
+export const getTotal = (array, prop) => {
+  const amount = array
+    .map((item) => {
+      return item[prop];
+    })
+    .reduce((prev, curr) => prev + curr, 0);
+  return amount;
+};
+export const getSiblingValue = (array, keyLookup, valueLookup, keyReturn) => {
+  const filteredArray = array.filter((item) => {
+    return item[keyLookup] === valueLookup;
+  });
+  const returnValue = filteredArray.map((item) => {
+    return item[keyReturn];
+  });
+  //if there's no value - return 0
+  if (returnValue[0]) {
+    return returnValue[0];
+  } else return 0;
+};
+
+export const getDifferValue = (obj1, obj2, propKey) => {
+  const combinedArr = [obj1, obj2];
+  const differ = combinedArr
+    .map((obj) => {
+      return obj[propKey];
+    })
+    .reduce((prev, curr) => prev - curr);
+  return differ;
+};

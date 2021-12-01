@@ -1,8 +1,10 @@
 import { cookieUserID } from "../helpers/cookie.js";
 import { getDataByName } from "../fetches.js";
 import { friendRequests } from "../components/friendNotification.js";
-import { calculateBudgetsAndExpense } from "../helpers/calculate.js";
+import { calculateBudgetsAndExpense, getTotal } from "../helpers/calculate.js";
 import generateTable from "../components/tableGenerator.js";
+import { buildSummaryObj } from "../helpers/factory.js";
+import { openDrop } from "../components/dropdown.js";
 
 calculateBudgetsAndExpense().then((result) => {
   generateTable([result[0]], "remaining");
@@ -31,26 +33,16 @@ export function welcomeMessage() {
     document.getElementById("profileName").appendChild(notLoggedIn);
   }
 }
+buildSummaryObj().then((res) => {
+  console.log(res);
+});
+
 welcomeMessage();
 friendRequests();
 
-document.getElementById("openDrop").addEventListener("click", () => openDrop())
-
-function openDrop(){
-  document.getElementById("dropdown").classList.toggle("show");
-}
-
-
-window.onclick = function(e){
-  if (!e.target.matches('.btnDrop')){
-    var dropdowns = document.getElementsByClassName("dropdownContent");
-    var i;
-
-    for (i = 0; i < dropdowns.length; i++){
-      var openDrop = dropdowns[i];
-        if(openDrop.classList.contains('show')) {
-          openDrop.classList.remove('show');
-        }
-    }
-  }
+const dropdown = document.getElementById("openDrop");
+if (dropdown) {
+  dropdown.addEventListener("click", () => {
+    openDrop();
+  });
 }

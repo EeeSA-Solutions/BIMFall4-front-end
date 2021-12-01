@@ -8,6 +8,7 @@ Se till att värdena och categories namnen mappas så att "fixedcost 100/300 skr
 */
 
 import { getDataByName } from "../fetches.js";
+
 getDataByName("Calculate").then((res) => {
   totalExpenseBudget(res);
   res[1].forEach((budgetElement) => {
