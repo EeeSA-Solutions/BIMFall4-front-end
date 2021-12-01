@@ -1,9 +1,12 @@
-export function openDrop() {
-  document.getElementById("dropdown").classList.toggle("show");
+export function openDrop(parent) {
+  document.getElementById(parent).elementn.classList.toggle("show");
 }
 
+
+
+//Remove drop on click
 window.onclick = function (e) {
-  if (!e.target.matches(".btnDrop")) {
+  if (!e.target.matches(".flexbox")) {
     var dropdowns = document.getElementsByClassName("dropdownContent");
     var i;
 

@@ -6,12 +6,6 @@ import generateTable from "../components/tableGenerator.js";
 import { buildSummaryObj } from "../helpers/factory.js";
 import { openDrop } from "../components/dropdown.js";
 
-calculateBudgetsAndExpense().then((result) => {
-  generateTable([result[0]], "remaining");
-  generateTable([result[1]], "budget");
-  generateTable([result[2]], "expense");
-});
-
 export function welcomeMessage() {
   if (cookieUserID != "") {
     getDataByName("user")
@@ -40,9 +34,23 @@ buildSummaryObj().then((res) => {
 welcomeMessage();
 friendRequests();
 
-const dropdown = document.getElementById("openDrop");
-if (dropdown) {
-  dropdown.addEventListener("click", () => {
-    openDrop();
+const dropdownBudget = document.getElementById("budget");
+if (dropdownBudget) {
+  dropdownBudget.addEventListener("click", () => {
+    openDrop('budget');
+  });
+}
+
+const dropdownExpense = document.getElementById("expense");
+if (dropdownExpense) {
+  dropdownExpense.addEventListener("click", () => {
+    openDrop('expense');
+  });
+}
+
+const dropdownRemaning = document.getElementById("remaining");
+if (dropdownRemaning) {
+  dropdownRemaning.addEventListener("click", () => {
+    openDrop('remaining');
   });
 }
