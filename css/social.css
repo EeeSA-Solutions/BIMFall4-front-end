@@ -2,15 +2,14 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
-#forms{
+#forms {
   width: 20rem;
 }
 
 .sidebarList > .social {
-  
   background: linear-gradient(
     90deg,
     var(--lightGrey),
@@ -29,7 +28,7 @@ label {
   text-shadow: none;
 }
 
-caption{
+caption {
   text-align: start;
   visibility: hidden;
 }

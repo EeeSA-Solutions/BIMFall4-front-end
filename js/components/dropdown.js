@@ -7,7 +7,11 @@ export function openDrop(parent, dropdownObj, ulName) {
 
 //Remove drop on click
 window.onclick = function (e) {
-  if (!e.target.matches(".flexbox")) {
+  if (
+    !e.target.matches(".flexbox") &&
+    !e.target.matches(".flexboxText") &&
+    !e.target.matches(".flexboxTextDesc")
+  ) {
     var dropdowns = document.getElementsByClassName("dropdownContent");
     var i;
     for (i = 0; i < dropdowns.length; i++) {

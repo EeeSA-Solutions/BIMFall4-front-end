@@ -1,24 +1,33 @@
+.containerBudgetContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .containerBudget {
   background: var(--gradeBlue);
   border-radius: 20px;
-  min-width: 750px;
+  width: 650px;
+  justify-content: center;
+  align-items: center;
 }
 .summaryBudget {
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem 0;
 }
 #summaryTotalId {
-  width: 700px;
+  width: 500px;
   margin-top: 15px;
-  box-shadow: calc(700 * (1 - var(--progress, 0)) * -1px) 0 0 white inset,
+  box-shadow: calc(500 * (1 - var(--progress, 0)) * -1px) 0 0 white inset,
     0px 3px 10px 0px rgba(0, 0, 68, 0.555);
 }
 .summaryBudget1 {
-  --width: 600;
+  --width: 400;
   --height: 35px;
 
   margin-bottom: 15px;

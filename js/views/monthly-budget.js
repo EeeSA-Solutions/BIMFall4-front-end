@@ -71,10 +71,12 @@ createBudgetForm.onsubmit = (e) => {
     },
   ];
   reqObjects.forEach((obj) => {
+    let overrideIndex = 0;
     if (obj.Amount > 0) {
       postByModel(obj, "budget").then((res) => {
         if (res?.status === 405) {
           overrideConfirm(obj);
+          overrideIndex += 1;
         }
       });
     }
@@ -82,7 +84,7 @@ createBudgetForm.onsubmit = (e) => {
 
   planBtn.style.display = "flex";
   createBudgetBody.style.display = "none";
-  containerBudget.style.display = "unset";
+  containerBudget.style.display = "flex";
 };
 
 //clear button even

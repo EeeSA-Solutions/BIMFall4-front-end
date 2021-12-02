@@ -33,13 +33,13 @@ buildSummaryObj().then((res) => {
   const dropdownRemaning = document.getElementById("remaining");
   dropdownBudget
     .getElementsByClassName("flexboxText")[0]
-    .append("Total Budget: " + res.totalBudget);
+    .append(res.totalBudget);
   dropdownExpense
     .getElementsByClassName("flexboxText")[0]
-    .append("Total Expense: " + res.totalExpense);
+    .append(res.totalExpense);
   dropdownRemaning
     .getElementsByClassName("flexboxText")[0]
-    .append("Total Remaining Budget: " + res.totalRemainingBudget);
+    .append(res.totalRemainingBudget);
 });
 
 welcomeMessage();
