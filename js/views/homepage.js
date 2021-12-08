@@ -27,7 +27,7 @@ export function welcomeMessage() {
     document.getElementById("profileName").appendChild(notLoggedIn);
   }
 }
-buildSummaryObj().then((res) => {
+const appendContentToCards = (res) => {
   const dropdownBudget = document.getElementById("budget");
   const dropdownExpense = document.getElementById("expense");
   const dropdownRemaning = document.getElementById("remaining");
@@ -40,6 +40,10 @@ buildSummaryObj().then((res) => {
   dropdownRemaning
     .getElementsByClassName("flexboxText")[0]
     .append(res.totalRemainingBudget);
+};
+
+buildSummaryObj().then((res) => {
+  appendContentToCards(res);
 });
 
 welcomeMessage();
