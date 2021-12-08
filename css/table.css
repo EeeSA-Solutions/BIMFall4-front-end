@@ -10,16 +10,19 @@ th {
   background: var(--gradeBlue);
 }
 
-table, th, td {
+table,
+th,
+td {
   border-collapse: collapse;
   border-radius: 10px, 30px, 10px, 5px;
 }
 
-th, td {
+th,
+td {
   padding: 7px;
 }
-td > button{
-  width:100%;
+td > button {
+  width: 100%;
 }
 
 tr:nth-child(even) {
@@ -27,4 +30,12 @@ tr:nth-child(even) {
 }
 tr:nth-child(odd) {
   background-color: var(--baseLightGrey);
+}
+@media (max-width: 500px) {
+  #table-div {
+    overflow-x: scroll;
+  }
+  table {
+    font-size: 60%;
+  
 }

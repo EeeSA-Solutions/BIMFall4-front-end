@@ -7,7 +7,6 @@
 .containerBudget {
   background: var(--gradeBlue);
   border-radius: 20px;
-  width: 650px;
   justify-content: center;
   align-items: center;
 }
@@ -18,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem 2rem;
 }
 #summaryTotalId {
   width: 500px;
@@ -44,4 +43,31 @@
       inset,
     0px 3px 10px 0px rgba(0, 0, 68, 0.555);
   border-radius: calc(var(--height) * var(--radius));
+}
+@media (max-width: 900px) {
+  #summaryTotalId {
+    width: 300px;
+    box-shadow: calc(300 * (1 - var(--progress, 0)) * -1px) 0 0 white inset,
+      0px 3px 10px 0px rgba(0, 0, 68, 0.555);
+  }
+  .summaryBudget1 {
+    --width: 250;
+    --height: 25px;
+    margin-bottom: 15px;
+  }
+  .summaryBudget {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 500px) {
+  .summaryBudget1 {
+    --width: 200;
+    --height: 25px;
+    margin-bottom: 15px;
+  }
+  #summaryTotalId {
+    width: 250px;
+    box-shadow: calc(250 * (1 - var(--progress, 0)) * -1px) 0 0 white inset,
+      0px 3px 10px 0px rgba(0, 0, 68, 0.555);
+  }
 }

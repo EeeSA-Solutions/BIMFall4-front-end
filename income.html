@@ -4,94 +4,126 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/site-skeleton.css" />
-    <link rel="stylesheet" href="./css/friendNotifaction.css">
-    <link rel="icon" href="./img/Sus.png"/>
+    <link rel="stylesheet" href="./css/friendNotifaction.css" />
+    <link rel="icon" href="./img/Sus.png" />
     <link rel="stylesheet" href="./css/income.css" />
     <link rel="stylesheet" href="./css/forms.css" />
     <link rel="stylesheet" href="./css/table.css" />
     <link rel="stylesheet" href="./css/popup.css" />
     <link rel="stylesheet" href="./css/animation.css" />
-    <link rel="stylesheet" href="./css/createBudget.css">
-    <title>B.I.M Budget Impossible Manager</title>  </head>
-<body>
-  <main>
-    <div class="logoHeader">
-      <img id="profileImage" src="img/profile.jpg" width=70px height=70px>
-      <div id="profileName"></div>
-    </div>
-  </div>
-<div class="textHeader">
-  <div id="dateSelector" >
-    <div id="arrowLeft" > 🡰 </div>
-    <div id="Month"></div>
-    <div id="Year"></div>
-    <div id="arrowRight"> 🡲 </div>
-  </div>
-<div id="logo">B.I.M <br><p id="bim">Budget in mind</p></div>
-  <hr class="line">
-  <div class="animation-container">
-    <div class="animation-wrapper"></div>
-   </div>
-</div>
-    <div class="sidebarBox">
-      <ul class="sidebarList">
-        <li class="homepage" onclick="location.href='./summary.html'">🏠 Summary</li>
-        <li class="budget" onclick="location.href = './budget.html'">📈 Budget</li>
-        <li class="expense" onclick="location.href='./expense.html'">💸 Expense</li>
-        <li class="income" onclick="location.href='./income.html'">💰 Income</li>
-        <li class="saving-goal" onclick="location.href= './saving-goal.html'">🚀 Saving Goal</li>
-        <li class="social" onclick="location.href= './social.html'">👥 Social</li>
-        <li class="subscribe" onclick="location.href= './subscription.html'">📌 Subscription</li>
-        <li class="sign-out" onclick="location.href= './index.html'">🚪 Sign out</li>
-
-      </ul>
-    </div>
-      <div class="maincontent">
+    <link rel="stylesheet" href="./css/createBudget.css" />
+    <title>B.I.M Budget Impossible Manager</title>
+  </head>
+  <body>
+    <main>
+      <div class="textHeader">
+        <div class="hamburger-menu-wrapper" id="hamburger-button">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div id="dateSelector">
+          <div id="arrowLeft">🡰</div>
+          <div id="Month"></div>
+          <div id="Year"></div>
+          <div id="arrowRight">🡲</div>
+        </div>
+        <div id="logo">
+          B.I.M <br />
+          <p id="bim">Budget in mind</p>
+        </div>
+        <hr class="line" />
+        <div class="animation-container">
+          <div class="animation-wrapper"></div>
+        </div>
+      </div>
+      <div class="sidebarBox" id="sidebar-box">
+        <div class="logoHeader" id="logo-header">
+          <img
+            id="profileImage"
+            src="img/profile.jpg"
+            width="70px"
+            height="70px"
+          />
+          <div id="profileName"></div>
+        </div>
+        <ul class="sidebarList">
+          <li class="homepage" onclick="location.href='./summary.html'">
+            🏠 Summary
+          </li>
+          <li class="budget" onclick="location.href = './budget.html'">
+            📈 Budget
+          </li>
+          <li class="expense" onclick="location.href='./expense.html'">
+            💸 Expense
+          </li>
+          <li class="income" onclick="location.href='./income.html'">
+            💰 Income
+          </li>
+          <li class="saving-goal" onclick="location.href= './saving-goal.html'">
+            🚀 Saving Goal
+          </li>
+          <li class="social" onclick="location.href= './social.html'">
+            👥 Social
+          </li>
+          <li class="subscribe" onclick="location.href= './subscription.html'">
+            📌 Subscription
+          </li>
+          <li class="sign-out" onclick="location.href= './index.html'">
+            🚪 Sign out
+          </li>
+        </ul>
+      </div>
+      <div class="maincontent" id="main-content">
         <div class="maincontentBox">
           <div class="form-container">
-              <form id="forms">
-            <div class="newBudgetLabel">
-              <h2>New income</h2>
-            </div>
-            <div>
-              <input placeholder="Income Name" type="text" required />
-            </div>
-            <div>
-              <input
-                placeholder="Income Amount"
-                type="number"
-                step="1"
-                required
-                min="1"
-              />
-            </div>
-            <div class="label-input-wrapper">
-              <label for="date">Date</label>
-              <input
-                id="date"
-                name="date"
-                placeholder="Transaction date"
-                type="date"
-                required
-              />
-            </div>
-            <div>
-              <label for="checkbox">
-                <h2>Repeat</h2>
-                <input id="checkbox" class="checkbox-repeat" type="checkbox">
-              </label>
-            </div>
-            <div>
-              <button type="submit">Send</button>
-            </div>
-          </form>
-        </div>
+            <form id="forms">
+              <div class="newBudgetLabel">
+                <h2>New income</h2>
+              </div>
+              <div>
+                <input placeholder="Income Name" type="text" required />
+              </div>
+              <div>
+                <input
+                  placeholder="Income Amount"
+                  type="number"
+                  step="1"
+                  required
+                  min="1"
+                />
+              </div>
+              <div class="label-input-wrapper">
+                <label for="date">Date</label>
+                <input
+                  id="date"
+                  name="date"
+                  placeholder="Transaction date"
+                  type="date"
+                  required
+                />
+              </div>
+              <div>
+                <label for="checkbox">
+                  <h2>Repeat</h2>
+                  <input
+                    id="checkbox"
+                    class="checkbox-repeat"
+                    type="checkbox"
+                  />
+                </label>
+              </div>
+              <div>
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
           <div id="table-div">
             <div id="overlay-container"></div>
           </div>
         </div>
       </div>
-      <footer>
+      <footer id="footer">
         <div class="box">
           <a class="buttonPopup" href="#popup1">About us</a>
         </div>
@@ -112,6 +144,8 @@
       <script type="module" src="./js/views/income.js"></script>
       <script type="module" src="./js/components/dateSelector.js"></script>
       <script type="module" src="./js/helpers/image.js"></script>
+      <script type="module" src="./js/components/hamburgerMenu.js"></script>
+
       <!-- <script type="module" src="./js/dateTime.js"></script> -->
     </main>
   </body>

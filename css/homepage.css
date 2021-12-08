@@ -49,6 +49,7 @@
   width: 12em;
   height: 5em;
   animation: scaleIn 0.75s ease-in, fadeIn 0.75s ease-in;
+  margin: 0.35rem;
 }
 
 footer {
@@ -89,4 +90,26 @@ footer {
 
 .show {
   display: block;
+}
+@media (max-width: 500px) {
+  #remaining,
+  #expense,
+  #budget {
+    width: 7em;
+    height: 3.5em;
+    margin: 0.15rem;
+  }
+  .dropdownContent li {
+    padding: 9px 8px;
+    font-size: 10px;
+  }
+  .dropdownContent {
+    min-width: 6rem;
+  }
+  .flexboxText {
+    font-size: 0.8rem;
+  }
+  .flexboxTextDesc {
+    font-size: 0.6rem;
+  }
 }

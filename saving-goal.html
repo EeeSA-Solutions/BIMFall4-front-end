@@ -15,12 +15,14 @@
 
   <body>
     <main>
-      <div class="logoHeader">
-        <img id="profileImage" src="img/profile.jpg" width=70px height=70px>
-        <div id="profileName"></div>
-      </div>
+      
          </div>
             <div class="textHeader">
+              <div class="hamburger-menu-wrapper" id="hamburger-button">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             <div id="dateSelector" >
                 <div id="arrowLeft" > 🡰 </div>
                 <div id="Month"></div>
@@ -34,7 +36,11 @@
         </div>
         </div>
       </div>
-      <div class="sidebarBox">
+      <div class="sidebarBox" id="sidebar-box">
+        <div class="logoHeader" id="logo-header">
+          <img id="profileImage" src="img/profile.jpg" width=70px height=70px>
+          <div id="profileName"></div>
+        </div>
         <ul class="sidebarList">
           <li class="homepage" onclick="location.href='./summary.html'">
             🏠 Summary
@@ -60,7 +66,7 @@
 
         </ul>
       </div>
-      <div class="maincontent">
+      <div class="maincontent" id="main-content">
         <div class="maincontentBox">
           <div class="form-container">
             <form id="forms">
@@ -101,7 +107,7 @@
           <div id="overlay-container"></div>
         </div>
       </div>
-      <footer>
+      <footer id="footer">
         <div class="box">
           <a class="buttonPopup" href="#popup1">About us</a>
         </div>
@@ -125,6 +131,8 @@
 <script type="module" src="./js/components/dateSelector.js"></script>
 <script type="module" src="./js/helpers/image.js"></script>
 <script type="module" src="./js/helpers/date.js"></script>
+<script type="module" src="./js/components/hamburgerMenu.js"></script>
+
 <!-- <script type="module" src="./js/dateTime.js"></script> -->
 
 </html>

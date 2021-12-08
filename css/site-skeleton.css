@@ -1,3 +1,11 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 :root {
   --lightBlue: #7bbeff;
   --mediumBlue: #71b9ff;
@@ -94,16 +102,23 @@ main {
 
 .sidebarBox {
   background: var(--gradeGrey);
+  grid-column: 1/2;
+  grid-row: 1/3;
 }
-
+footer {
+  grid-row: 3/4;
+  position: absolute;
+  bottom: 0;
+}
+.buttonPopup {
+  margin-right: 0.75rem;
+}
 .sidebarList {
   font-size: 130%;
   color: var(--textDarkBlue);
-  padding: 50px;
+  padding: 2rem 0;
   list-style: none;
   width: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 .sidebarList > li {
@@ -120,10 +135,13 @@ main {
 }
 
 .maincontent {
-  padding: 5%;
+  padding: 2rem;
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 .logoHeader {
+  padding-top: 1.5rem;
   background-color: var(--darkGrey);
   color: var(--textDarkBlue);
   padding-left: 30px;
@@ -149,13 +167,15 @@ main {
   position: relative;
   justify-content: space-between;
   flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 170%;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 #logo {
   text-align: center;
   padding: 15px;
-  padding-right: 65px;
-  padding-bottom: 40px;
 }
 
 #bim {
@@ -170,10 +190,6 @@ main {
   border-left: none;
   margin: auto;
 }
-.textHeader {
-  font-weight: bold;
-  font-size: 170%;
-}
 
 #dateSelector {
   padding: 15px;
@@ -187,4 +203,83 @@ main {
 #arrowLeft,
 #arrowRight:hover {
   cursor: pointer;
+}
+.hamburger-menu-wrapper {
+  display: none;
+  position: absolute;
+  left: 6.5%;
+  height: 100%;
+  cursor: pointer;
+}
+.active-hamburger {
+  transform: rotate(90deg);
+  animation: rotate 0.25s ease-in;
+}
+@media (max-width: 900px) {
+  .hamburger-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hamburger-menu-wrapper div {
+    width: 1.75rem;
+    height: 0.15rem;
+    margin: 0.2rem 0;
+    background: black;
+  }
+  .sidebarBox {
+    display: none;
+  }
+  main {
+    display: unset;
+  }
+  .logoHeader {
+    display: none;
+  }
+  #logo {
+    display: none;
+  }
+  .hidden {
+    display: none;
+  }
+  .unset {
+    display: unset;
+    animation: fadeIn 1s ease-in;
+  }
+  .pos-unset {
+    position: unset;
+  }
+  .logo-header-show {
+    display: flex;
+    background-color: unset;
+  }
+  #bim {
+    font-size: 0.5rem;
+  }
+  .textHeader {
+    justify-content: center;
+    font-size: 120%;
+    height: 4rem;
+  }
+  #dateSelector {
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .maincontent {
+    padding: 1rem;
+  }
+  .textHeader {
+    font-size: 80%;
+  }
+  .hamburger-menu-wrapper div {
+    width: 1.5rem;
+    height: 0.1rem;
+    margin: 0.2rem 0;
+    background: black;
+  }
+  .hamburger-menu-wrapper {
+    padding-bottom: 0.75rem;
+  }
 }
